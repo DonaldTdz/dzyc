@@ -829,5 +829,23 @@ namespace DHQR.UnitTest
             var kk= GpsDistanceHelper.GetDistance(lat1,lon1,lat2,lon2);
         }
 
+        #region 达州到货系统测试
+
+        [TestMethod]
+        public void TestGetDists()
+        {
+            string data = "{'DLVMAN_ID':'O00000000001161','IsSuccessful':false}";
+            var jser = new JavaScriptSerializer();
+            var param = jser.Deserialize<DownloadDistParam>(data);
+            DZLangchaoLogic logic = new DZLangchaoLogic();
+            var dataList = logic.GetDists(param);
+            if (dataList.Count() == 2)
+            {
+
+            }
+        }
+
+        #endregion
+
     }
 }

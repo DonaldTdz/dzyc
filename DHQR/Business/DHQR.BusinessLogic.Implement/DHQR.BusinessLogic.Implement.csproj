@@ -102,6 +102,7 @@
     <Compile Include="DistFileLineLogic.cs" />
     <Compile Include="DistRecordLogLogic.cs" />
     <Compile Include="DistRutLogic.cs" />
+    <Compile Include="DZLangchaoLogic.cs" />
     <Compile Include="EntranceCardLogic.cs" />
     <Compile Include="GisCustPoisLogic.cs" />
     <Compile Include="GisLastLocrecordLogic.cs" />

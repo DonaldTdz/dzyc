@@ -86,6 +86,8 @@
     <Compile Include="CommonSql.cs" />
     <Compile Include="ConvertHelper.cs" />
     <Compile Include="DB2Helper.cs" />
+    <Compile Include="DZLangchaoDB2Repository.cs" />
+    <Compile Include="DZLangchaoEntities.cs" />
     <Compile Include="ICommandBuilder.cs" />
     <Compile Include="LangchaoDB2Repository.cs" />
     <Compile Include="LangchaoEntities.cs" />
