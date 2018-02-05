@@ -1,0 +1,33 @@
+﻿<%@ Master Language="C#" Inherits="System.Web.Mvc.ViewMasterPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title>
+        <asp:ContentPlaceHolder ID="TitleContent" runat="server" />
+    </title>
+    <link href="../../DHQRCss/global.css" rel="stylesheet" type="text/css" />
+    <link href="../../DHQRCss/main.css" rel="stylesheet" type="text/css" />
+    <script src="../../DHQRJs/jquery-1.7.2.min.js" type="text/javascript"></script>
+    <script src="../../DHQRJs/global.js" type="text/javascript"></script>
+    <script src="../../DHQRJs/jquery.mousewheel.js" type="text/javascript"></script>
+    <script src="../../DHQRJs/jquery.jscrollpane.js" type="text/javascript"></script>
+    <link href="../../DHQRCss/jquery.jscrollpane.css" rel="stylesheet" type="text/css" />
+    <script src="../../DHQRJs/main.js" type="text/javascript"></script>
+    <script type="text/javascript">
+//        $(document).ready(main_obj.page_init);
+//        window.onresize = main_obj.page_init;
+    </script>
+    <%--引用资源--%>
+    <asp:ContentPlaceHolder ID="ResourceContent" runat="server" />
+</head>
+<body>
+   <%-- <div id="container" class="ui-layout-center" style="display: none;">--%>
+        <%--主要内容--%>
+        <asp:ContentPlaceHolder ID="MainContent" runat="server">
+        </asp:ContentPlaceHolder>
+<%--    </div>--%>
+    <%--尾部脚本--%>
+    <asp:ContentPlaceHolder ID="BottomScript" runat="server" />
+</body>
+</html>

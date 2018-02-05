@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script type="text/javascript">
+        window.onload = function () {
+            var url = window.dialogArguments.url;
+            var date = new Date();
+            var vsign = "";
+            if (url.indexOf("?") >= 0) {
+                vsign = "&";
+            }
+            else {
+                vsign = "?";
+            }
+            url += vsign + "date=" + date.getTime();
+            document.title = window.dialogArguments.title;
+            document.getElementById("commonWindow").setAttribute("src", url);
+        }; 
+    </script>
+</head>
+<body>
+    <div id="container">
+        <iframe id="commonWindow" style="position: absolute; left: 0; top: 0; overflow:hidden; height: 100%;
+            width: 100%; border: 0px;" marginwidth="0" marginheight="0" scrolling="no" />
+    </div>
+</body>
+</html>

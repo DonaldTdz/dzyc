@@ -1,0 +1,16 @@
+﻿
+#stores .tips_info
+{
+    background: #f7f7f7;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    height: 30px;
+    line-height: 30px;
+    padding: 0 10px;
+    margin-bottom: 8px;
+    float: left;
+}
+#stores strong
+{
+    color: #444;
+}

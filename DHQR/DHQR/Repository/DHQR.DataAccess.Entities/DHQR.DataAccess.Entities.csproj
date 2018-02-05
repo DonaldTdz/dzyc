@@ -1,0 +1,332 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9434414B-9BA1-4351-AB0A-CECF3A570729}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DHQR.DataAccess.Entities</RootNamespace>
+    <AssemblyName>DHQR.DataAccess.Entities</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Common.Base">
+      <HintPath>..\..\..\libs\Common.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="Common.DAL.Entities">
+      <HintPath>..\..\..\libs\Common.DAL.Entities.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=4.4.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\EntityFramework.5.0.0\lib\net40\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AppVersion.cs">
+      <DependentUpon>BaseDataEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AttachmentInfo.cs">
+      <DependentUpon>BaseDataEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BaseDataEntity.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BaseDataEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BaseEnum.cs">
+      <DependentUpon>BaseDataEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BaseEnumExtentions.cs" />
+    <Compile Include="CarCheckKey.cs">
+      <DependentUpon>BaseDataEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CarRunKey.cs">
+      <DependentUpon>BaseDataEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CoReturn.cs">
+      <DependentUpon>BaseDataEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CoReturnLine.cs">
+      <DependentUpon>BaseDataEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CoTemp.cs">
+      <DependentUpon>BaseDataEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CoTempReturn.cs">
+      <DependentUpon>BaseDataEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DeliveryWarning.cs">
+      <DependentUpon>BaseDataEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Department.cs">
+      <DependentUpon>BaseDataEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DistAttachmentInfo.cs">
+      <DependentUpon>BaseDataEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DistCarCheck.cs">
+      <DependentUpon>BaseDataEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DistCarRun.cs">
+      <DependentUpon>BaseDataEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DistCarRunLine.cs">
+      <DependentUpon>BaseDataEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DistCust.cs">
+      <DependentUpon>BaseDataEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DistDlvman.cs">
+      <DependentUpon>BaseDataEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DistFileLine.cs">
+      <DependentUpon>BaseDataEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DistRecordLog.cs">
+      <DependentUpon>BaseDataEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DistRut.cs">
+      <DependentUpon>BaseDataEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntranceCard.cs">
+      <DependentUpon>BaseDataEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EnumExtentions.cs" />
+    <Compile Include="ExceptionLog.cs">
+      <DependentUpon>BaseDataEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GisCustPois.cs">
+      <DependentUpon>BaseDataEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GisLastLocrecord.cs">
+      <DependentUpon>BaseDataEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GlobalConfiguration.cs">
+      <DependentUpon>BaseDataEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LangchaoParams.cs" />
+    <Compile Include="LdmDisItem.cs">
+      <DependentUpon>BaseDataEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LdmDist.cs">
+      <DependentUpon>BaseDataEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LdmDistCar.cs">
+      <DependentUpon>BaseDataEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LdmDistLine.cs">
+      <DependentUpon>BaseDataEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LoginLog.cs">
+      <DependentUpon>BaseDataEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LogKey.cs">
+      <DependentUpon>BaseDataEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Menu.cs">
+      <DependentUpon>BaseDataEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Module.cs">
+      <DependentUpon>BaseDataEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModuleRole.cs">
+      <DependentUpon>BaseDataEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModuleRoleToModule.cs">
+      <DependentUpon>BaseDataEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Region.cs">
+      <DependentUpon>BaseDataEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ReOrderKey.cs">
+      <DependentUpon>BaseDataEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ReportEntities.cs" />
+    <Compile Include="Retailer.cs">
+      <DependentUpon>BaseDataEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ReturnDataEntities.cs" />
+    <Compile Include="RoleToAction.cs">
+      <DependentUpon>BaseDataEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ServiceCallLog.cs">
+      <DependentUpon>BaseDataEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ServiceExceptionLog.cs">
+      <DependentUpon>BaseDataEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TemplateModels.cs" />
+    <Compile Include="User.cs">
+      <DependentUpon>BaseDataEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UserFastModule.cs">
+      <DependentUpon>BaseDataEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UserModuleRole.cs">
+      <DependentUpon>BaseDataEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WeiXinApp.cs">
+      <DependentUpon>BaseDataEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WeiXinArticle.cs">
+      <DependentUpon>BaseDataEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WeiXinArticlesType.cs">
+      <DependentUpon>BaseDataEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WeiXinCustomUrl.cs">
+      <DependentUpon>BaseDataEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WeiXinEnums.cs" />
+    <Compile Include="WeiXinFirstIn.cs">
+      <DependentUpon>BaseDataEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WeiXinKeyWord.cs">
+      <DependentUpon>BaseDataEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WeiXinLogistic.cs">
+      <DependentUpon>BaseDataEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WeiXinMassMsg.cs">
+      <DependentUpon>BaseDataEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WeiXinMassMsgHist.cs">
+      <DependentUpon>BaseDataEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WeiXinMedia.cs">
+      <DependentUpon>BaseDataEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WeiXinMenu.cs">
+      <DependentUpon>BaseDataEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WeiXinPicMsgDetail.cs">
+      <DependentUpon>BaseDataEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WeiXinPicMsgMatser.cs">
+      <DependentUpon>BaseDataEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WeiXinSource.cs">
+      <DependentUpon>BaseDataEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WeiXinSysType.cs">
+      <DependentUpon>BaseDataEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WeiXinSysUrl.cs">
+      <DependentUpon>BaseDataEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WeiXinTriggerInfo.cs">
+      <DependentUpon>BaseDataEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WeiXinUser.cs">
+      <DependentUpon>BaseDataEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WeiXinUserGroup.cs">
+      <DependentUpon>BaseDataEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WeiXinUserInfo.cs">
+      <DependentUpon>BaseDataEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WeiXinUserType.cs">
+      <DependentUpon>BaseDataEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WeiXinUserTypeToModule.cs">
+      <DependentUpon>BaseDataEntity.tt</DependentUpon>
+    </Compile>
+    <None Include="BaseInfo.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BaseInfo.edmx</DependentUpon>
+    </None>
+    <Compile Include="BaseInfoEntity.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BaseInfoEntity.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BaseInfoEntity.Context.Extensions.cs">
+      <DependentUpon>BaseInfoEntity.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BaseOperation.cs" />
+    <Compile Include="CommonEnums.cs" />
+    <Compile Include="QueryParam.cs" />
+    <Compile Include="EntityExtentions.cs" />
+    <Compile Include="EntityQueryParams.cs" />
+    <Compile Include="IIdentityCode.cs" />
+    <Compile Include="ISequence.cs" />
+    <Compile Include="ITree.cs" />
+    <Compile Include="JsonTree.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="BaseDataEntity.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>BaseDataEntity.cs</LastGenOutput>
+    </None>
+    <EntityDeploy Include="BaseInfo.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>BaseInfo.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="BaseInfoEntity.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>BaseInfoEntity.Context.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

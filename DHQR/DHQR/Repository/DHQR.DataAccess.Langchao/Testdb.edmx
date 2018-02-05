@@ -1,0 +1,1340 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="TestModel.Store" Alias="Self" Provider="Devart.Data.DB2" ProviderManifestToken="DB2 for LUW, 9.7.5" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="TestModelStoreContainer">
+          <EntitySet Name="I_CO_RETURN" EntityType="TestModel.Store.I_CO_RETURN" store:Type="Tables" Schema="CDHC" />
+          <EntitySet Name="I_CO_RETURN_LINE" EntityType="TestModel.Store.I_CO_RETURN_LINE" store:Type="Tables" Schema="CDHC" />
+          <EntitySet Name="I_DIST_CAR_CHECK" EntityType="TestModel.Store.I_DIST_CAR_CHECK" store:Type="Tables" Schema="CDHC" />
+          <EntitySet Name="I_DIST_CAR_RUN" EntityType="TestModel.Store.I_DIST_CAR_RUN" store:Type="Tables" Schema="CDHC" />
+          <EntitySet Name="I_DIST_CAR_RUN_LINE" EntityType="TestModel.Store.I_DIST_CAR_RUN_LINE" store:Type="Tables" Schema="CDHC" />
+          <EntitySet Name="I_DIST_CUST" EntityType="TestModel.Store.I_DIST_CUST" store:Type="Tables" Schema="CDHC" />
+          <EntitySet Name="I_DIST_FILE_LINE" EntityType="TestModel.Store.I_DIST_FILE_LINE" store:Type="Tables" Schema="CDHC" />
+          <EntitySet Name="I_DIST_RECORD_LOG" EntityType="TestModel.Store.I_DIST_RECORD_LOG" store:Type="Tables" Schema="CDHC" />
+          <EntitySet Name="I_GIS_CUST_POI" EntityType="TestModel.Store.I_GIS_CUST_POI" store:Type="Tables" Schema="CDHC" />
+          <EntitySet Name="I_GIS_LAST_LOCRECORD" EntityType="TestModel.Store.I_GIS_LAST_LOCRECORD" store:Type="Tables" Schema="CDHC" />
+          <EntitySet Name="PBCATCOL" EntityType="TestModel.Store.PBCATCOL" store:Type="Tables" store:Schema="CDHC" store:Name="PBCATCOL">
+            <DefiningQuery>SELECT 
+      PBCATCOL.PBC_TNAM,
+      PBCATCOL.PBC_TID,
+      PBCATCOL.PBC_OWNR,
+      PBCATCOL.PBC_CNAM,
+      PBCATCOL.PBC_CID,
+      PBCATCOL.PBC_LABL,
+      PBCATCOL.PBC_LPOS,
+      PBCATCOL.PBC_HDR,
+      PBCATCOL.PBC_HPOS,
+      PBCATCOL.PBC_JTFY,
+      PBCATCOL.PBC_MASK,
+      PBCATCOL.PBC_CASE,
+      PBCATCOL.PBC_HGHT,
+      PBCATCOL.PBC_WDTH,
+      PBCATCOL.PBC_PTRN,
+      PBCATCOL.PBC_BMAP,
+      PBCATCOL.PBC_INIT,
+      PBCATCOL.PBC_CMNT,
+      PBCATCOL.PBC_EDIT,
+      PBCATCOL.PBC_TAG
+      FROM CDHC.PBCATCOL PBCATCOL</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="PBCATEDT" EntityType="TestModel.Store.PBCATEDT" store:Type="Tables" store:Schema="CDHC" store:Name="PBCATEDT">
+            <DefiningQuery>SELECT 
+      PBCATEDT.PBE_NAME,
+      PBCATEDT.PBE_EDIT,
+      PBCATEDT.PBE_TYPE,
+      PBCATEDT.PBE_CNTR,
+      PBCATEDT.PBE_SEQN,
+      PBCATEDT.PBE_FLAG,
+      PBCATEDT.PBE_WORK
+      FROM CDHC.PBCATEDT PBCATEDT</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="PBCATFMT" EntityType="TestModel.Store.PBCATFMT" store:Type="Tables" store:Schema="CDHC" store:Name="PBCATFMT">
+            <DefiningQuery>SELECT 
+      PBCATFMT.PBF_NAME,
+      PBCATFMT.PBF_FRMT,
+      PBCATFMT.PBF_TYPE,
+      PBCATFMT.PBF_CNTR
+      FROM CDHC.PBCATFMT PBCATFMT</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="PBCATTBL" EntityType="TestModel.Store.PBCATTBL" store:Type="Tables" store:Schema="CDHC" store:Name="PBCATTBL">
+            <DefiningQuery>SELECT 
+      PBCATTBL.PBT_TNAM,
+      PBCATTBL.PBT_TID,
+      PBCATTBL.PBT_OWNR,
+      PBCATTBL.PBD_FHGT,
+      PBCATTBL.PBD_FWGT,
+      PBCATTBL.PBD_FITL,
+      PBCATTBL.PBD_FUNL,
+      PBCATTBL.PBD_FCHR,
+      PBCATTBL.PBD_FPTC,
+      PBCATTBL.PBD_FFCE,
+      PBCATTBL.PBH_FHGT,
+      PBCATTBL.PBH_FWGT,
+      PBCATTBL.PBH_FITL,
+      PBCATTBL.PBH_FUNL,
+      PBCATTBL.PBH_FCHR,
+      PBCATTBL.PBH_FPTC,
+      PBCATTBL.PBH_FFCE,
+      PBCATTBL.PBL_FHGT,
+      PBCATTBL.PBL_FWGT,
+      PBCATTBL.PBL_FITL,
+      PBCATTBL.PBL_FUNL,
+      PBCATTBL.PBL_FCHR,
+      PBCATTBL.PBL_FPTC,
+      PBCATTBL.PBL_FFCE,
+      PBCATTBL.PBT_CMNT
+      FROM CDHC.PBCATTBL PBCATTBL</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="PBCATVLD" EntityType="TestModel.Store.PBCATVLD" store:Type="Tables" store:Schema="CDHC" store:Name="PBCATVLD">
+            <DefiningQuery>SELECT 
+      PBCATVLD.PBV_NAME,
+      PBCATVLD.PBV_VALD,
+      PBCATVLD.PBV_TYPE,
+      PBCATVLD.PBV_CNTR,
+      PBCATVLD.PBV_MSG
+      FROM CDHC.PBCATVLD PBCATVLD</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="I_CUST" EntityType="TestModel.Store.I_CUST" store:Type="Views" store:Schema="CDHC" store:Name="I_CUST">
+            <DefiningQuery>SELECT 
+      I_CUST.CUST_ID,
+      I_CUST.CUST_NAME,
+      I_CUST.LICENSE_CODE,
+      I_CUST.STATUS,
+      I_CUST.COM_ID
+      FROM CDHC.I_CUST I_CUST</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="I_DIST" EntityType="TestModel.Store.I_DIST" store:Type="Views" store:Schema="CDHC" store:Name="I_DIST">
+            <DefiningQuery>SELECT 
+      I_DIST.DIST_NUM,
+      I_DIST.COM_ID,
+      I_DIST.RUT_ID,
+      I_DIST.RUT_NAME,
+      I_DIST.DIST_DATE,
+      I_DIST.DLVMAN_ID,
+      I_DIST.DLVMAN_NAME,
+      I_DIST.DRIVER_ID,
+      I_DIST.DRIVER_NAME,
+      I_DIST.CAR_ID,
+      I_DIST.CAR_LICENSE,
+      I_DIST.DIST_CUST_SUM,
+      I_DIST.QTY_BAR,
+      I_DIST.AMT_SUM,
+      I_DIST.STATUS,
+      I_DIST.IS_DOWNLOAD,
+      I_DIST.IS_MRB,
+      I_DIST.DLVMAN_CARD_ID
+      FROM CDHC.I_DIST I_DIST</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="I_DIST_CAR" EntityType="TestModel.Store.I_DIST_CAR" store:Type="Views" store:Schema="CDHC" store:Name="I_DIST_CAR">
+            <DefiningQuery>SELECT 
+      I_DIST_CAR.CAR_ID,
+      I_DIST_CAR.CAR_NAME,
+      I_DIST_CAR.CAR_LICENSE,
+      I_DIST_CAR.DLVMAN_ID,
+      I_DIST_CAR.DLVMAN_NAME,
+      I_DIST_CAR.DRIVER_ID,
+      I_DIST_CAR.DRIVER_NAME,
+      I_DIST_CAR.IS_MRB,
+      I_DIST_CAR.COM_ID
+      FROM CDHC.I_DIST_CAR I_DIST_CAR</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="I_DIST_ITEM" EntityType="TestModel.Store.I_DIST_ITEM" store:Type="Views" store:Schema="CDHC" store:Name="I_DIST_ITEM">
+            <DefiningQuery>SELECT 
+      I_DIST_ITEM.CO_NUM,
+      I_DIST_ITEM.ITEM_ID,
+      I_DIST_ITEM.ITEM_NAME,
+      I_DIST_ITEM.PRICE,
+      I_DIST_ITEM.QTY,
+      I_DIST_ITEM.AMT,
+      I_DIST_ITEM.IS_ABNORMAL
+      FROM CDHC.I_DIST_ITEM I_DIST_ITEM</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="I_DIST_LINE" EntityType="TestModel.Store.I_DIST_LINE" store:Type="Views" store:Schema="CDHC" store:Name="I_DIST_LINE">
+            <DefiningQuery>SELECT 
+      I_DIST_LINE.DIST_NUM,
+      I_DIST_LINE.CO_NUM,
+      I_DIST_LINE.CUST_ID,
+      I_DIST_LINE.CUST_CODE,
+      I_DIST_LINE.CUST_NAME,
+      I_DIST_LINE.MANAGER,
+      I_DIST_LINE.ADDR,
+      I_DIST_LINE.TEL,
+      I_DIST_LINE.QTY_BAR,
+      I_DIST_LINE.AMT_AR,
+      I_DIST_LINE.AMT_OR,
+      I_DIST_LINE.PMT_STATUS,
+      I_DIST_LINE."TYPE",
+      I_DIST_LINE.SEQ,
+      I_DIST_LINE.LICENSE_CODE,
+      I_DIST_LINE.PAY_TYPE,
+      I_DIST_LINE.LONGITUDE,
+      I_DIST_LINE.LATITUDE,
+      I_DIST_LINE.CUST_CARD_ID,
+      I_DIST_LINE.CUST_CARD_CODE
+      FROM CDHC.I_DIST_LINE I_DIST_LINE</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+        <EntityType Name="I_CO_RETURN">
+          <Key>
+            <PropertyRef Name="RETURN_CO_NUM" />
+          </Key>
+          <Property Name="RETURN_CO_NUM" Type="varchar" Nullable="false" MaxLength="30" />
+          <Property Name="CUST_ID" Type="varchar" Nullable="false" MaxLength="30" />
+          <Property Name="TYPE" Type="char" Nullable="false" MaxLength="2" />
+          <Property Name="STATUS" Type="char" Nullable="false" MaxLength="2" />
+          <Property Name="CRT_DATE" Type="char" MaxLength="8" />
+          <Property Name="CRT_USER_NAME" Type="varchar" MaxLength="50" />
+          <Property Name="ORG_CO_NUM" Type="varchar" Nullable="false" MaxLength="30" />
+          <Property Name="NOTE" Type="varchar" MaxLength="200" />
+          <Property Name="AMT_SUM" Type="decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="QTY_SUM" Type="decimal" Nullable="false" Precision="18" Scale="6" />
+        </EntityType>
+        <EntityType Name="I_CO_RETURN_LINE">
+          <Key>
+            <PropertyRef Name="RETURN_CO_NUM" />
+            <PropertyRef Name="LINE_NUM" />
+          </Key>
+          <Property Name="RETURN_CO_NUM" Type="varchar" Nullable="false" MaxLength="30" />
+          <Property Name="LINE_NUM" Type="integer" Nullable="false" />
+          <Property Name="ITEM_ID" Type="varchar" Nullable="false" MaxLength="30" />
+          <Property Name="QTY_ORD" Type="decimal" Nullable="false" Precision="18" Scale="6" />
+          <Property Name="NOTE" Type="varchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="I_DIST_CAR_CHECK">
+          <Key>
+            <PropertyRef Name="CHECK_ID" />
+          </Key>
+          <Property Name="CHECK_ID" Type="varchar" Nullable="false" MaxLength="30" />
+          <Property Name="CAR_ID" Type="varchar" Nullable="false" MaxLength="30" />
+          <Property Name="REF_TYPE" Type="char" Nullable="false" />
+          <Property Name="REF_ID" Type="varchar" Nullable="false" MaxLength="200" />
+          <Property Name="ABNORMAL_DETAIL" Type="char" Nullable="false" MaxLength="3" />
+          <Property Name="ABNORMAL_TYPE" Type="char" Nullable="false" />
+          <Property Name="CHECK_TIME" Type="char" Nullable="false" MaxLength="14" />
+          <Property Name="LONGITUDE" Type="decimal" Precision="11" Scale="8" />
+          <Property Name="LATITUDE" Type="decimal" Precision="11" Scale="8" />
+          <Property Name="CHECK_TYPE" Type="char" />
+          <Property Name="OPERATE_MODE" Type="char" />
+          <Property Name="NOTE" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="I_DIST_CAR_RUN">
+          <Key>
+            <PropertyRef Name="INFO_NUM" />
+          </Key>
+          <Property Name="INFO_NUM" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="REF_TYPE" Type="char" Nullable="false" />
+          <Property Name="REF_ID" Type="varchar" Nullable="false" MaxLength="200" />
+          <Property Name="CAR_ID" Type="varchar" Nullable="false" MaxLength="30" />
+          <Property Name="DLVMAN_ID" Type="varchar" Nullable="false" MaxLength="30" />
+          <Property Name="CRT_DATE" Type="char" MaxLength="14" />
+          <Property Name="AMT_SUM" Type="decimal" Precision="18" Scale="6" />
+          <Property Name="THIS_MIL" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="NOTE" Type="varchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="I_DIST_CAR_RUN_LINE">
+          <Key>
+            <PropertyRef Name="INFO_NUM" />
+            <PropertyRef Name="LINE_ID" />
+          </Key>
+          <Property Name="INFO_NUM" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="LINE_ID" Type="integer" Nullable="false" />
+          <Property Name="COST_TYPE" Type="char" Nullable="false" />
+          <Property Name="FUEL_TYPE" Type="char" />
+          <Property Name="LITRE_SUM" Type="decimal" Precision="18" Scale="6" />
+          <Property Name="FUEL_PRI" Type="decimal" Precision="18" Scale="6" />
+          <Property Name="AMT" Type="decimal" Nullable="false" Precision="18" Scale="6" />
+          <Property Name="INV_NUM" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="I_DIST_CUST">
+          <Key>
+            <PropertyRef Name="DIST_NUM" />
+            <PropertyRef Name="CO_NUM" />
+          </Key>
+          <Property Name="DIST_NUM" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="CO_NUM" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="CUST_ID" Type="varchar" Nullable="false" MaxLength="30" />
+          <Property Name="IS_RECEIVED" Type="char" Nullable="false" MaxLength="2" />
+          <Property Name="DIST_SATIS" Type="char" MaxLength="2" />
+          <Property Name="UNLOAD_REASON" Type="char" MaxLength="2" />
+          <Property Name="REC_DATE" Type="char" MaxLength="8" />
+          <Property Name="REC_ARRIVE_TIME" Type="char" MaxLength="14" />
+          <Property Name="REC_LEAVE_TIME" Type="char" MaxLength="14" />
+          <Property Name="HANDOVER_TIME" Type="decimal" Precision="18" Scale="6" />
+          <Property Name="NOTSATIS_REASON" Type="char" MaxLength="6" />
+          <Property Name="UNUSUAL_TYPE" Type="char" MaxLength="2" />
+          <Property Name="EVALUATE_INFO" Type="varchar" MaxLength="100" />
+          <Property Name="SIGN_TYPE" Type="char" />
+          <Property Name="EXP_SIGN_REASON" Type="char" MaxLength="3" />
+          <Property Name="UNLOAD_LON" Type="decimal" Precision="11" Scale="8" />
+          <Property Name="UNLOAD_LAT" Type="decimal" Precision="11" Scale="8" />
+          <Property Name="UNLOAD_DISTANCE" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="EVALUATE_TIME" Type="char" MaxLength="14" />
+          <Property Name="DLVMAN_ID" Type="varchar" MaxLength="30" />
+        </EntityType>
+        <EntityType Name="I_DIST_FILE_LINE">
+          <Key>
+            <PropertyRef Name="DOC_ID" />
+          </Key>
+          <Property Name="DOC_ID" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="DIST_NUM" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="CO_NUM" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="CUST_ID" Type="varchar" Nullable="false" MaxLength="30" />
+          <Property Name="FILE_TYPE" Type="char" Nullable="false" />
+          <Property Name="CRT_TIME" Type="varchar" MaxLength="14" />
+          <Property Name="CRT_MAN_ID" Type="varchar" MaxLength="30" />
+          <Property Name="NOTE" Type="varchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="I_DIST_RECORD_LOG">
+          <Key>
+            <PropertyRef Name="LOG_SEQ" />
+          </Key>
+          <Property Name="LOG_SEQ" Type="varchar" Nullable="false" MaxLength="30" />
+          <Property Name="REF_TYPE" Type="char" Nullable="false" />
+          <Property Name="REF_ID" Type="varchar" Nullable="false" MaxLength="200" />
+          <Property Name="OPERATION_TYPE" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="LOG_DATE" Type="char" Nullable="false" MaxLength="8" />
+          <Property Name="LOG_TIME" Type="char" Nullable="false" MaxLength="8" />
+          <Property Name="USER_ID" Type="varchar" MaxLength="30" />
+          <Property Name="LONGITUDE" Type="decimal" Precision="10" Scale="7" />
+          <Property Name="LATITUDE" Type="decimal" Precision="10" Scale="7" />
+          <Property Name="NOTE" Type="varchar" MaxLength="200" />
+          <Property Name="OPERATE_MODE" Type="char" />
+        </EntityType>
+        <EntityType Name="I_GIS_CUST_POI">
+          <Key>
+            <PropertyRef Name="CUST_ID" />
+            <PropertyRef Name="MOBILE_TYPE" />
+          </Key>
+          <Property Name="CUST_ID" Type="varchar" Nullable="false" MaxLength="30" />
+          <Property Name="MOBILE_TYPE" Type="char" Nullable="false" />
+          <Property Name="ORIGINAL_LONGITUDE" Type="decimal" Precision="11" Scale="8" />
+          <Property Name="ORIGINAL_LATITUDE" Type="decimal" Precision="11" Scale="8" />
+          <Property Name="IS_DEFAULT" Type="char" Nullable="false" />
+          <Property Name="CRT_TIME" Type="char" Nullable="false" MaxLength="14" />
+          <Property Name="CRT_USER_ID" Type="varchar" Nullable="false" MaxLength="30" />
+          <Property Name="COL_TIME" Type="char" MaxLength="14" />
+          <Property Name="IMP_STATUS" Type="char" Nullable="false" MaxLength="2" />
+          <Property Name="NOTE" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="I_GIS_LAST_LOCRECORD">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="decimal" Nullable="false" Precision="24" StoreGeneratedPattern="Identity" />
+          <Property Name="M_CODE" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="M_TYPE" Type="varchar" Nullable="false" MaxLength="10" />
+          <Property Name="ORIGINAL_LONGITUDE" Type="decimal" Precision="11" Scale="8" />
+          <Property Name="ORIGINAL_LATITUDE" Type="decimal" Precision="11" Scale="8" />
+          <Property Name="SPEED" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="DIRECTION" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="HEIGHT" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="STATLLITE_NUM" Type="integer" />
+          <Property Name="GPSTIME" Type="char" MaxLength="14" />
+          <Property Name="INPUTDATE" Type="char" MaxLength="14" />
+          <Property Name="STATE" Type="char" />
+        </EntityType>
+        <!--生成过程中发现错误:
+      警告 6002: 表/视图“Catalog1.CDHC.PBCATCOL”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+      -->
+        <EntityType Name="PBCATCOL">
+          <Key>
+            <PropertyRef Name="PBC_TNAM" />
+            <PropertyRef Name="PBC_OWNR" />
+            <PropertyRef Name="PBC_CNAM" />
+          </Key>
+          <Property Name="PBC_TNAM" Type="char" Nullable="false" MaxLength="129" />
+          <Property Name="PBC_TID" Type="integer" />
+          <Property Name="PBC_OWNR" Type="char" Nullable="false" MaxLength="129" />
+          <Property Name="PBC_CNAM" Type="char" Nullable="false" MaxLength="129" />
+          <Property Name="PBC_CID" Type="smallint" />
+          <Property Name="PBC_LABL" Type="varchar" MaxLength="254" />
+          <Property Name="PBC_LPOS" Type="smallint" />
+          <Property Name="PBC_HDR" Type="varchar" MaxLength="254" />
+          <Property Name="PBC_HPOS" Type="smallint" />
+          <Property Name="PBC_JTFY" Type="smallint" />
+          <Property Name="PBC_MASK" Type="varchar" MaxLength="31" />
+          <Property Name="PBC_CASE" Type="smallint" />
+          <Property Name="PBC_HGHT" Type="smallint" />
+          <Property Name="PBC_WDTH" Type="smallint" />
+          <Property Name="PBC_PTRN" Type="varchar" MaxLength="31" />
+          <Property Name="PBC_BMAP" Type="char" />
+          <Property Name="PBC_INIT" Type="varchar" MaxLength="254" />
+          <Property Name="PBC_CMNT" Type="varchar" MaxLength="254" />
+          <Property Name="PBC_EDIT" Type="varchar" MaxLength="31" />
+          <Property Name="PBC_TAG" Type="varchar" MaxLength="254" />
+        </EntityType>
+        <!--生成过程中发现错误:
+      警告 6002: 表/视图“Catalog1.CDHC.PBCATEDT”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+      -->
+        <EntityType Name="PBCATEDT">
+          <Key>
+            <PropertyRef Name="PBE_NAME" />
+            <PropertyRef Name="PBE_SEQN" />
+          </Key>
+          <Property Name="PBE_NAME" Type="varchar" Nullable="false" MaxLength="30" />
+          <Property Name="PBE_EDIT" Type="varchar" MaxLength="254" />
+          <Property Name="PBE_TYPE" Type="smallint" />
+          <Property Name="PBE_CNTR" Type="integer" />
+          <Property Name="PBE_SEQN" Type="smallint" Nullable="false" />
+          <Property Name="PBE_FLAG" Type="integer" />
+          <Property Name="PBE_WORK" Type="char" MaxLength="32" />
+        </EntityType>
+        <!--生成过程中发现错误:
+      警告 6002: 表/视图“Catalog1.CDHC.PBCATFMT”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+      -->
+        <EntityType Name="PBCATFMT">
+          <Key>
+            <PropertyRef Name="PBF_NAME" />
+          </Key>
+          <Property Name="PBF_NAME" Type="varchar" Nullable="false" MaxLength="30" />
+          <Property Name="PBF_FRMT" Type="varchar" MaxLength="254" />
+          <Property Name="PBF_TYPE" Type="smallint" />
+          <Property Name="PBF_CNTR" Type="integer" />
+        </EntityType>
+        <!--生成过程中发现错误:
+      警告 6002: 表/视图“Catalog1.CDHC.PBCATTBL”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+      -->
+        <EntityType Name="PBCATTBL">
+          <Key>
+            <PropertyRef Name="PBT_TNAM" />
+            <PropertyRef Name="PBT_OWNR" />
+          </Key>
+          <Property Name="PBT_TNAM" Type="char" Nullable="false" MaxLength="129" />
+          <Property Name="PBT_TID" Type="integer" />
+          <Property Name="PBT_OWNR" Type="char" Nullable="false" MaxLength="129" />
+          <Property Name="PBD_FHGT" Type="smallint" />
+          <Property Name="PBD_FWGT" Type="smallint" />
+          <Property Name="PBD_FITL" Type="char" />
+          <Property Name="PBD_FUNL" Type="char" />
+          <Property Name="PBD_FCHR" Type="smallint" />
+          <Property Name="PBD_FPTC" Type="smallint" />
+          <Property Name="PBD_FFCE" Type="char" MaxLength="18" />
+          <Property Name="PBH_FHGT" Type="smallint" />
+          <Property Name="PBH_FWGT" Type="smallint" />
+          <Property Name="PBH_FITL" Type="char" />
+          <Property Name="PBH_FUNL" Type="char" />
+          <Property Name="PBH_FCHR" Type="smallint" />
+          <Property Name="PBH_FPTC" Type="smallint" />
+          <Property Name="PBH_FFCE" Type="char" MaxLength="18" />
+          <Property Name="PBL_FHGT" Type="smallint" />
+          <Property Name="PBL_FWGT" Type="smallint" />
+          <Property Name="PBL_FITL" Type="char" />
+          <Property Name="PBL_FUNL" Type="char" />
+          <Property Name="PBL_FCHR" Type="smallint" />
+          <Property Name="PBL_FPTC" Type="smallint" />
+          <Property Name="PBL_FFCE" Type="char" MaxLength="18" />
+          <Property Name="PBT_CMNT" Type="varchar" MaxLength="254" />
+        </EntityType>
+        <!--生成过程中发现错误:
+      警告 6002: 表/视图“Catalog1.CDHC.PBCATVLD”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+      -->
+        <EntityType Name="PBCATVLD">
+          <Key>
+            <PropertyRef Name="PBV_NAME" />
+          </Key>
+          <Property Name="PBV_NAME" Type="varchar" Nullable="false" MaxLength="30" />
+          <Property Name="PBV_VALD" Type="varchar" MaxLength="254" />
+          <Property Name="PBV_TYPE" Type="smallint" />
+          <Property Name="PBV_CNTR" Type="integer" />
+          <Property Name="PBV_MSG" Type="varchar" MaxLength="254" />
+        </EntityType>
+        <!--生成过程中发现错误:
+      警告 6002: 表/视图“Catalog1.CDHC.I_CUST”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+      -->
+        <EntityType Name="I_CUST">
+          <Key>
+            <PropertyRef Name="CUST_ID" />
+            <PropertyRef Name="CUST_NAME" />
+            <PropertyRef Name="COM_ID" />
+          </Key>
+          <Property Name="CUST_ID" Type="varchar" Nullable="false" MaxLength="30" />
+          <Property Name="CUST_NAME" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="LICENSE_CODE" Type="varchar" MaxLength="30" />
+          <Property Name="STATUS" Type="varchar" MaxLength="2" />
+          <Property Name="COM_ID" Type="varchar" Nullable="false" MaxLength="30" />
+        </EntityType>
+        <!--生成过程中发现错误:
+      警告 6002: 表/视图“Catalog1.CDHC.I_DIST”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+      -->
+        <EntityType Name="I_DIST">
+          <Key>
+            <PropertyRef Name="DIST_NUM" />
+            <PropertyRef Name="COM_ID" />
+            <PropertyRef Name="CAR_ID" />
+            <PropertyRef Name="STATUS" />
+            <PropertyRef Name="IS_MRB" />
+          </Key>
+          <Property Name="DIST_NUM" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="COM_ID" Type="varchar" Nullable="false" MaxLength="30" />
+          <Property Name="RUT_ID" Type="varchar" MaxLength="50" />
+          <Property Name="RUT_NAME" Type="varchar" MaxLength="100" />
+          <Property Name="DIST_DATE" Type="char" MaxLength="8" />
+          <Property Name="DLVMAN_ID" Type="varchar" MaxLength="30" />
+          <Property Name="DLVMAN_NAME" Type="varchar" MaxLength="80" />
+          <Property Name="DRIVER_ID" Type="varchar" MaxLength="30" />
+          <Property Name="DRIVER_NAME" Type="varchar" MaxLength="80" />
+          <Property Name="CAR_ID" Type="varchar" Nullable="false" MaxLength="45" />
+          <Property Name="CAR_LICENSE" Type="varchar" MaxLength="15" />
+          <Property Name="DIST_CUST_SUM" Type="integer" />
+          <Property Name="QTY_BAR" Type="decimal" Precision="18" Scale="6" />
+          <Property Name="AMT_SUM" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="STATUS" Type="varchar" Nullable="false" MaxLength="8" />
+          <Property Name="IS_DOWNLOAD" Type="char" />
+          <Property Name="IS_MRB" Type="char" Nullable="false" />
+          <Property Name="DLVMAN_CARD_ID" Type="varchar" MaxLength="30" />
+        </EntityType>
+        <!--生成过程中发现错误:
+      警告 6002: 表/视图“Catalog1.CDHC.I_DIST_CAR”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+      -->
+        <EntityType Name="I_DIST_CAR">
+          <Key>
+            <PropertyRef Name="CAR_ID" />
+            <PropertyRef Name="CAR_NAME" />
+            <PropertyRef Name="CAR_LICENSE" />
+            <PropertyRef Name="DLVMAN_ID" />
+            <PropertyRef Name="DRIVER_ID" />
+            <PropertyRef Name="IS_MRB" />
+            <PropertyRef Name="COM_ID" />
+          </Key>
+          <Property Name="CAR_ID" Type="varchar" Nullable="false" MaxLength="35" />
+          <Property Name="CAR_NAME" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="CAR_LICENSE" Type="varchar" Nullable="false" MaxLength="15" />
+          <Property Name="DLVMAN_ID" Type="varchar" Nullable="false" MaxLength="30" />
+          <Property Name="DLVMAN_NAME" Type="varchar" MaxLength="80" />
+          <Property Name="DRIVER_ID" Type="varchar" Nullable="false" MaxLength="30" />
+          <Property Name="DRIVER_NAME" Type="varchar" MaxLength="80" />
+          <Property Name="IS_MRB" Type="char" Nullable="false" />
+          <Property Name="COM_ID" Type="varchar" Nullable="false" MaxLength="30" />
+        </EntityType>
+        <!--生成过程中发现错误:
+      警告 6002: 表/视图“Catalog1.CDHC.I_DIST_ITEM”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+      -->
+        <EntityType Name="I_DIST_ITEM">
+          <Key>
+            <PropertyRef Name="CO_NUM" />
+            <PropertyRef Name="ITEM_ID" />
+            <PropertyRef Name="PRICE" />
+            <PropertyRef Name="QTY" />
+            <PropertyRef Name="AMT" />
+          </Key>
+          <Property Name="CO_NUM" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="ITEM_ID" Type="varchar" Nullable="false" MaxLength="30" />
+          <Property Name="ITEM_NAME" Type="varchar" MaxLength="30" />
+          <Property Name="PRICE" Type="decimal" Nullable="false" Precision="18" Scale="6" />
+          <Property Name="QTY" Type="decimal" Nullable="false" Precision="18" Scale="6" />
+          <Property Name="AMT" Type="decimal" Nullable="false" Precision="18" Scale="6" />
+          <Property Name="IS_ABNORMAL" Type="char" />
+        </EntityType>
+        <!--生成过程中发现错误:
+      警告 6002: 表/视图“Catalog1.CDHC.I_DIST_LINE”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+      -->
+        <EntityType Name="I_DIST_LINE">
+          <Key>
+            <PropertyRef Name="DIST_NUM" />
+            <PropertyRef Name="CO_NUM" />
+            <PropertyRef Name="CUST_ID" />
+            <PropertyRef Name="QTY_BAR" />
+            <PropertyRef Name="AMT_AR" />
+            <PropertyRef Name="SEQ" />
+          </Key>
+          <Property Name="DIST_NUM" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="CO_NUM" Type="varchar" Nullable="false" MaxLength="30" />
+          <Property Name="CUST_ID" Type="varchar" Nullable="false" MaxLength="30" />
+          <Property Name="CUST_CODE" Type="varchar" MaxLength="30" />
+          <Property Name="CUST_NAME" Type="varchar" MaxLength="100" />
+          <Property Name="MANAGER" Type="varchar" MaxLength="50" />
+          <Property Name="ADDR" Type="varchar" MaxLength="200" />
+          <Property Name="TEL" Type="varchar" MaxLength="50" />
+          <Property Name="QTY_BAR" Type="decimal" Nullable="false" Precision="18" Scale="6" />
+          <Property Name="AMT_AR" Type="decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="AMT_OR" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="PMT_STATUS" Type="char" MaxLength="2" />
+          <Property Name="TYPE" Type="char" MaxLength="2" />
+          <Property Name="SEQ" Type="integer" Nullable="false" />
+          <Property Name="LICENSE_CODE" Type="varchar" MaxLength="30" />
+          <Property Name="PAY_TYPE" Type="varchar" MaxLength="2" />
+          <Property Name="LONGITUDE" Type="decimal" Precision="11" Scale="8" />
+          <Property Name="LATITUDE" Type="decimal" Precision="11" Scale="8" />
+          <Property Name="CUST_CARD_ID" Type="varchar" MaxLength="30" />
+          <Property Name="CUST_CARD_CODE" Type="varchar" MaxLength="30" />
+        </EntityType>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="TestModel" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="TestEntities">
+          <EntitySet Name="I_CO_RETURN" EntityType="TestModel.I_CO_RETURN" />
+          <EntitySet Name="I_CO_RETURN_LINE" EntityType="TestModel.I_CO_RETURN_LINE" />
+          <EntitySet Name="I_DIST_CAR_CHECK" EntityType="TestModel.I_DIST_CAR_CHECK" />
+          <EntitySet Name="I_DIST_CAR_RUN" EntityType="TestModel.I_DIST_CAR_RUN" />
+          <EntitySet Name="I_DIST_CAR_RUN_LINE" EntityType="TestModel.I_DIST_CAR_RUN_LINE" />
+          <EntitySet Name="I_DIST_CUST" EntityType="TestModel.I_DIST_CUST" />
+          <EntitySet Name="I_DIST_FILE_LINE" EntityType="TestModel.I_DIST_FILE_LINE" />
+          <EntitySet Name="I_GIS_CUST_POI" EntityType="TestModel.I_GIS_CUST_POI" />
+          <EntitySet Name="I_GIS_LAST_LOCRECORD" EntityType="TestModel.I_GIS_LAST_LOCRECORD" />
+          <EntitySet Name="PBCATCOL" EntityType="TestModel.PBCATCOL" />
+          <EntitySet Name="PBCATEDT" EntityType="TestModel.PBCATEDT" />
+          <EntitySet Name="PBCATFMT" EntityType="TestModel.PBCATFMT" />
+          <EntitySet Name="PBCATTBL" EntityType="TestModel.PBCATTBL" />
+          <EntitySet Name="PBCATVLD" EntityType="TestModel.PBCATVLD" />
+          <EntitySet Name="I_CUST" EntityType="TestModel.I_CUST" />
+          <EntitySet Name="I_DIST" EntityType="TestModel.I_DIST" />
+          <EntitySet Name="I_DIST_CAR" EntityType="TestModel.I_DIST_CAR" />
+          <EntitySet Name="I_DIST_ITEM" EntityType="TestModel.I_DIST_ITEM" />
+          <EntitySet Name="I_DIST_LINE" EntityType="TestModel.I_DIST_LINE" />
+          <EntitySet Name="I_DIST_RECORD_LOG" EntityType="TestModel.I_DIST_RECORD_LOG" />
+        </EntityContainer>
+        <EntityType Name="I_CO_RETURN">
+          <Key>
+            <PropertyRef Name="RETURN_CO_NUM" />
+          </Key>
+          <Property Type="String" Name="RETURN_CO_NUM" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="CUST_ID" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="TYPE" Nullable="false" MaxLength="2" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="STATUS" Nullable="false" MaxLength="2" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="CRT_DATE" MaxLength="8" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="CRT_USER_NAME" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ORG_CO_NUM" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="NOTE" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Type="Decimal" Name="AMT_SUM" Nullable="false" Precision="18" Scale="2" />
+          <Property Type="Decimal" Name="QTY_SUM" Nullable="false" Precision="18" Scale="6" />
+        </EntityType>
+        <EntityType Name="I_CO_RETURN_LINE">
+          <Key>
+            <PropertyRef Name="RETURN_CO_NUM" />
+            <PropertyRef Name="LINE_NUM" />
+          </Key>
+          <Property Type="String" Name="RETURN_CO_NUM" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="LINE_NUM" Nullable="false" />
+          <Property Type="String" Name="ITEM_ID" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="Decimal" Name="QTY_ORD" Nullable="false" Precision="18" Scale="6" />
+          <Property Type="String" Name="NOTE" MaxLength="200" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="I_DIST_CAR_CHECK">
+          <Key>
+            <PropertyRef Name="CHECK_ID" />
+          </Key>
+          <Property Type="String" Name="CHECK_ID" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="CAR_ID" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="REF_TYPE" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="REF_ID" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ABNORMAL_DETAIL" Nullable="false" MaxLength="3" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="ABNORMAL_TYPE" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="CHECK_TIME" Nullable="false" MaxLength="14" FixedLength="true" Unicode="false" />
+          <Property Type="Decimal" Name="LONGITUDE" Precision="11" Scale="8" />
+          <Property Type="Decimal" Name="LATITUDE" Precision="11" Scale="8" />
+          <Property Type="String" Name="CHECK_TYPE" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="OPERATE_MODE" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="NOTE" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="I_DIST_CAR_RUN">
+          <Key>
+            <PropertyRef Name="INFO_NUM" />
+          </Key>
+          <Property Type="String" Name="INFO_NUM" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="REF_TYPE" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="REF_ID" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="CAR_ID" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="DLVMAN_ID" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="CRT_DATE" MaxLength="14" FixedLength="true" Unicode="false" />
+          <Property Type="Decimal" Name="AMT_SUM" Precision="18" Scale="6" />
+          <Property Type="Decimal" Name="THIS_MIL" Precision="18" Scale="2" />
+          <Property Type="String" Name="NOTE" MaxLength="200" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="I_DIST_CAR_RUN_LINE">
+          <Key>
+            <PropertyRef Name="INFO_NUM" />
+            <PropertyRef Name="LINE_ID" />
+          </Key>
+          <Property Type="String" Name="INFO_NUM" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="LINE_ID" Nullable="false" />
+          <Property Type="String" Name="COST_TYPE" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="FUEL_TYPE" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Type="Decimal" Name="LITRE_SUM" Precision="18" Scale="6" />
+          <Property Type="Decimal" Name="FUEL_PRI" Precision="18" Scale="6" />
+          <Property Type="Decimal" Name="AMT" Nullable="false" Precision="18" Scale="6" />
+          <Property Type="String" Name="INV_NUM" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="I_DIST_CUST">
+          <Key>
+            <PropertyRef Name="DIST_NUM" />
+            <PropertyRef Name="CO_NUM" />
+          </Key>
+          <Property Type="String" Name="DIST_NUM" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="CO_NUM" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="CUST_ID" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="IS_RECEIVED" Nullable="false" MaxLength="2" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="DIST_SATIS" MaxLength="2" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="UNLOAD_REASON" MaxLength="2" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="REC_DATE" MaxLength="8" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="REC_ARRIVE_TIME" MaxLength="14" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="REC_LEAVE_TIME" MaxLength="14" FixedLength="true" Unicode="false" />
+          <Property Type="Decimal" Name="HANDOVER_TIME" Precision="18" Scale="6" />
+          <Property Type="String" Name="NOTSATIS_REASON" MaxLength="6" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="UNUSUAL_TYPE" MaxLength="2" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="EVALUATE_INFO" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="SIGN_TYPE" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="EXP_SIGN_REASON" MaxLength="3" FixedLength="true" Unicode="false" />
+          <Property Type="Decimal" Name="UNLOAD_LON" Precision="11" Scale="8" />
+          <Property Type="Decimal" Name="UNLOAD_LAT" Precision="11" Scale="8" />
+          <Property Type="Decimal" Name="UNLOAD_DISTANCE" Precision="18" Scale="2" />
+          <Property Type="String" Name="EVALUATE_TIME" MaxLength="14" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="DLVMAN_ID" MaxLength="30" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="I_DIST_FILE_LINE">
+          <Key>
+            <PropertyRef Name="DOC_ID" />
+          </Key>
+          <Property Type="String" Name="DOC_ID" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="DIST_NUM" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="CO_NUM" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="CUST_ID" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="FILE_TYPE" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="CRT_TIME" MaxLength="14" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="CRT_MAN_ID" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="NOTE" MaxLength="200" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="I_GIS_CUST_POI">
+          <Key>
+            <PropertyRef Name="CUST_ID" />
+            <PropertyRef Name="MOBILE_TYPE" />
+          </Key>
+          <Property Type="String" Name="CUST_ID" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="MOBILE_TYPE" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Type="Decimal" Name="ORIGINAL_LONGITUDE" Precision="11" Scale="8" />
+          <Property Type="Decimal" Name="ORIGINAL_LATITUDE" Precision="11" Scale="8" />
+          <Property Type="String" Name="IS_DEFAULT" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="CRT_TIME" Nullable="false" MaxLength="14" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="CRT_USER_ID" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="COL_TIME" MaxLength="14" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="IMP_STATUS" Nullable="false" MaxLength="2" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="NOTE" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="I_GIS_LAST_LOCRECORD">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Decimal" Name="ID" Nullable="false" Precision="24" Scale="0" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Type="String" Name="M_CODE" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="M_TYPE" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Type="Decimal" Name="ORIGINAL_LONGITUDE" Precision="11" Scale="8" />
+          <Property Type="Decimal" Name="ORIGINAL_LATITUDE" Precision="11" Scale="8" />
+          <Property Type="Decimal" Name="SPEED" Precision="10" Scale="2" />
+          <Property Type="Decimal" Name="DIRECTION" Precision="10" Scale="2" />
+          <Property Type="Decimal" Name="HEIGHT" Precision="10" Scale="2" />
+          <Property Type="Int32" Name="STATLLITE_NUM" />
+          <Property Type="String" Name="GPSTIME" MaxLength="14" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="INPUTDATE" MaxLength="14" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="STATE" MaxLength="1" FixedLength="true" Unicode="false" />
+        </EntityType>
+        <EntityType Name="PBCATCOL">
+          <Key>
+            <PropertyRef Name="PBC_TNAM" />
+            <PropertyRef Name="PBC_OWNR" />
+            <PropertyRef Name="PBC_CNAM" />
+          </Key>
+          <Property Type="String" Name="PBC_TNAM" Nullable="false" MaxLength="129" FixedLength="true" Unicode="false" />
+          <Property Type="Int32" Name="PBC_TID" />
+          <Property Type="String" Name="PBC_OWNR" Nullable="false" MaxLength="129" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="PBC_CNAM" Nullable="false" MaxLength="129" FixedLength="true" Unicode="false" />
+          <Property Type="Int16" Name="PBC_CID" />
+          <Property Type="String" Name="PBC_LABL" MaxLength="254" FixedLength="false" Unicode="false" />
+          <Property Type="Int16" Name="PBC_LPOS" />
+          <Property Type="String" Name="PBC_HDR" MaxLength="254" FixedLength="false" Unicode="false" />
+          <Property Type="Int16" Name="PBC_HPOS" />
+          <Property Type="Int16" Name="PBC_JTFY" />
+          <Property Type="String" Name="PBC_MASK" MaxLength="31" FixedLength="false" Unicode="false" />
+          <Property Type="Int16" Name="PBC_CASE" />
+          <Property Type="Int16" Name="PBC_HGHT" />
+          <Property Type="Int16" Name="PBC_WDTH" />
+          <Property Type="String" Name="PBC_PTRN" MaxLength="31" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="PBC_BMAP" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="PBC_INIT" MaxLength="254" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="PBC_CMNT" MaxLength="254" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="PBC_EDIT" MaxLength="31" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="PBC_TAG" MaxLength="254" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="PBCATEDT">
+          <Key>
+            <PropertyRef Name="PBE_NAME" />
+            <PropertyRef Name="PBE_SEQN" />
+          </Key>
+          <Property Type="String" Name="PBE_NAME" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="PBE_EDIT" MaxLength="254" FixedLength="false" Unicode="false" />
+          <Property Type="Int16" Name="PBE_TYPE" />
+          <Property Type="Int32" Name="PBE_CNTR" />
+          <Property Type="Int16" Name="PBE_SEQN" Nullable="false" />
+          <Property Type="Int32" Name="PBE_FLAG" />
+          <Property Type="String" Name="PBE_WORK" MaxLength="32" FixedLength="true" Unicode="false" />
+        </EntityType>
+        <EntityType Name="PBCATFMT">
+          <Key>
+            <PropertyRef Name="PBF_NAME" />
+          </Key>
+          <Property Type="String" Name="PBF_NAME" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="PBF_FRMT" MaxLength="254" FixedLength="false" Unicode="false" />
+          <Property Type="Int16" Name="PBF_TYPE" />
+          <Property Type="Int32" Name="PBF_CNTR" />
+        </EntityType>
+        <EntityType Name="PBCATTBL">
+          <Key>
+            <PropertyRef Name="PBT_TNAM" />
+            <PropertyRef Name="PBT_OWNR" />
+          </Key>
+          <Property Type="String" Name="PBT_TNAM" Nullable="false" MaxLength="129" FixedLength="true" Unicode="false" />
+          <Property Type="Int32" Name="PBT_TID" />
+          <Property Type="String" Name="PBT_OWNR" Nullable="false" MaxLength="129" FixedLength="true" Unicode="false" />
+          <Property Type="Int16" Name="PBD_FHGT" />
+          <Property Type="Int16" Name="PBD_FWGT" />
+          <Property Type="String" Name="PBD_FITL" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="PBD_FUNL" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Type="Int16" Name="PBD_FCHR" />
+          <Property Type="Int16" Name="PBD_FPTC" />
+          <Property Type="String" Name="PBD_FFCE" MaxLength="18" FixedLength="true" Unicode="false" />
+          <Property Type="Int16" Name="PBH_FHGT" />
+          <Property Type="Int16" Name="PBH_FWGT" />
+          <Property Type="String" Name="PBH_FITL" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="PBH_FUNL" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Type="Int16" Name="PBH_FCHR" />
+          <Property Type="Int16" Name="PBH_FPTC" />
+          <Property Type="String" Name="PBH_FFCE" MaxLength="18" FixedLength="true" Unicode="false" />
+          <Property Type="Int16" Name="PBL_FHGT" />
+          <Property Type="Int16" Name="PBL_FWGT" />
+          <Property Type="String" Name="PBL_FITL" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="PBL_FUNL" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Type="Int16" Name="PBL_FCHR" />
+          <Property Type="Int16" Name="PBL_FPTC" />
+          <Property Type="String" Name="PBL_FFCE" MaxLength="18" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="PBT_CMNT" MaxLength="254" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="PBCATVLD">
+          <Key>
+            <PropertyRef Name="PBV_NAME" />
+          </Key>
+          <Property Type="String" Name="PBV_NAME" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="PBV_VALD" MaxLength="254" FixedLength="false" Unicode="false" />
+          <Property Type="Int16" Name="PBV_TYPE" />
+          <Property Type="Int32" Name="PBV_CNTR" />
+          <Property Type="String" Name="PBV_MSG" MaxLength="254" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="I_CUST">
+          <Key>
+            <PropertyRef Name="CUST_ID" />
+            <PropertyRef Name="CUST_NAME" />
+            <PropertyRef Name="COM_ID" />
+          </Key>
+          <Property Type="String" Name="CUST_ID" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="CUST_NAME" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="LICENSE_CODE" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="STATUS" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="COM_ID" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="I_DIST">
+          <Key>
+            <PropertyRef Name="DIST_NUM" />
+            <PropertyRef Name="CAR_ID" />
+            <PropertyRef Name="STATUS" />
+            <PropertyRef Name="IS_MRB" />
+            <PropertyRef Name="COM_ID" />
+          </Key>
+          <Property Type="String" Name="DIST_NUM" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="RUT_ID" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="RUT_NAME" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="DIST_DATE" MaxLength="8" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="DLVMAN_ID" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="DLVMAN_NAME" MaxLength="80" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="DRIVER_ID" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="DRIVER_NAME" MaxLength="80" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="CAR_ID" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="CAR_LICENSE" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="DIST_CUST_SUM" />
+          <Property Type="Decimal" Name="QTY_BAR" Precision="18" Scale="6" />
+          <Property Type="Decimal" Name="AMT_SUM" Precision="18" Scale="2" />
+          <Property Type="String" Name="STATUS" Nullable="false" MaxLength="8" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="IS_DOWNLOAD" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="IS_MRB" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="DLVMAN_CARD_ID" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="COM_ID" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="I_DIST_CAR">
+          <Key>
+            <PropertyRef Name="CAR_ID" />
+            <PropertyRef Name="CAR_NAME" />
+            <PropertyRef Name="CAR_LICENSE" />
+            <PropertyRef Name="DLVMAN_ID" />
+            <PropertyRef Name="DRIVER_ID" />
+            <PropertyRef Name="IS_MRB" />
+            <PropertyRef Name="COM_ID" />
+          </Key>
+          <Property Type="String" Name="CAR_ID" Nullable="false" MaxLength="35" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="CAR_NAME" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="CAR_LICENSE" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="DLVMAN_ID" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="DLVMAN_NAME" MaxLength="80" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="DRIVER_ID" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="DRIVER_NAME" MaxLength="80" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="IS_MRB" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="COM_ID" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="I_DIST_ITEM">
+          <Key>
+            <PropertyRef Name="CO_NUM" />
+            <PropertyRef Name="ITEM_ID" />
+            <PropertyRef Name="PRICE" />
+            <PropertyRef Name="QTY" />
+            <PropertyRef Name="AMT" />
+          </Key>
+          <Property Type="String" Name="CO_NUM" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ITEM_ID" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ITEM_NAME" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="Decimal" Name="PRICE" Nullable="false" Precision="18" Scale="6" />
+          <Property Type="Decimal" Name="QTY" Nullable="false" Precision="18" Scale="6" />
+          <Property Type="Decimal" Name="AMT" Nullable="false" Precision="18" Scale="6" />
+          <Property Type="String" Name="IS_ABNORMAL" MaxLength="1" FixedLength="true" Unicode="false" />
+        </EntityType>
+        <EntityType Name="I_DIST_LINE">
+          <Key>
+            <PropertyRef Name="DIST_NUM" />
+            <PropertyRef Name="CO_NUM" />
+            <PropertyRef Name="CUST_ID" />
+            <PropertyRef Name="QTY_BAR" />
+            <PropertyRef Name="AMT_AR" />
+            <PropertyRef Name="SEQ" />
+          </Key>
+          <Property Type="String" Name="DIST_NUM" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="CO_NUM" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="CUST_ID" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="CUST_CODE" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="CUST_NAME" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="MANAGER" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ADDR" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="TEL" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Decimal" Name="QTY_BAR" Nullable="false" Precision="18" Scale="6" />
+          <Property Type="Decimal" Name="AMT_AR" Nullable="false" Precision="18" Scale="2" />
+          <Property Type="Decimal" Name="AMT_OR" Precision="18" Scale="2" />
+          <Property Type="String" Name="PMT_STATUS" MaxLength="2" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="TYPE" MaxLength="2" FixedLength="true" Unicode="false" />
+          <Property Type="Int32" Name="SEQ" Nullable="false" />
+          <Property Type="String" Name="LICENSE_CODE" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="PAY_TYPE" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Type="Decimal" Name="LONGITUDE" Precision="11" Scale="8" />
+          <Property Type="Decimal" Name="LATITUDE" Precision="11" Scale="8" />
+          <Property Type="String" Name="CUST_CARD_ID" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="CUST_CARD_CODE" MaxLength="30" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="I_DIST_RECORD_LOG">
+          <Key>
+            <PropertyRef Name="LOG_SEQ" />
+          </Key>
+          <Property Type="String" Name="LOG_SEQ" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="REF_TYPE" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="REF_ID" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="OPERATION_TYPE" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="LOG_DATE" Nullable="false" MaxLength="8" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="LOG_TIME" Nullable="false" MaxLength="8" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="USER_ID" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="Decimal" Name="LONGITUDE" Precision="10" Scale="7" />
+          <Property Type="Decimal" Name="LATITUDE" Precision="10" Scale="7" />
+          <Property Type="String" Name="NOTE" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="OPERATE_MODE" MaxLength="1" FixedLength="true" Unicode="false" />
+        </EntityType>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="TestModelStoreContainer" CdmEntityContainer="TestEntities">
+          <EntitySetMapping Name="I_CO_RETURN">
+            <EntityTypeMapping TypeName="TestModel.I_CO_RETURN">
+              <MappingFragment StoreEntitySet="I_CO_RETURN">
+                <ScalarProperty Name="QTY_SUM" ColumnName="QTY_SUM" />
+                <ScalarProperty Name="AMT_SUM" ColumnName="AMT_SUM" />
+                <ScalarProperty Name="NOTE" ColumnName="NOTE" />
+                <ScalarProperty Name="ORG_CO_NUM" ColumnName="ORG_CO_NUM" />
+                <ScalarProperty Name="CRT_USER_NAME" ColumnName="CRT_USER_NAME" />
+                <ScalarProperty Name="CRT_DATE" ColumnName="CRT_DATE" />
+                <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+                <ScalarProperty Name="TYPE" ColumnName="TYPE" />
+                <ScalarProperty Name="CUST_ID" ColumnName="CUST_ID" />
+                <ScalarProperty Name="RETURN_CO_NUM" ColumnName="RETURN_CO_NUM" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="I_CO_RETURN_LINE">
+            <EntityTypeMapping TypeName="TestModel.I_CO_RETURN_LINE">
+              <MappingFragment StoreEntitySet="I_CO_RETURN_LINE">
+                <ScalarProperty Name="NOTE" ColumnName="NOTE" />
+                <ScalarProperty Name="QTY_ORD" ColumnName="QTY_ORD" />
+                <ScalarProperty Name="ITEM_ID" ColumnName="ITEM_ID" />
+                <ScalarProperty Name="LINE_NUM" ColumnName="LINE_NUM" />
+                <ScalarProperty Name="RETURN_CO_NUM" ColumnName="RETURN_CO_NUM" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="I_DIST_CAR_CHECK">
+            <EntityTypeMapping TypeName="TestModel.I_DIST_CAR_CHECK">
+              <MappingFragment StoreEntitySet="I_DIST_CAR_CHECK">
+                <ScalarProperty Name="NOTE" ColumnName="NOTE" />
+                <ScalarProperty Name="OPERATE_MODE" ColumnName="OPERATE_MODE" />
+                <ScalarProperty Name="CHECK_TYPE" ColumnName="CHECK_TYPE" />
+                <ScalarProperty Name="LATITUDE" ColumnName="LATITUDE" />
+                <ScalarProperty Name="LONGITUDE" ColumnName="LONGITUDE" />
+                <ScalarProperty Name="CHECK_TIME" ColumnName="CHECK_TIME" />
+                <ScalarProperty Name="ABNORMAL_TYPE" ColumnName="ABNORMAL_TYPE" />
+                <ScalarProperty Name="ABNORMAL_DETAIL" ColumnName="ABNORMAL_DETAIL" />
+                <ScalarProperty Name="REF_ID" ColumnName="REF_ID" />
+                <ScalarProperty Name="REF_TYPE" ColumnName="REF_TYPE" />
+                <ScalarProperty Name="CAR_ID" ColumnName="CAR_ID" />
+                <ScalarProperty Name="CHECK_ID" ColumnName="CHECK_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="I_DIST_CAR_RUN">
+            <EntityTypeMapping TypeName="TestModel.I_DIST_CAR_RUN">
+              <MappingFragment StoreEntitySet="I_DIST_CAR_RUN">
+                <ScalarProperty Name="NOTE" ColumnName="NOTE" />
+                <ScalarProperty Name="THIS_MIL" ColumnName="THIS_MIL" />
+                <ScalarProperty Name="AMT_SUM" ColumnName="AMT_SUM" />
+                <ScalarProperty Name="CRT_DATE" ColumnName="CRT_DATE" />
+                <ScalarProperty Name="DLVMAN_ID" ColumnName="DLVMAN_ID" />
+                <ScalarProperty Name="CAR_ID" ColumnName="CAR_ID" />
+                <ScalarProperty Name="REF_ID" ColumnName="REF_ID" />
+                <ScalarProperty Name="REF_TYPE" ColumnName="REF_TYPE" />
+                <ScalarProperty Name="INFO_NUM" ColumnName="INFO_NUM" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="I_DIST_CAR_RUN_LINE">
+            <EntityTypeMapping TypeName="TestModel.I_DIST_CAR_RUN_LINE">
+              <MappingFragment StoreEntitySet="I_DIST_CAR_RUN_LINE">
+                <ScalarProperty Name="INV_NUM" ColumnName="INV_NUM" />
+                <ScalarProperty Name="AMT" ColumnName="AMT" />
+                <ScalarProperty Name="FUEL_PRI" ColumnName="FUEL_PRI" />
+                <ScalarProperty Name="LITRE_SUM" ColumnName="LITRE_SUM" />
+                <ScalarProperty Name="FUEL_TYPE" ColumnName="FUEL_TYPE" />
+                <ScalarProperty Name="COST_TYPE" ColumnName="COST_TYPE" />
+                <ScalarProperty Name="LINE_ID" ColumnName="LINE_ID" />
+                <ScalarProperty Name="INFO_NUM" ColumnName="INFO_NUM" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="I_DIST_CUST">
+            <EntityTypeMapping TypeName="TestModel.I_DIST_CUST">
+              <MappingFragment StoreEntitySet="I_DIST_CUST">
+                <ScalarProperty Name="DLVMAN_ID" ColumnName="DLVMAN_ID" />
+                <ScalarProperty Name="EVALUATE_TIME" ColumnName="EVALUATE_TIME" />
+                <ScalarProperty Name="UNLOAD_DISTANCE" ColumnName="UNLOAD_DISTANCE" />
+                <ScalarProperty Name="UNLOAD_LAT" ColumnName="UNLOAD_LAT" />
+                <ScalarProperty Name="UNLOAD_LON" ColumnName="UNLOAD_LON" />
+                <ScalarProperty Name="EXP_SIGN_REASON" ColumnName="EXP_SIGN_REASON" />
+                <ScalarProperty Name="SIGN_TYPE" ColumnName="SIGN_TYPE" />
+                <ScalarProperty Name="EVALUATE_INFO" ColumnName="EVALUATE_INFO" />
+                <ScalarProperty Name="UNUSUAL_TYPE" ColumnName="UNUSUAL_TYPE" />
+                <ScalarProperty Name="NOTSATIS_REASON" ColumnName="NOTSATIS_REASON" />
+                <ScalarProperty Name="HANDOVER_TIME" ColumnName="HANDOVER_TIME" />
+                <ScalarProperty Name="REC_LEAVE_TIME" ColumnName="REC_LEAVE_TIME" />
+                <ScalarProperty Name="REC_ARRIVE_TIME" ColumnName="REC_ARRIVE_TIME" />
+                <ScalarProperty Name="REC_DATE" ColumnName="REC_DATE" />
+                <ScalarProperty Name="UNLOAD_REASON" ColumnName="UNLOAD_REASON" />
+                <ScalarProperty Name="DIST_SATIS" ColumnName="DIST_SATIS" />
+                <ScalarProperty Name="IS_RECEIVED" ColumnName="IS_RECEIVED" />
+                <ScalarProperty Name="CUST_ID" ColumnName="CUST_ID" />
+                <ScalarProperty Name="CO_NUM" ColumnName="CO_NUM" />
+                <ScalarProperty Name="DIST_NUM" ColumnName="DIST_NUM" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="I_DIST_FILE_LINE">
+            <EntityTypeMapping TypeName="TestModel.I_DIST_FILE_LINE">
+              <MappingFragment StoreEntitySet="I_DIST_FILE_LINE">
+                <ScalarProperty Name="NOTE" ColumnName="NOTE" />
+                <ScalarProperty Name="CRT_MAN_ID" ColumnName="CRT_MAN_ID" />
+                <ScalarProperty Name="CRT_TIME" ColumnName="CRT_TIME" />
+                <ScalarProperty Name="FILE_TYPE" ColumnName="FILE_TYPE" />
+                <ScalarProperty Name="CUST_ID" ColumnName="CUST_ID" />
+                <ScalarProperty Name="CO_NUM" ColumnName="CO_NUM" />
+                <ScalarProperty Name="DIST_NUM" ColumnName="DIST_NUM" />
+                <ScalarProperty Name="DOC_ID" ColumnName="DOC_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="I_GIS_CUST_POI">
+            <EntityTypeMapping TypeName="TestModel.I_GIS_CUST_POI">
+              <MappingFragment StoreEntitySet="I_GIS_CUST_POI">
+                <ScalarProperty Name="NOTE" ColumnName="NOTE" />
+                <ScalarProperty Name="IMP_STATUS" ColumnName="IMP_STATUS" />
+                <ScalarProperty Name="COL_TIME" ColumnName="COL_TIME" />
+                <ScalarProperty Name="CRT_USER_ID" ColumnName="CRT_USER_ID" />
+                <ScalarProperty Name="CRT_TIME" ColumnName="CRT_TIME" />
+                <ScalarProperty Name="IS_DEFAULT" ColumnName="IS_DEFAULT" />
+                <ScalarProperty Name="ORIGINAL_LATITUDE" ColumnName="ORIGINAL_LATITUDE" />
+                <ScalarProperty Name="ORIGINAL_LONGITUDE" ColumnName="ORIGINAL_LONGITUDE" />
+                <ScalarProperty Name="MOBILE_TYPE" ColumnName="MOBILE_TYPE" />
+                <ScalarProperty Name="CUST_ID" ColumnName="CUST_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="I_GIS_LAST_LOCRECORD">
+            <EntityTypeMapping TypeName="TestModel.I_GIS_LAST_LOCRECORD">
+              <MappingFragment StoreEntitySet="I_GIS_LAST_LOCRECORD">
+                <ScalarProperty Name="STATE" ColumnName="STATE" />
+                <ScalarProperty Name="INPUTDATE" ColumnName="INPUTDATE" />
+                <ScalarProperty Name="GPSTIME" ColumnName="GPSTIME" />
+                <ScalarProperty Name="STATLLITE_NUM" ColumnName="STATLLITE_NUM" />
+                <ScalarProperty Name="HEIGHT" ColumnName="HEIGHT" />
+                <ScalarProperty Name="DIRECTION" ColumnName="DIRECTION" />
+                <ScalarProperty Name="SPEED" ColumnName="SPEED" />
+                <ScalarProperty Name="ORIGINAL_LATITUDE" ColumnName="ORIGINAL_LATITUDE" />
+                <ScalarProperty Name="ORIGINAL_LONGITUDE" ColumnName="ORIGINAL_LONGITUDE" />
+                <ScalarProperty Name="M_TYPE" ColumnName="M_TYPE" />
+                <ScalarProperty Name="M_CODE" ColumnName="M_CODE" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PBCATCOL">
+            <EntityTypeMapping TypeName="TestModel.PBCATCOL">
+              <MappingFragment StoreEntitySet="PBCATCOL">
+                <ScalarProperty Name="PBC_TAG" ColumnName="PBC_TAG" />
+                <ScalarProperty Name="PBC_EDIT" ColumnName="PBC_EDIT" />
+                <ScalarProperty Name="PBC_CMNT" ColumnName="PBC_CMNT" />
+                <ScalarProperty Name="PBC_INIT" ColumnName="PBC_INIT" />
+                <ScalarProperty Name="PBC_BMAP" ColumnName="PBC_BMAP" />
+                <ScalarProperty Name="PBC_PTRN" ColumnName="PBC_PTRN" />
+                <ScalarProperty Name="PBC_WDTH" ColumnName="PBC_WDTH" />
+                <ScalarProperty Name="PBC_HGHT" ColumnName="PBC_HGHT" />
+                <ScalarProperty Name="PBC_CASE" ColumnName="PBC_CASE" />
+                <ScalarProperty Name="PBC_MASK" ColumnName="PBC_MASK" />
+                <ScalarProperty Name="PBC_JTFY" ColumnName="PBC_JTFY" />
+                <ScalarProperty Name="PBC_HPOS" ColumnName="PBC_HPOS" />
+                <ScalarProperty Name="PBC_HDR" ColumnName="PBC_HDR" />
+                <ScalarProperty Name="PBC_LPOS" ColumnName="PBC_LPOS" />
+                <ScalarProperty Name="PBC_LABL" ColumnName="PBC_LABL" />
+                <ScalarProperty Name="PBC_CID" ColumnName="PBC_CID" />
+                <ScalarProperty Name="PBC_CNAM" ColumnName="PBC_CNAM" />
+                <ScalarProperty Name="PBC_OWNR" ColumnName="PBC_OWNR" />
+                <ScalarProperty Name="PBC_TID" ColumnName="PBC_TID" />
+                <ScalarProperty Name="PBC_TNAM" ColumnName="PBC_TNAM" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PBCATEDT">
+            <EntityTypeMapping TypeName="TestModel.PBCATEDT">
+              <MappingFragment StoreEntitySet="PBCATEDT">
+                <ScalarProperty Name="PBE_WORK" ColumnName="PBE_WORK" />
+                <ScalarProperty Name="PBE_FLAG" ColumnName="PBE_FLAG" />
+                <ScalarProperty Name="PBE_SEQN" ColumnName="PBE_SEQN" />
+                <ScalarProperty Name="PBE_CNTR" ColumnName="PBE_CNTR" />
+                <ScalarProperty Name="PBE_TYPE" ColumnName="PBE_TYPE" />
+                <ScalarProperty Name="PBE_EDIT" ColumnName="PBE_EDIT" />
+                <ScalarProperty Name="PBE_NAME" ColumnName="PBE_NAME" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PBCATFMT">
+            <EntityTypeMapping TypeName="TestModel.PBCATFMT">
+              <MappingFragment StoreEntitySet="PBCATFMT">
+                <ScalarProperty Name="PBF_CNTR" ColumnName="PBF_CNTR" />
+                <ScalarProperty Name="PBF_TYPE" ColumnName="PBF_TYPE" />
+                <ScalarProperty Name="PBF_FRMT" ColumnName="PBF_FRMT" />
+                <ScalarProperty Name="PBF_NAME" ColumnName="PBF_NAME" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PBCATTBL">
+            <EntityTypeMapping TypeName="TestModel.PBCATTBL">
+              <MappingFragment StoreEntitySet="PBCATTBL">
+                <ScalarProperty Name="PBT_CMNT" ColumnName="PBT_CMNT" />
+                <ScalarProperty Name="PBL_FFCE" ColumnName="PBL_FFCE" />
+                <ScalarProperty Name="PBL_FPTC" ColumnName="PBL_FPTC" />
+                <ScalarProperty Name="PBL_FCHR" ColumnName="PBL_FCHR" />
+                <ScalarProperty Name="PBL_FUNL" ColumnName="PBL_FUNL" />
+                <ScalarProperty Name="PBL_FITL" ColumnName="PBL_FITL" />
+                <ScalarProperty Name="PBL_FWGT" ColumnName="PBL_FWGT" />
+                <ScalarProperty Name="PBL_FHGT" ColumnName="PBL_FHGT" />
+                <ScalarProperty Name="PBH_FFCE" ColumnName="PBH_FFCE" />
+                <ScalarProperty Name="PBH_FPTC" ColumnName="PBH_FPTC" />
+                <ScalarProperty Name="PBH_FCHR" ColumnName="PBH_FCHR" />
+                <ScalarProperty Name="PBH_FUNL" ColumnName="PBH_FUNL" />
+                <ScalarProperty Name="PBH_FITL" ColumnName="PBH_FITL" />
+                <ScalarProperty Name="PBH_FWGT" ColumnName="PBH_FWGT" />
+                <ScalarProperty Name="PBH_FHGT" ColumnName="PBH_FHGT" />
+                <ScalarProperty Name="PBD_FFCE" ColumnName="PBD_FFCE" />
+                <ScalarProperty Name="PBD_FPTC" ColumnName="PBD_FPTC" />
+                <ScalarProperty Name="PBD_FCHR" ColumnName="PBD_FCHR" />
+                <ScalarProperty Name="PBD_FUNL" ColumnName="PBD_FUNL" />
+                <ScalarProperty Name="PBD_FITL" ColumnName="PBD_FITL" />
+                <ScalarProperty Name="PBD_FWGT" ColumnName="PBD_FWGT" />
+                <ScalarProperty Name="PBD_FHGT" ColumnName="PBD_FHGT" />
+                <ScalarProperty Name="PBT_OWNR" ColumnName="PBT_OWNR" />
+                <ScalarProperty Name="PBT_TID" ColumnName="PBT_TID" />
+                <ScalarProperty Name="PBT_TNAM" ColumnName="PBT_TNAM" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PBCATVLD">
+            <EntityTypeMapping TypeName="TestModel.PBCATVLD">
+              <MappingFragment StoreEntitySet="PBCATVLD">
+                <ScalarProperty Name="PBV_MSG" ColumnName="PBV_MSG" />
+                <ScalarProperty Name="PBV_CNTR" ColumnName="PBV_CNTR" />
+                <ScalarProperty Name="PBV_TYPE" ColumnName="PBV_TYPE" />
+                <ScalarProperty Name="PBV_VALD" ColumnName="PBV_VALD" />
+                <ScalarProperty Name="PBV_NAME" ColumnName="PBV_NAME" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="I_CUST">
+            <EntityTypeMapping TypeName="TestModel.I_CUST">
+              <MappingFragment StoreEntitySet="I_CUST">
+                <ScalarProperty Name="COM_ID" ColumnName="COM_ID" />
+                <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+                <ScalarProperty Name="LICENSE_CODE" ColumnName="LICENSE_CODE" />
+                <ScalarProperty Name="CUST_NAME" ColumnName="CUST_NAME" />
+                <ScalarProperty Name="CUST_ID" ColumnName="CUST_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="I_DIST">
+            <EntityTypeMapping TypeName="TestModel.I_DIST">
+              <MappingFragment StoreEntitySet="I_DIST">
+                <ScalarProperty Name="COM_ID" ColumnName="COM_ID" />
+                <ScalarProperty Name="DLVMAN_CARD_ID" ColumnName="DLVMAN_CARD_ID" />
+                <ScalarProperty Name="IS_MRB" ColumnName="IS_MRB" />
+                <ScalarProperty Name="IS_DOWNLOAD" ColumnName="IS_DOWNLOAD" />
+                <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+                <ScalarProperty Name="AMT_SUM" ColumnName="AMT_SUM" />
+                <ScalarProperty Name="QTY_BAR" ColumnName="QTY_BAR" />
+                <ScalarProperty Name="DIST_CUST_SUM" ColumnName="DIST_CUST_SUM" />
+                <ScalarProperty Name="CAR_LICENSE" ColumnName="CAR_LICENSE" />
+                <ScalarProperty Name="CAR_ID" ColumnName="CAR_ID" />
+                <ScalarProperty Name="DRIVER_NAME" ColumnName="DRIVER_NAME" />
+                <ScalarProperty Name="DRIVER_ID" ColumnName="DRIVER_ID" />
+                <ScalarProperty Name="DLVMAN_NAME" ColumnName="DLVMAN_NAME" />
+                <ScalarProperty Name="DLVMAN_ID" ColumnName="DLVMAN_ID" />
+                <ScalarProperty Name="DIST_DATE" ColumnName="DIST_DATE" />
+                <ScalarProperty Name="RUT_NAME" ColumnName="RUT_NAME" />
+                <ScalarProperty Name="RUT_ID" ColumnName="RUT_ID" />
+                <ScalarProperty Name="DIST_NUM" ColumnName="DIST_NUM" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="I_DIST_CAR">
+            <EntityTypeMapping TypeName="TestModel.I_DIST_CAR">
+              <MappingFragment StoreEntitySet="I_DIST_CAR">
+                <ScalarProperty Name="COM_ID" ColumnName="COM_ID" />
+                <ScalarProperty Name="IS_MRB" ColumnName="IS_MRB" />
+                <ScalarProperty Name="DRIVER_NAME" ColumnName="DRIVER_NAME" />
+                <ScalarProperty Name="DRIVER_ID" ColumnName="DRIVER_ID" />
+                <ScalarProperty Name="DLVMAN_NAME" ColumnName="DLVMAN_NAME" />
+                <ScalarProperty Name="DLVMAN_ID" ColumnName="DLVMAN_ID" />
+                <ScalarProperty Name="CAR_LICENSE" ColumnName="CAR_LICENSE" />
+                <ScalarProperty Name="CAR_NAME" ColumnName="CAR_NAME" />
+                <ScalarProperty Name="CAR_ID" ColumnName="CAR_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="I_DIST_ITEM">
+            <EntityTypeMapping TypeName="TestModel.I_DIST_ITEM">
+              <MappingFragment StoreEntitySet="I_DIST_ITEM">
+                <ScalarProperty Name="IS_ABNORMAL" ColumnName="IS_ABNORMAL" />
+                <ScalarProperty Name="AMT" ColumnName="AMT" />
+                <ScalarProperty Name="QTY" ColumnName="QTY" />
+                <ScalarProperty Name="PRICE" ColumnName="PRICE" />
+                <ScalarProperty Name="ITEM_NAME" ColumnName="ITEM_NAME" />
+                <ScalarProperty Name="ITEM_ID" ColumnName="ITEM_ID" />
+                <ScalarProperty Name="CO_NUM" ColumnName="CO_NUM" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="I_DIST_LINE">
+            <EntityTypeMapping TypeName="TestModel.I_DIST_LINE">
+              <MappingFragment StoreEntitySet="I_DIST_LINE">
+                <ScalarProperty Name="CUST_CARD_CODE" ColumnName="CUST_CARD_CODE" />
+                <ScalarProperty Name="CUST_CARD_ID" ColumnName="CUST_CARD_ID" />
+                <ScalarProperty Name="LATITUDE" ColumnName="LATITUDE" />
+                <ScalarProperty Name="LONGITUDE" ColumnName="LONGITUDE" />
+                <ScalarProperty Name="PAY_TYPE" ColumnName="PAY_TYPE" />
+                <ScalarProperty Name="LICENSE_CODE" ColumnName="LICENSE_CODE" />
+                <ScalarProperty Name="SEQ" ColumnName="SEQ" />
+                <ScalarProperty Name="TYPE" ColumnName="TYPE" />
+                <ScalarProperty Name="PMT_STATUS" ColumnName="PMT_STATUS" />
+                <ScalarProperty Name="AMT_OR" ColumnName="AMT_OR" />
+                <ScalarProperty Name="AMT_AR" ColumnName="AMT_AR" />
+                <ScalarProperty Name="QTY_BAR" ColumnName="QTY_BAR" />
+                <ScalarProperty Name="TEL" ColumnName="TEL" />
+                <ScalarProperty Name="ADDR" ColumnName="ADDR" />
+                <ScalarProperty Name="MANAGER" ColumnName="MANAGER" />
+                <ScalarProperty Name="CUST_NAME" ColumnName="CUST_NAME" />
+                <ScalarProperty Name="CUST_CODE" ColumnName="CUST_CODE" />
+                <ScalarProperty Name="CUST_ID" ColumnName="CUST_ID" />
+                <ScalarProperty Name="CO_NUM" ColumnName="CO_NUM" />
+                <ScalarProperty Name="DIST_NUM" ColumnName="DIST_NUM" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="I_DIST_RECORD_LOG">
+            <EntityTypeMapping TypeName="TestModel.I_DIST_RECORD_LOG">
+              <MappingFragment StoreEntitySet="I_DIST_RECORD_LOG">
+                <ScalarProperty Name="OPERATE_MODE" ColumnName="OPERATE_MODE" />
+                <ScalarProperty Name="NOTE" ColumnName="NOTE" />
+                <ScalarProperty Name="LATITUDE" ColumnName="LATITUDE" />
+                <ScalarProperty Name="LONGITUDE" ColumnName="LONGITUDE" />
+                <ScalarProperty Name="USER_ID" ColumnName="USER_ID" />
+                <ScalarProperty Name="LOG_TIME" ColumnName="LOG_TIME" />
+                <ScalarProperty Name="LOG_DATE" ColumnName="LOG_DATE" />
+                <ScalarProperty Name="OPERATION_TYPE" ColumnName="OPERATION_TYPE" />
+                <ScalarProperty Name="REF_ID" ColumnName="REF_ID" />
+                <ScalarProperty Name="REF_TYPE" ColumnName="REF_TYPE" />
+                <ScalarProperty Name="LOG_SEQ" ColumnName="LOG_SEQ" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer>
+    <edmx:Connection>
+      <edmx:DesignerInfoPropertySet>
+        <edmx:DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </edmx:DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <edmx:DesignerInfoPropertySet>
+        <edmx:DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <edmx:DesignerProperty Name="EnablePluralization" Value="False" />
+        <edmx:DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <edmx:DesignerProperty Name="DDLGenerationTemplate" Value="$(VSEFTools)\DBGen\Devart SSDLToDB2.tt" />
+      </edmx:DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <edmx:Diagram Name="Testdb">
+        <edmx:EntityTypeShape EntityType="TestModel.I_CO_RETURN" Width="1.5" PointX="9.19553040396214" PointY="24.2869025581921" />
+        <edmx:EntityTypeShape EntityType="TestModel.I_CO_RETURN_LINE" Width="1.5" PointX="9.85369475830984" PointY="7.3687576238851795" />
+        <edmx:EntityTypeShape EntityType="TestModel.I_DIST_CAR_CHECK" Width="1.5" PointX="6.2110368619724348" PointY="24.797633599861353" />
+        <edmx:EntityTypeShape EntityType="TestModel.I_DIST_CAR_RUN" Width="1.5" PointX="3.8358413185159863" PointY="19.487767481937897" />
+        <edmx:EntityTypeShape EntityType="TestModel.I_DIST_CAR_RUN_LINE" Width="1.5" PointX="5.9758369820079942" PointY="20.84507278578592" />
+        <edmx:EntityTypeShape EntityType="TestModel.I_DIST_CUST" Width="1.5" PointX="11.401328975055986" PointY="6.6006272614936474" />
+        <edmx:EntityTypeShape EntityType="TestModel.I_DIST_FILE_LINE" Width="1.5" PointX="7.48820136277387" PointY="31.31535546449728" />
+        <edmx:EntityTypeShape EntityType="TestModel.I_GIS_CUST_POI" Width="1.5" PointX="4.4078493194691131" PointY="7.015154737520569" />
+        <edmx:EntityTypeShape EntityType="TestModel.I_GIS_LAST_LOCRECORD" Width="1.5" PointX="7.4415741653375207" PointY="20.700926388008952" />
+        <edmx:EntityTypeShape EntityType="TestModel.PBCATCOL" Width="1.5" PointX="7.36608958959863" PointY="17.958572902697405" />
+        <edmx:EntityTypeShape EntityType="TestModel.PBCATEDT" Width="1.5" PointX="4.1785615925577293" PointY="23.963638644648547" />
+        <edmx:EntityTypeShape EntityType="TestModel.PBCATFMT" Width="1.5" PointX="3.8327715358849481" PointY="30.081460355818951" />
+        <edmx:EntityTypeShape EntityType="TestModel.PBCATTBL" Width="1.5" PointX="7.6951052228431704" PointY="28.779170764973" />
+        <edmx:EntityTypeShape EntityType="TestModel.PBCATVLD" Width="1.5" PointX="6.1833643997941934" PointY="27.866116328102592" />
+        <edmx:EntityTypeShape EntityType="TestModel.I_CUST" Width="1.5" PointX="0.33956319668309909" PointY="30.628078087525477" />
+        <edmx:EntityTypeShape EntityType="TestModel.I_DIST" Width="1.5" PointX="1.2208826193683233" PointY="2.9547145976474112" />
+        <edmx:EntityTypeShape EntityType="TestModel.I_DIST_CAR" Width="1.5" PointX="11.522201020048094" PointY="26.952595440183114" />
+        <edmx:EntityTypeShape EntityType="TestModel.I_DIST_ITEM" Width="1.5" PointX="9.0319611565358748" PointY="20.33699084275262" />
+        <edmx:EntityTypeShape EntityType="TestModel.I_DIST_LINE" Width="1.5" PointX="7.5823916138999126" PointY="14.983849562231381" />
+        <edmx:EntityTypeShape EntityType="TestModel.I_DIST_RECORD_LOG" Width="1.5" PointX="7.2682798985709809" PointY="7.2123084548918106" />
+      </edmx:Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

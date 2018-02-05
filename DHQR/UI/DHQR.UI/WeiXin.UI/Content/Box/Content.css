@@ -1,0 +1,41 @@
+@charset "utf-8";
+
+*:focus {outline: none;}
+/* fade */
+.DialogBox-fade{background-color:#000000;}
+/* drag */
+.DialogBox-drag{border:1px dashed #86ae00;}
+/* DialogBox */
+div.DialogBox {padding:0px;border:none;font-size:12px;}
+/* border */
+div.DialogBox .DialogBox-border{background: none repeat scroll 0 0 #000000;filter:alpha(opacity=20);-moz-opacity:0.2;opacity:0.2;}
+/* container */
+div.DialogBox .DialogBox-container{background-color:#ffffff;border:1px solid #999999;}
+/* title-panel */
+div.DialogBox .DialogBox-title-panel{background: #86ae00;background: -webkit-gradient(linear, left top, left bottom, from(#92b61a), to(#6b8b00));background: -moz-linear-gradient(top,  #92b61a,  #6b8b00);filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#92b61a', endColorstr='#6b8b00');border-bottom:1px solid #999999;}
+div.DialogBox .DialogBox-title{font-weight:bold;color:#ffffff;}
+div.DialogBox .DialogBox-title-icon{background:url(images/DialogBox-title-icon.gif) no-repeat scroll 3px 5px transparent;}
+div.DialogBox .DialogBox-close,div.DialogBox .DialogBox-close-hover{background:url(images/DialogBox-close1.gif) no-repeat scroll 0px 0px transparent;}
+div.DialogBox .DialogBox-close-hover{background-position:-16px 0;}
+/* content */
+div.DialogBox .DialogBox-content{min-height:24px;line-height:18px;color:#444444;}
+div.DialogBox .DialogBox-content-loading{background-color:#E6E6E6;}
+div.DialogBox .DialogBox-content-loading-image{background:url(images/DialogBox-content-loading.gif) no-repeat bottom center;}
+/* button-panel */
+div.DialogBox .DialogBox-button-panel{border-top:1px solid #CCCCCC;background-color: #EEEEEE;}
+div.DialogBox .DialogBox-bottom-text{text-indent:10px;color:#444444;}
+div.DialogBox .DialogBox-button{background: #86ae00;background: -webkit-gradient(linear, left top, left bottom, from(#92b61a), to(#6b8b00));background: -moz-linear-gradient(top,  #92b61a,  #6b8b00);filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#92b61a', endColorstr='#6b8b00');border:#435700 1px solid;color:#fff;border-radius:3px 3px 3px 3px;margin:1px 7px 0px 0px;height:22px;cursor:default;}
+div.DialogBox .DialogBox-button-hover{background: #86ae00;background: -webkit-gradient(linear, left top, left bottom, from(#86ae00), to(#506800));background: -moz-linear-gradient(top,  #86ae00,  #506800);filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#86ae00', endColorstr='#506800');}
+div.DialogBox .DialogBox-button-active{background: -webkit-gradient(linear, left top, left bottom, from(#506800), to(#86ae00));background: -moz-linear-gradient(top,  #506800,  #86ae00);filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#506800', endColorstr='#86ae00');}
+div.DialogBox-warning .DialogBox .DialogBox-button-panel{background-color: #FFFFFF;}
+/* tip-color */
+div.DialogBox .DialogBox-tip-color{background: #86ae00;background: -webkit-gradient(linear, left top, left bottom, from(#86ae00), to(#506800));background: -moz-linear-gradient(top,  #86ae00,  #506800);filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#86ae00', endColorstr='#506800');border-color:#435700;border-radius:3px 3px 3px 3px;color:#fff;}
+/* icons */
+div.DialogBox span.DialogBox-icon{background:url(images/DialogBox-icons.png) no-repeat scroll 0 0 transparent;_background:url(images/DialogBox-icons-ie6.gif) no-repeat scroll 0 0 transparent;}
+div.DialogBox span.DialogBox-icon-info {background-position:0 0;}
+div.DialogBox span.DialogBox-icon-question {background-position:-36px 0;}
+div.DialogBox span.DialogBox-icon-success {background-position:-72px 0;}
+div.DialogBox span.DialogBox-icon-warning {background-position:-108px 0;}
+div.DialogBox span.DialogBox-icon-error {background-position:-144px 0;}
+div.DialogBox span.DialogBox-icon-none {display: none; overflow:hidden;}
+div.DialogBox span.DialogBox-icon-loading {background:url(images/DialogBox-loading1.gif) no-repeat scroll 0 0 transparent;}

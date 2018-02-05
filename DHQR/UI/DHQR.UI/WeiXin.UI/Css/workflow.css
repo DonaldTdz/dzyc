@@ -1,0 +1,153 @@
+body, html { font-family: "宋体"; font-size: 12px; margin: 0px; padding: 0px; overflow: hidden; }
+div { background-repeat: no-repeat; overflow: hidden; }
+a { text-decoration: none; }
+img { border: none; }
+table { table-layout: fixed; }
+
+.left { float: left; }
+.right { float: right; }
+.clear { clear: both; line-height: 0px; height: 0px; }
+.main { margin: 0px 4px; }
+.hide { display: none; }
+/*线*/
+.line { font-size: 0px; line-height: 0px;  }
+.line4 { height: 4px; }
+
+.btndialog { border: 0px; background-image: url(/images/base/dialog.gif); width: 21px; height: 19px; }
+
+/**/
+.icon1 { color: #163d8a; font-weight: bold; margin-left: 4px; background-image: url(/images/workflow/icon1.gif); padding-left: 21px; height: 24px; background-position: 0px center; }
+.icon2 { color: #163d8a; font-weight: bold; margin-left: 4px; background-image: url(/images/workflow/icon2.gif); padding-left: 21px; height: 24px; background-position: 0px center; }
+.icon3 { color: #163d8a; font-weight: bold; margin-left: 4px; background-image: url(/images/workflow/icon3.gif); padding-left: 21px; height: 24px; background-position: 0px center; }
+
+.minicon { height: 15px; width: 15px; background-image: url(/images/workflow/min.gif); display: inline-block; cursor: pointer; margin-top: 5px; }
+.maxicon { height: 15px; width: 15px; background-image: url(/images/workflow/max.gif); display: inline-block; cursor: pointer; margin-top: 5px; margin-right: 5px; }
+.wenicon { height: 15px; width: 15px; background-image: url(/images/workflow/icon4.gif); display: inline-block; cursor: pointer; margin-top: 5px; margin-right: 5px; }
+.iicon { height: 15px; width: 15px; background-image: url(/images/workflow/icon4.gif); display: inline-block; cursor: pointer; margin-top: 5px; margin-right: 5px; background-position: right center; }
+
+.title { background-image: url(/images/workflow/titiebarbg.gif); height: 24px; line-height: 24px; border: 1px solid #a0afce; background-repeat: repeat-x; }
+
+#leftmenu { background-color: #dfe8f7; overflow: auto; width: 158px; border: 1px solid #a0afce; position: absolute; z-index: 10; left: 4px; top: 33px; }
+#dragdiv { font-size: 0px; width: 5px; cursor: w-resize; position: absolute; z-index: 11; left: 162px; top: 33px; background-image: url(/images/workflow/drag.gif); background-position: center center; }
+#paintarea { background-color: #ffffff; overflow: auto; width: 200px; position: absolute; z-index: 10; left: 167px; top: 33px; border: 1px solid #a0afce; }
+.setheight { height: 400px; }
+.setheight1 { height: 230px; }
+#dragy { cursor: s-resize; left: 0px; top: 0px; width: 100%; height: 5px; font-size: 0px; line-height: 0px; background-image: url(/images/workflow/dragy.gif); background-position: center center; position: absolute; z-index: 11; }
+#attribute { background-repeat: repeat-y; ;background-color:#dfe8f7;background-image:url(/images/workflow/attributebg2.gif);position:absolute;z-index:10;left:4px;width:500px;border:1pxsolid#a0afce;}
+.attributecontent { overflow: hidden; width: 2000px; }
+.attributecontentleft { overflow: hidden; width: 160px; }
+.attributecontentright { overflow: auto; width: 500px; }
+.attributecontentleft div { cursor: pointer; float: right; border: 1px solid #99adce; width: 154px; height: 21px; line-height: 21px; margin-top: 2px; background-image: url(/images/workflow/attributebg.gif); background-repeat: repeat-x; }
+.attributecontentleft div span { background-position: 4px center; background-repeat: no-repeat; padding-left: 30px; height: 21px; line-height: 21px; display: block; }
+.attributecontentleft .attractive { border-right-color: #DFE8F7; background-image: none; background-color: #DFE8F7; cursor: default; }
+.attributecontentleft div .aicon1 { background-image: url(/images/workflow/aicon1.gif); }
+.attributecontentleft div .aicon2 { background-image: url(/images/workflow/aicon2.gif); }
+.textlen { width: 100px; display: inline-block; overflow: hidden; }
+
+
+.grid { background-image: url(/images/workflow/grid.gif); background-repeat: repeat; }
+
+.noborder { border: none; }
+.border1 { border-bottom: 1px solid #a0afce; }
+
+.menuborder { }
+.menuitem { cursor: pointer; background-position: 8px center; height: 21px; line-height: 21px; margin: 1px 0px; border: 1px solid #e0e8f3; border-left: 0px; border-right: 0px; padding: 0px 6px 0px 30px; }
+.menuitemactive { background-color: #ffffff; border-style: dashed; border-color: #a7adbd; }
+.menusplit { margin: 0px 6px; font-size: 0px; line-height: 0px; height: 1px; border: none; background-color: #aec2da; border-bottom: 1px solid #edffff; }
+.ticon1 { background-image: url(/images/workflow/ticon1.gif); }
+.ticon2 { background-image: url(/images/workflow/ticon2.gif); }
+.ticon3 { background-image: url(/images/workflow/ticon3.gif); }
+.ticon4 { background-image: url(/images/workflow/ticon4.gif); }
+.ticon5 { background-image: url(/images/workflow/ticon5.gif); }
+.ticon6 { background-image: url(/images/workflow/ticon6.gif); }
+.ticon7 { background-image: url(/images/workflow/ticon7.gif); }
+.ticon8 { background-image: url(/images/workflow/ticon8.gif); }
+.ticon9 { background-image: url(/images/workflow/ticon9.gif); }
+.ticon10 { background-image: url(/images/workflow/ticon10.gif); }
+.ticon11 { background-image: url(/images/workflow/ticon11.gif); }
+.ticon12 { background-image: url(/images/workflow/ticon12.gif); }
+.ticon13 { background-image: url(/images/workflow/ticon13.gif); }
+.ticon14 { background-image: url(/images/workflow/ticon14.gif); }
+.ticon15 { background-image: url(/images/workflow/delete.gif); }
+
+.nodeicon { background-repeat: no-repeat; background-position: 5px center; }
+.nodeicon1 { background-image: url(/images/workflow/ticon7.gif); }
+.nodeicon2 { background-image: url(/images/workflow/ticon8.gif); }
+.nodeicon3 { background-image: url(/images/workflow/ticon9.gif); }
+.nodeicon4 { background-image: url(/images/workflow/ticon10.gif); }
+.nodeicon5 { background-image: url(/images/workflow/ticon12.gif); }
+
+.node { cursor: default; height: 51px; overflow: hidden; width: auto; position: absolute; left: 50px; top: 50px; width: 130px; }
+.node .l { width: 5px; height: 51px; background-image: url(/images/workflow/nodeleft.gif); font-size: 0px; }
+.node .l1 { width: 5px; height: 51px; background-image: url(/images/workflow/nodeleft1.gif); font-size: 0px; }
+.node .c { height: 51px; background-image: url(/images/workflow/nodecenter.gif); background-repeat: repeat-x; padding: 1px 0px 1px 0px; }
+.node .c1 { height: 51px; background-image: url(/images/workflow/nodecenter1.gif); background-repeat: repeat-x; padding: 1px 0px 1px 0px; }
+.node .c .icon,.node .c1 .icon { padding: 0px 10px 0px 28px; }
+.node .r { width: 4px; height: 51px; background-image: url(/images/workflow/noderight.gif); font-size: 0px; }
+.node .r1 { width: 4px; height: 51px; background-image: url(/images/workflow/noderight1.gif); font-size: 0px; }
+.node .c .t,.node .c1 .t { height: 17px; line-height: 17px; font-style: italic; color: #262d33; }
+.node .c .tt,.node .c1 .tt { height: 27px; line-height: 27px; color: #373737; }
+
+/*拖动大小div*/
+.resizediv { display: none; height: 4px; width: 4px; position: absolute; z-index: 9999; background-color: #159df5; font-size: 0px; line-height: 0px; }
+.linediv { height: 6px; width: 6px; }
+#resizel { }
+#resizet { }
+#resizeb { }
+#resizer { }
+#resizelt { }
+#resizelb { }
+#resizert { }
+#resizetb { }
+
+.vline { position: absolute; z-index: 9999; left: 0px; top: 0px; display: none; }
+/*画线*/
+.newline { position: absolute; z-index: 9999; left: 0px; top: 0px; }
+/*新建线*/
+
+.ffline { overflow: visible; left: 100px; top: 100px; ;text-align:right;width:100px;position:absolute;z-index:9999;-webkit-transform:rotate(0deg);-moz-transform:rotate(0deg);height:7px;background-image:url(/images/workflow/ll.gif);background-position:0pxcenter;background-repeat:repeat-x;}
+.ffline a { display: inline-block; height: 7px; width: 7px; background-image: url(/images/workflow/lj.gif); }
+.ffline div { position: absolute; left: 50%; top: 50%; overflow: visible; font-size: 14px; }
+
+
+.btnBottomNav { text-align: right; margin-top: 8px; }
+.btnBottomNav input { border: 0; padding: 0; background: url(/images/common/btn-bg.jpg); width: 58px; height: 28px; cursor: pointer; margin-left: 10px; }
+
+#winpop { font-size: 12px; top: 10px; width: 90%; height: 90%; position: absolute; z-index: 9999; background: #FFF; }
+#winpop .win { width: 100%; height: 100%; position: relative; z-index: 9997; }
+#winpop #win_title { height: 22px; line-height: 22px; background-color: #333; color: white; text-align: left; padding-left: 5px; }
+#winpop #winclose { height: 30px; float: right; padding-right: 5px; padding-left: 5px; border: 1px solid #fff; }
+
+.input_text { border: 1px #ccc solid;  height:18px;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

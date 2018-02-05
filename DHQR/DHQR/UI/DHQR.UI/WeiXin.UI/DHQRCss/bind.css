@@ -1,0 +1,270 @@
+body {
+	font-size: 11.5pt;
+	color: #474747;
+	background: #F1F5F5;
+}
+/**
+ * 隐藏默认的checkbox
+ */
+html * {
+	-webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+}
+input[type="submit"],
+ input[type="reset"],
+ input[type="button"],
+ button {
+ -webkit-appearance: none;
+ }
+input {
+	border: none;
+	border: none;
+	outline: medium;
+}
+.index {
+	margin: 0 auto;
+	width: 100%;
+	max-width: 640px;
+}
+body,
+div,
+ul,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+form,
+input,
+textarea,
+p {
+	margin: 0px;
+	padding: 0px;
+	font-family: arial, "Hiragino Sans GB", "Microsoft Yahei", "微软雅黑", "宋体", 宋体, Tahoma, Arial, Helvetica, STHeiti;
+}
+
+a {
+	color:#FFFFFF;
+	text-decoration: none;
+}
+input[type="submit"],
+ input[type="reset"],
+ input[type="button"],
+ button {
+ -webkit-appearance: none;
+ }
+img {
+	margin: 0px;
+	padding: 0px;
+	border: medium none;
+}
+
+ol,
+ul,
+li {
+	list-style-type: none;
+}
+
+.nav {
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 48px;
+	line-height: 48px;
+	background: #00C76A none repeat scroll 0% 0%;
+	position: fixed;
+	text-align: center;
+}
+.nav  p {
+	color: #FFFFFF;
+	font-size: 15pt;
+	text-align: center;
+}
+.index_page{
+	margin-top: 20px;
+}
+.index_page ul li{
+	width: 100%;
+	height: 60px;
+	background: #FFFFFF;
+	line-height: 60px;
+	border-bottom: 1px solid #F1F5F5;
+}
+span{
+	float:right;
+	margin-right: 5px;
+	color: grey;
+}
+font{
+	float: left;
+	margin-left: 5px;
+}
+.index_te{
+	margin-top: 30px;
+}
+.index_te input{
+	width: 100%;
+	height: 60px;
+	line-height: 60px;
+	background: #FFFFFF;
+	padding-left: 5px;
+	font-family: "微软雅黑";
+	font-size: 12pt;
+	text-align: left;
+}
+@media all and (min-width: 350px) {
+	.nav  p {
+	font-size: 17pt;
+}
+	}
+	
+	@media all and (min-width: 400px) {
+	.nav{
+		height: 55px;
+		line-height: 55px;
+	}
+	.nav  p {
+	font-size: 18pt;
+}
+.index_page ul li{
+	width: 100%;
+	height: 70px;
+	background: #FFFFFF;
+	line-height: 70px;
+	border-bottom: 1px solid #F1F5F5;
+	font-size: 13pt;
+}
+span{
+	float:right;
+	margin-right: 5px;
+	color: grey;
+}
+font{
+	float: left;
+	margin-left: 5px;
+}
+.index_te{
+	margin-top: 30px;
+}
+.index_te input{
+	width: 100%;
+	height: 75px;
+	line-height: 75px;
+	background:#3bda70;
+	padding-left: 5px;
+	font-family: "微软雅黑";
+	font-size: 15pt;
+	text-align: left;
+	text-align: center;
+	color: #FFFFFF;
+	border: 1px solid #2bbc5b;
+}
+	}
+.wrap {
+	margin: 0px auto 0 auto;
+}
+.tabs {
+	height: 50px;
+	background: #00C76A;
+}
+.tabs a {
+	float: left;
+	width: 39%;
+	height: 40px;
+	text-align: center;
+	text-decoration: none;
+	line-height: 40px;
+	font-size: 16px;
+	color: #FFFFFF;
+	background: #fff;
+	margin-top: 5px;
+		border: 1px solid #FFFFFF;
+		background-color: #00C76A;
+}
+.tabs a.a-active{
+	color: #00C76A;
+	border: 1px solid #FFFFFF;
+	background: #FFFFFF;
+}
+.tabs a.active {
+	color: #fff;
+	
+}
+.swiper {
+	width: 100%;
+	height: auto;
+}
+.slide {
+	height:auto;
+	width: 100%;
+	color: #fff;
+}
+.one {
+	display: none;
+}
+.slide input{
+	width: 100%;
+	height: 50px;
+	margin-top: 20px;
+	padding-left: 5px;
+	color: #474747;
+}
+@media all and (min-width: 350px) {
+	.tabs {
+	height: 60px;
+	background: #00C76A;
+}
+.tabs a {
+	float: left;
+	width: 39%;
+	height: 40px;
+	text-align: center;
+	text-decoration: none;
+	line-height: 40px;
+	font-size: 16px;
+	color: #FFFFFF;
+	background: #fff;
+	margin-top:8px;
+		border: 1px solid #FFFFFF;
+		background-color: #00C76A;
+}
+.slide input{
+	width: 100%;
+	height: 60px;
+	margin-top: 20px;
+	padding-left: 5px;
+	color: #474747;
+	line-height: 60px;
+	font-size: 13pt;
+}
+}
+@media all and (min-width: 400px) {
+	.tabs {
+	height: 70px;
+	background: #00C76A;
+}
+.tabs a {
+	float: left;
+	width: 39%;
+	height: 50px;
+	text-align: center;
+	text-decoration: none;
+	line-height: 50px;
+	font-size: 20px;
+	color: #FFFFFF;
+	background: #fff;
+	margin-top:8px;
+		border: 1px solid #FFFFFF;
+		background-color: #00C76A;
+}
+.slide input{
+	width: 100%;
+	height: 70px;
+	margin-top: 20px;
+	padding-left: 5px;
+	color: #474747;
+	line-height: 70px;
+	font-size: 15pt;
+}
+}

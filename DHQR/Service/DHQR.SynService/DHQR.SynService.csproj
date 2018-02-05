@@ -1,0 +1,156 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{17634BDA-F7DC-484E-89DC-60C2161812AE}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DHQR.SynService</RootNamespace>
+    <AssemblyName>DHQR.SynService</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>发布\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BeITMemcached">
+      <HintPath>..\..\..\libs\BeITMemcached.dll</HintPath>
+    </Reference>
+    <Reference Include="Common.Base">
+      <HintPath>..\..\..\libs\Common.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="Common.BLL.Contract">
+      <HintPath>..\..\..\libs\Common.BLL.Contract.dll</HintPath>
+    </Reference>
+    <Reference Include="Common.BLL.Implement">
+      <HintPath>..\..\..\libs\Common.BLL.Implement.dll</HintPath>
+    </Reference>
+    <Reference Include="Common.DAL.Entities">
+      <HintPath>..\..\..\libs\Common.DAL.Entities.dll</HintPath>
+    </Reference>
+    <Reference Include="Common.DAL.Implement">
+      <HintPath>..\..\..\libs\Common.DAL.Implement.dll</HintPath>
+    </Reference>
+    <Reference Include="Common.DataCache">
+      <HintPath>..\..\..\libs\Common.DataCache.dll</HintPath>
+    </Reference>
+    <Reference Include="Common.GlobalConfig">
+      <HintPath>..\..\..\libs\Common.GlobalConfig.dll</HintPath>
+    </Reference>
+    <Reference Include="Common.UI">
+      <HintPath>..\..\..\libs\Common.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="DynamicQuery">
+      <HintPath>..\..\..\libs\DynamicQuery.dll</HintPath>
+    </Reference>
+    <Reference Include="IBM.Data.DB2, Version=9.7.4.4, Culture=neutral, PublicKeyToken=7c307b91aa13d208, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\libs\ibm.data.db2(jb51.net)\X86\10.1.0.4\IBM.Data.DB2.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net">
+      <HintPath>..\..\..\libs\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI">
+      <HintPath>..\..\..\libs\NPOI.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Business\DHQR.BusinessLogic.Implement\DHQR.BusinessLogic.Implement.csproj">
+      <Project>{ad5e5286-1f09-4037-afc9-a67eeeb034bb}</Project>
+      <Name>DHQR.BusinessLogic.Implement</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Common\DHQR.BasicLib\DHQR.BasicLib.csproj">
+      <Project>{cd4dc6a5-4b68-456f-919d-c030d8b29b2d}</Project>
+      <Name>DHQR.BasicLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Repository\DHQR.DataAccess.Entities\DHQR.DataAccess.Entities.csproj">
+      <Project>{9434414b-9ba1-4351-ab0a-cecf3a570729}</Project>
+      <Name>DHQR.DataAccess.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Repository\DHQR.DataAccess.Implement\DHQR.DataAccess.Implement.csproj">
+      <Project>{2e983506-d53b-4218-86c2-7abd7df6d017}</Project>
+      <Name>DHQR.DataAccess.Implement</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Repository\DHQR.DataAccess.Langchao\DHQR.DataAccess.Langchao.csproj">
+      <Project>{61ffb43a-fbb4-4405-bf42-bef7393fec3b}</Project>
+      <Name>DHQR.DataAccess.Langchao</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 和 x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

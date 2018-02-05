@@ -1,0 +1,35 @@
+﻿#qunfa .list .item{width:350px; margin-right:15px; margin-bottom:15px; border:1px solid #ddd; background:#fff; float:left; zoom:1;}
+#qunfa .list .first_item{border:1px dotted #ddd; height:150px;}
+#qunfa .list .first_item>div{text-align:center; margin:40px 0;}
+#qunfa .list .first_item div div{width:47px; height:55px; margin:0 auto; background:url(../images/bg.png) -898px -50px no-repeat; margin-bottom:10px;}
+#qunfa .list .first_item div div a{display:block; width:47px; height:55px;}
+#qunfa .list .first_item a{color:#B5B5B5;}
+#qunfa .list .list .info{left:20px;}
+#qunfa .button{text-align:center; padding:35px 0; padding-left:35px; width:340px; height:32px;}
+#qunfa .ctr{width:350px; background:#F4F4F4; border-top:1px solid #ddd; padding:10px 0; height:24px;}
+#qunfa .ctr div{float:left; width:116px; text-align:center; height:18px; padding:3px 0;}
+#qunfa .ctr div a{cursor:pointer;}
+#qunfa .multi .time{width:320px; margin:0 auto; padding-top:8px; height:20px; line-height:20px;}
+#qunfa .multi .first{width:320px; margin:0 auto; margin-top:8px; height:208px; position:relative; overflow:hidden; margin-bottom:10px;}
+#qunfa .multi .first .info{position:absolute; width:320px; overflow:hidden;}
+#qunfa .multi .first .info .img{text-align:center; height:180px; line-height:180px; font-size:20px; color:#888; background:#ECECEC;}
+#qunfa .multi .first .info .img img{max-width:320px; max-height:180px;}
+#qunfa .multi .first .info .title{height:28px; line-height:28px; overflow:hidden; text-indent:8px; color:#fff; background:#666; font-size:12px;}
+#qunfa .multi .first .control{position:absolute; width:320px; height:208px; line-height:208px; text-align:center; overflow:hidden; background:#ddd; filter:alpha(opacity=70); -moz-opacity:0.7; -khtml-opacity:0.7; opacity:0.7; display:none;}
+#qunfa .multi .list{border-top:1px solid #ddd; height:92px; overflow:hidden; position:relative;}
+#qunfa .multi .list .info{position:absolute; width:320px; left:10px; height:72px; padding:10px 0;}
+#qunfa .multi .list .info .title{width:240px; float:left; overflow:hidden;}
+#qunfa .multi .list .info .img{width:70px; height:70px; line-height:70px; overflow:hidden; text-align:center; float:right; overflow:hidden; border:1px solid #B2B8BD; background:#ECECEC; color:#C0C0C0;}
+#qunfa .multi .list .info .img img{max-width:70px; max-height:70px;}
+#qunfa .multi .list .control{position:absolute; width:340px; height:92px; line-height:92px; text-align:center; background:#ddd; filter:alpha(opacity=70); -moz-opacity:0.7; -khtml-opacity:0.7; opacity:0.7; display:none;}
+#qunfa .multi .list textarea{display:none;}
+#qunfa .multi .add{text-align:center; border-top:1px solid #B2B8BD; padding:35px 0;}
+#qunfa .m_lefter{float:left; width:340px; overflow:hidden; border:1px solid #ddd; border-bottom:2px solid #ddd; background:#fff; margin-right:12px;}
+#qunfa .m_righter{float:left; width:412px; position:relative; border:none; background:#fff;}
+#qunfa .m_righter .input input{width:280px; height:28px; line-height:28px; border:1px solid #ddd; background:#F5F5F5; text-indent:3px; border-radius:5px;}
+#qunfa .m_righter .tips{font-size:12px; color:#888;}
+#qunfa .m_righter .mod_form{position:absolute; height:190px; top:37px; width:414px; background:#fff;}
+#qunfa .m_righter .mod_form .jt{float:left; width:12px; height:150px; padding-top:40px; z-index:2; position:relative;}
+#qunfa .m_righter .mod_form .m_form{float:left; width:380px; margin-left:-1px; border:1px solid #ddd; background:#fff; padding:10px; z-index:1; position:relative;}
+#qunfa .m_righter select{height:32px; border:1px solid #ddd; padding:5px; width:300px; vertical-align:middle; border-radius:5px; margin-top:5px;}
+#qunfa .m_righter select *{width:300px; overflow:hidden;}

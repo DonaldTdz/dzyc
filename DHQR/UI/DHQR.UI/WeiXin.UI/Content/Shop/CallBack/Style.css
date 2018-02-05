@@ -1,0 +1,72 @@
+HTML {
+	OVERFLOW-X: hidden; OVERFLOW-Y: scroll
+}
+BODY {
+	BACKGROUND-IMAGE: url(Images/Login_Body_Bg.gif); BACKGROUND-COLOR: #2d323b; MARGIN: 0px; BACKGROUND-REPEAT: repeat
+}
+BODY {
+	LINE-HEIGHT: 20px; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; COLOR: #000000; FONT-SIZE: 12px; TEXT-DECORATION: none
+}
+TD {
+	LINE-HEIGHT: 20px; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; COLOR: #000000; FONT-SIZE: 12px; TEXT-DECORATION: none
+}
+TH {
+	LINE-HEIGHT: 20px; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; COLOR: #000000; FONT-SIZE: 12px; TEXT-DECORATION: none
+}
+FORM {
+	MARGIN: 0px
+}
+INPUT {
+	FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-SIZE: 12px; CURSOR: pointer; PADDING-TOP: 3px
+}
+A {
+	COLOR: #0068b7; TEXT-DECORATION: none
+}
+A:hover {
+	COLOR: #ff7300; TEXT-DECORATION: none
+}
+IMG {
+	BORDER-RIGHT-WIDTH: 0px; BORDER-TOP-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; VERTICAL-ALIGN: middle; BORDER-LEFT-WIDTH: 0px
+}
+.no_Border {
+	BORDER-RIGHT-WIDTH: 0px; BACKGROUND: none transparent scroll repeat 0% 0%; BORDER-TOP-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px
+}
+.block A {
+	DISPLAY: block
+}
+.margin_Top5 {
+	MARGIN-TOP: 5px
+}
+.margin_Top10 {
+	MARGIN-TOP: 10px
+}
+.margin_Bottom10 {
+	MARGIN-BOTTOM: 10px
+}
+.padding_Top10 {
+	PADDING-TOP: 10px
+}
+.white {
+	COLOR: #ffffff
+}
+.red {
+	COLOR: red
+}
+.blue {
+	COLOR: blue
+}
+.other {
+	COLOR: #999999
+}
+.size13 {
+	FONT-SIZE: 13px
+}
+.size14 {
+	FONT-SIZE: 14px
+}
+.size15 {
+	FONT-SIZE: 15px
+}
+.en_font {
+	FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif
+}

@@ -1,0 +1,223 @@
+﻿body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, span, textarea, p, blockquote, th, td { padding: 0; margin: 0; }
+fieldset, img { border: 0; }
+input, label, select, option, textarea, fieldset, legend { font: 12px Verdana, Simsun, Helvetica, Arial, sans-serif; }
+table { border-collapse: collapse; border-spacing: 0; font: 12px Verdana, Simsun, Helvetica, Arial, sans-serif; }
+ul { list-style: none; }
+body { font: 12px Verdana, Simsun, Helvetica, Arial, sans-serif; color: #616161; }
+
+/*避免样式冲突 加#hq-css*/
+.hq-navi { color: #616161; margin: 8px 10px 0 10px; }
+.hq-navi a { color: #616161; text-decoration: none; }
+
+.dl { float: left; }
+.dr { float: right; }
+.clear-both { clear: both; }
+
+label.warn { color: Red; }
+
+/*滑动样式*/
+.tab { position: relative; padding-left: 36px; bottom: -1px; width: 680px; }
+.tab li { float: left; border: solid 1px #C9C9C9; padding: 6px 36px; margin-right: 10px; cursor: pointer; background-color: #DEEBFF; position: relative; }
+.tab .t-li { border-bottom: solid 1px #FFFFFF; color: #FF9900; background: #FFFFFF; }
+.tab-content { background-color: #FFF; width: 680px; border-top: solid 1px #C9C9C9; padding: 20px; display: none; }
+.tab-content .e-btn { background: url(../images/common/edit.png) no-repeat; padding: 4px 20px; }
+
+
+
+
+/*外边距样式*/
+.mr10 { margin-right: 10px; }
+.mr20 { margin-right: 20px; }
+.ml16 { margin-left: 16px; }
+.ml4 { margin-left: 4px; }
+.mt8 { margin-top: 8px; }
+.mt4 { margin-top: 4px; }
+.mb10 { margin-bottom: 10px; }
+.mb20 { margin-bottom: 20px; }
+
+
+/*行距样式*/
+.lh19 { line-height: 19px; }
+.lh22 { line-height: 22px; }
+.lh24 { line-height: 24px; }
+.lh28 { line-height: 28px; }
+
+/*内容颜色样式*/
+.yellow { color: #000000; }
+.blue { color: #333333; }
+.white { color: #000000; }
+.black { color: #000000; }
+
+
+
+
+
+/*间隔行高度*/
+.dh16 { height: 16px; clear: both; overflow: hidden; }
+.dh8 { height: 8px; clear: both; overflow: hidden; }
+.dh4 { height: 4px; clear: both; overflow: hidden; }
+
+
+.c-height { height: 0; overflow: hidden; }
+
+.center { text-align: center; }
+
+/*清除边距*/
+.clear-m-l { margin-left: 0; }
+.clear-m-b { margin-bottom: 0; }
+.clear-m-t { margin-top: 0; }
+.clear-m-r { margin-right: 0; }
+
+/*按钮样式*/
+.btnCommon input { border: 0; padding: 0; margin: 0; background: url(/images/common/btn-bg.jpg); width: 58px; height: 28px; cursor: pointer; margin-left: 10px; }
+/*提交按钮*/
+
+
+
+.btnTopNav { text-align: right; margin-top: 8px; }
+.btnTopNav input { border: 0; padding: 0; background: url(/images/common/btn-bg.jpg); width: 58px; height: 28px; cursor: pointer; margin-left: 10px; }
+
+.btnBottomNav { text-align: right; margin-top: 8px; }
+.btnBottomNav input { border: 0; padding: 0; background: url(/images/common/btn-bg.jpg); width: 58px; height: 28px; cursor: pointer; margin-left: 10px; }
+input.btn-style { border: 0; padding: 0; margin: 0; background: url(/images/common/btn-bg.jpg); width: 58px; height: 28px; cursor: pointer; margin-left: 10px; }
+input.btn-style-1 { border: 0; padding: 0; margin: 0; background: url(/images/common/btn-bg-1.jpg); width: 100px; height: 28px; cursor: pointer; margin-left: 10px; }
+
+
+
+
+
+/*线*/
+.line { background: url(../images/common/line.png) repeat-x; width: 100%; height: 1px; }
+
+/*文本对齐*/
+.textMiddle { text-align: center; }
+.textLeft { text-align: left; }
+.textRight { text-align: right; }
+
+.div-middle { margin: 0 auto; text-align: center; }
+
+
+
+/*后台数据列表*/
+
+.tdTitle { background-color: #DEEBFF; font-weight: bold; text-align: right; }
+.thead { background-color: #DEEBFF; text-align: center; font-weight: bold; }
+
+
+.bgOver { background-color: #EFEFEF; cursor: pointer; }
+.bgOut { background-color: #FFFFFF; cursor: pointer; }
+
+
+
+
+
+/*列表 内容居左*/
+.tabList { width: 100%; color: #616161; font: "Trebuchet MS" ,Arial,Helvetica,sans-serif; margin-top: 8px; }
+.tabList td, .tabList th { border: solid 1px #CCCCCC; padding: 4px 2px; }
+.tabList a { color: #006699; margin: 0 2px; }
+.tabList thead { background-color: #DEEBFF; text-align: center; font-weight: bold; }
+.tabList tbody { text-align: left; }
+
+
+/*无边框布局表格*/
+.tabLayOut { color: #616161; font: "Trebuchet MS" ,Arial,Helvetica,sans-serif; margin-top: 8px; }
+.tabLayOut td, .tabLayOut th { vertical-align: top; text-align: left; padding: 4px 2px; }
+.tabLayOut a { color: #006699; margin: 0 2px; }
+.tabLayOut tbody { text-align: left; }
+
+
+
+/*数据列表 内容居中 a { text-decoration: none; color: #616161; margin: 0; padding: 0; }*/
+.tabMainList { width: 100%; color: #616161; font: "Trebuchet MS" ,Arial,Helvetica,sans-serif; margin-top: 8px; }
+.tabMainList td, .tabMainList th { border: solid 1px #CCCCCC; padding: 4px 2px; }
+.tabMainList a { text-decoration: none; color: #006699; margin: 0 2px; font-size: 12px; padding: 0px; }
+.tabMainList a:visit { text-decoration: none; color: #006699; margin: 0 2px; font-size: 12px; padding: 0px; }
+.tabMainList a:hover { text-decoration: none; color: red; margin: 0 2px; font-size: 12px; padding: 0px; }
+.tabMainList thead { background-color: #DEEBFF; text-align: center; font-weight: bold; }
+.tabMainList tbody { text-align: left; }
+.tabMainList tbody td { padding-left: 5px; }
+
+
+
+
+
+/*后台数据编辑*/
+.tabEdit { width: 100%; color: #616161; font: "Trebuchet MS" ,Arial,Helvetica,sans-serif; margin-top: 8px; background-color: #EFEFEF; }
+.tabEdit td, .tabMainList th { border: solid 1px #CCCCCC; padding: 4px 2px; }
+.tabEdit a { color: #006699; margin: 0 2px; }
+.tabEdit thead { background-color: #DEEBFF; text-align: center; font-weight: bold; }
+
+
+/*后台数据搜索*/
+.tabSearch { width: 100%; color: #616161; font: "Trebuchet MS" ,Arial,Helvetica,sans-serif; margin-top: 8px; background-color: #EFEFEF; }
+.tabSearch td, .tabSearch th { border: solid 1px #CCCCCC; padding: 4px 2px; }
+.tabSearch a { color: #006699; margin: 0 2px; }
+.tabSearch thead { background-color: #DEEBFF; text-align: center; font-weight: bold; }
+
+
+
+
+.tabPage { margin-top: 8px; width: 100%; border: 0; }
+.atten { margin: 8px 0; }
+.tips { margin-top: 8px; }
+
+/*清除嵌套表格的边框*/
+.noBorder td { border: 0; }
+
+.w30 { width: 30px; overflow: hidden; }
+.w50 { width: 50px; overflow: hidden; }
+.w60 { width: 60px; overflow: hidden; }
+.w70 { width: 70px; overflow: hidden; }
+.w80 { width: 80px; overflow: hidden; }
+.w90 { width: 90px; overflow: hidden; }
+.w100 { width: 100px; overflow: hidden; }
+.w110 { width: 110px; overflow: hidden; }
+.w120 { width: 120px; overflow: hidden; }
+.w130 { width: 130px; overflow: hidden; }
+.w140 { width: 140px; overflow: hidden; }
+.w150 { width: 150px; overflow: hidden; }
+.w160 { width: 160px; overflow: hidden; }
+.w170 { width: 170px; overflow: hidden; }
+.w180 { width: 180px; overflow: hidden; }
+.w200 { width: 200px; overflow: hidden; }
+.w220 { width: 220px; overflow: hidden; }
+.w240 { width: 240px; overflow: hidden; }
+.w250 { width: 250px; overflow: hidden; }
+.w260 { width: 260px; overflow: hidden; }
+.w280 { width: 280px; overflow: hidden; }
+.w300 { width: 300px; overflow: hidden; }
+.w350 { width: 350px; overflow: hidden; }
+.w360 { width: 360px; overflow: hidden; }
+.w380 { width: 380px; overflow: hidden; }
+.w400 { width: 400px; overflow: hidden; }
+.w460 { width: 460px; overflow: hidden; }
+.w600 { width: 600px; overflow: hidden; }
+.w700 { width: 700px; overflow: hidden; }
+
+
+.h24 { height: 24px; }
+
+
+
+/*文本框*/
+.input_text { height: 18px; line-height: 18px; border: 1px #ccc solid; overflow: hidden; padding: 2px; }
+.input_text_focus { border: 1px #006699 solid; }
+.input_select { height: 24px; line-height: 24px; border: solid 1px #CCCCCC; padding: 2px; }
+.input_content { border: 1px #ccc solid; width: 600px; height: 100px; }
+.input_content1 { border: solid 1px #ccc; }
+.input_disabled { background-color: #eee; }
+.required { }
+
+/*溢出*/
+.break-w { overflow: hidden; }
+
+
+
+
+.linkList a { padding: 2px; margin: 2px; color: #006699; }
+
+
+/*显示隐藏样式*/
+.display { display: block; }
+.hide { display: none; }
+

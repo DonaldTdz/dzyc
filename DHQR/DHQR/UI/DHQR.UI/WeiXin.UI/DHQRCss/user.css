@@ -1,0 +1,229 @@
+﻿.r_con_wrap .r_con_table td.upd_points select, .r_con_wrap .r_con_table td.upd_points input
+{
+    width: 68px;
+}
+
+#mod_user_pass
+{
+    z-index: 10001;
+}
+#mod_user_pass .tips
+{
+    height: 100px;
+    line-height: 100px;
+    text-align: center;
+    background: #fff;
+    font-size: 14px;
+    display: none;
+}
+
+#card_style
+{
+    border: 1px solid #ddd;
+    background: #f5f5f5;
+    padding: 17px;
+    margin-top: 5px;
+}
+#card_style .file
+{
+    /*float:left; width:50%; */
+    position: relative;
+}
+#card_style .file .input
+{
+    background: #FFF;
+}
+#card_style .file .tips
+{
+    margin-top: 5px;
+    color: #999;
+}
+#card_style .file .del
+{
+    position: absolute;
+    left: 136px;
+    top: 160px;
+}
+#card_style .file .img
+{
+    max-width: 180px;
+    max-height: 54px;
+    overflow: hidden;
+    background: #fff;
+}
+#card_style .file .img img
+{
+    width: 100%;
+}
+#card_style .style
+{
+    /*float:left; */
+    width: 269px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    min-height: 161px;
+    background: #fff;
+    text-align: center;
+    padding-bottom: 8px;
+}
+#card_style .style img
+{
+    width: 267px;
+    height: 161px;
+}
+#card_style_list .list
+{
+    height: 450px;
+    overflow: auto;
+}
+#card_style_list table
+{
+    background: #fff;
+    width: 460px;
+}
+#card_style_list table td
+{
+    text-align: center;
+    padding: 15px;
+}
+#card_style_list table td:hover
+{
+    background: #ddd;
+}
+#card_style_list table td a
+{
+    width: 200px;
+    height: 120px;
+    overflow: hidden;
+    display: block;
+    border: 3px solid #fff;
+    border-radius: 10px;
+}
+#card_style_list table td a.cur
+{
+    border: 3px solid #F60;
+}
+#card_style_list table td a img
+{
+    width: 100%;
+    height: 100%;
+}
+
+#card_article .r_con_table td.status, #card_benefits .r_con_table td.status, #coupon_list .r_con_table td.status
+{
+    color: #1584D5;
+    font-weight: bold;
+}
+#card_article .r_con_table td.fc_blue, #card_benefits .r_con_table td.fc_blue, #coupon_list .r_con_table td.fc_blue
+{
+    color: #00C;
+}
+#card_article .r_con_table td img, #card_benefits .r_con_table td img, #coupon_list .r_con_table td img
+{
+    margin: 0 3px;
+    vertical-align: middle;
+}
+
+#user .search
+{
+    padding: 10px;
+    height: 22px;
+    background: #f7f7f7;
+    border: 1px solid #ddd;
+    margin-bottom: 8px;
+    font-size: 12px;
+}
+#user .search *
+{
+    font-size: 12px;
+}
+#user .search .search_btn
+{
+    background: #1584D5;
+    color: white;
+    border: none;
+    height: 22px;
+    line-height: 22px;
+    width: 80px;
+    cursor: pointer;
+}
+#user .search .l
+{
+    float: left;
+}
+#user .search .r
+{
+    float: right;
+}
+#user .face
+{
+    width: 60px;
+}
+#update_post_tips
+{
+    position: fixed;
+    width: 200px;
+    height: 36px;
+    line-height: 36px;
+    background: #1584D5;
+    color: #fff;
+    text-align: center;
+    left: 0;
+    top: 200px;
+    display: none;
+}
+
+#business_keyword .type
+{
+    margin-bottom: 15px;
+    height: 30px;
+}
+#business_keyword .type a
+{
+    display: block;
+    width: 80px;
+    height: 30px;
+    line-height: 30px;
+    background: #ddd;
+    float: left;
+    margin-right: 10px;
+    text-align: center;
+    text-decoration: none;
+}
+#business_keyword .type a.cur, #url .type a:hover
+{
+    background: #1584D5;
+    color: #fff;
+}
+#business_keyword .add_form
+{
+    border: 1px solid #ddd;
+    background: #f7f7f7;
+    margin-bottom: 10px;
+}
+#business_keyword .mod_form
+{
+    border: 1px dotted red;
+}
+#business_keyword .add_form td
+{
+    padding: 10px 5px;
+}
+#business_keyword .add_form td .form_input
+{
+    height: 28px;
+    line-height: 28px;
+    vertical-align: middle;
+    border-radius: 5px;
+}
+#business_keyword .add_form td .submit
+{
+    height: 28px;
+    line-height: 28px;
+    background: #1584D5;
+    border: none;
+    color: #fff;
+    width: 100px;
+    border-radius: 5px;
+    font-size: 14px;
+}
