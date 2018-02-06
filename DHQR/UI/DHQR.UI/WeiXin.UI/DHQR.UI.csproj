@@ -4614,6 +4614,10 @@
       <Project>{9434414b-9ba1-4351-ab0a-cecf3a570729}</Project>
       <Name>DHQR.DataAccess.Entities</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\..\Repository\DHQR.DataAccess.Langchao\DHQR.DataAccess.Langchao.csproj">
+      <Project>{61FFB43A-FBB4-4405-BF42-BEF7393FEC3B}</Project>
+      <Name>DHQR.DataAccess.Langchao</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -1,7 +1,9 @@
 ﻿using Common.Base;
 using DHQR.BusinessLogic.Implement;
 using DHQR.DataAccess.Entities;
+using DHQR.DataAccess.Langchao;
 using DHQR.UI.Controllers.API.Dto;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -42,6 +44,13 @@ namespace DHQR.UI.Controllers.API
         {
         }
 
+        public JObject PostRestultTest([FromBody]JObject jparam)
+        {
+            var param = jparam.ToObject<DownloadDistParam>();
+            var result = new APIResultDTO() { Code = 0, Data = param, Message = "获取数据成功" };
+            return JObject.FromObject(result);
+        }
+
         private readonly ServiceCallLogLogic serverlogLogic = new ServiceCallLogLogic();
 
         #region 下载配送单
@@ -49,19 +58,15 @@ namespace DHQR.UI.Controllers.API
         /// <summary>
         /// 下载配送单
         /// </summary>
-        public JsonResult DownloadDist(string data)
+        public JsonResult PostDownloadDist([FromBody]JObject jparam)
         {
-            var jser = new JavaScriptSerializer();
-            var param = jser.Deserialize<DownloadDistParam>(data);
+            var param = jparam.ToObject<DownloadDistParam>();
             DoHandle dohandle;
             #region 取浪潮配送单数据
 
             List<LdmDist> ldmDists = new List<LdmDist>();//配送单
             List<LdmDistLine> ldmDistLines = new List<LdmDistLine>();//配送单明细
             List<LdmDisItem> ldmDisItems = new List<LdmDisItem>();//配送单商品信息
-
-
-
             DZLangchaoLogic lcLogic = new DZLangchaoLogic();
             lcLogic.DownloadDists(param, out ldmDists, out ldmDistLines, out ldmDisItems);
 
@@ -81,14 +86,10 @@ namespace DHQR.UI.Controllers.API
             }
 
 
-            #region 写服务器日志
+            //写服务器日志
+            serverlogLogic.InsertLog("DeliveryConfirm", "DownloadDist", jparam.ToString(), param.DLVMAN_ID, dohandle.IsSuccessful);
 
-            serverlogLogic.InsertLog("DeliveryConfirm", "DownloadDist", data, param.DLVMAN_ID, dohandle.IsSuccessful);
-
-            #endregion
-
-
-
+            var result = new APIResultDTO();
 
             if (dohandle.IsSuccessful)
             {
@@ -96,22 +97,94 @@ namespace DHQR.UI.Controllers.API
                 #region 返回配送单到终端
 
                 LdmInfo ldmInfo = new LdmInfo { LdmDists = ldmDists, LdmDistLines = ldmDistLines, LdmDisItems = ldmDisItems };
-                var result = jser.Serialize(ldmInfo);
-
+                result.Code = 0;
+                result.Data = ldmInfo;
+                result.Message = "获取数据成功";
                 #endregion
-
-               
-                var jr = new JsonResult();
-                jr.Data = result;
-                return jr;
             }
             else
             {
-                var result = jser.Serialize(dohandle);
-                var jr = new JsonResult();
-                jr.Data = result;
-                return jr;
+                result.Message = dohandle.OperateMsg;
+                result.Code = 901;
             }
+            return new JsonResult() { Data = result };
+        }
+
+        #endregion
+
+        #region 下载配送单完成
+
+
+        /// <summary>
+        /// 下载配送单完成
+        /// </summary>
+        /// <param name="data"></param>
+        /// <returns></returns>
+        public JsonResult PostDownDistFinish([FromBody]JObject jparam)
+        {
+            DoHandle dohandle;
+            var param = jparam.ToObject<DownDistFinish>();
+            if (param.DistNums == null)
+            {
+                return new JsonResult() { Data = new APIResultDTO() { Code = 701, Message = "传入参数错误！" } };
+            }
+
+            #region 浪潮数据库回写日志
+
+            IList<I_DIST_RECORD_LOG> logs = new List<I_DIST_RECORD_LOG>();
+            foreach (var item in param.DistNums)
+            {
+
+                I_DIST_RECORD_LOG log = new I_DIST_RECORD_LOG();
+                var logKey = new LogKeyLogic().GetLogkey();
+                OperationType opType;
+                log.LOG_SEQ = logKey;
+                log.OPERATION_TYPE = opType.downDistFinish;//下载完成
+                log.REF_TYPE = param.REF_TYPE;
+                log.REF_ID = item;
+                log.LOG_DATE = param.LOG_DATE;
+                log.LOG_TIME = param.LOG_TIME;
+                log.USER_ID = param.USER_ID;
+                log.LONGITUDE = param.LONGITUDE;
+                log.LATITUDE = param.LATITUDE;
+                log.OPERATE_MODE = param.OPERATE_MODE;
+                logs.Add(log);
+            }
+
+            #endregion
+
+            IList<DistRecordLog> distRecords = logs.Select(f => ConvertFromLC.ConvertRecordLog(f)).ToList();
+
+            #region 写浪潮数据表【送货员操作日志】
+
+            //LangchaoLogic lcLogic = new LangchaoLogic();
+            //lcLogic.WriteDistRecordLog(logs, out dohandle);
+
+            #endregion
+
+            #region 写本地服务器数据表【送货员操作日志】
+
+            //if (dohandle.IsSuccessful)
+            //{
+                DistRecordLogLogic logLogic = new DistRecordLogLogic();
+                foreach (var d in distRecords)
+                {
+                    d.Id = Guid.NewGuid();
+                }
+                logLogic.Create(distRecords, out dohandle);
+            //}
+            #endregion
+
+            #region 写服务器日志
+
+            serverlogLogic.InsertLog("DeliveryConfirm", "DownDistFinish", jparam.ToString(), param.USER_ID, dohandle.IsSuccessful);
+
+            #endregion
+
+
+            var result = new APIResultDTO() { Code = (dohandle.IsSuccessful? 0 : 901), Message = dohandle.OperateMsg };
+            return new JsonResult() { Data = result };
+
         }
 
         #endregion

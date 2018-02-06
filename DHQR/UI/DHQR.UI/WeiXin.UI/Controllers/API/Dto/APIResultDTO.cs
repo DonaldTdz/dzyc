@@ -8,6 +8,13 @@ namespace DHQR.UI.Controllers.API.Dto
     [Serializable]
     public class APIResultDTO
     {
+        public APIResultDTO()
+        {
+            Code = 0;
+            Message = string.Empty;
+            Data = string.Empty;
+        }
+
         /// <summary>
         /// 返回code代码
         /// </summary>
