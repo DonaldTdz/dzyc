@@ -67,6 +67,49 @@ namespace DHQR.BusinessLogic.Implement
             }
         }
 
+        /// <summary>
+        /// 备车检查
+        /// </summary>
+        /// <param name="checkInfo"></param>
+        /// <param name="dohandle"></param>
+        public void CheckDZCar(List<DistCarCheck> checkInfo, out DoHandle dohandle)
+        {
+            OperationType operateType;
+            var logKey = new LogKeyLogic().GetLogkey();
+            var firstChek = checkInfo.FirstOrDefault();
+            DistRecordLog log = new DistRecordLog
+            {
+                LOG_SEQ = logKey,
+                REF_TYPE = firstChek.REF_TYPE,
+                REF_ID = firstChek.REF_ID,
+                OPERATION_TYPE = operateType.prepareCar,
+                LOG_DATE = DateTime.Now.ToString("yyyyMMdd"),
+                LOG_TIME = DateTime.Now.ToString("HHmmss"),
+                USER_ID = firstChek.USER_ID,
+                LONGITUDE = firstChek.LONGITUDE,
+                LATITUDE = firstChek.LATITUDE,
+                NOTE = operateType.prepareCar,
+                OPERATE_MODE = "0"
+            };
+            CarCheckKeyLogic carKeyLogic = new CarCheckKeyLogic();
+            foreach (var item in checkInfo)
+            {
+                item.CHECK_ID = carKeyLogic.GetLogkey();
+                item.CHECK_TIME = DateTime.Now.ToString("yyyyMMddHHmmss");
+            }
+
+            dohandle = new DoHandle() { IsSuccessful = true, OperateMsg = "检查完成" };
+
+            ////写浪潮数据库
+            //LangchaoLogic lcLogic = new LangchaoLogic();
+            //lcLogic.CheckCar(checkInfo, log, out dohandle);
+
+            //if (dohandle.IsSuccessful)
+            //{
+            //    DistCarCheckRep.CheckCar(checkInfo, log, out dohandle);
+            //}
+        }
+
         #region 查询车辆检查信息
 
         /// <summary>

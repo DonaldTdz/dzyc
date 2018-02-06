@@ -161,5 +161,233 @@ namespace DHQR.UI.Controllers.API
         }
 
         #endregion
+
+        #region 备车检查
+
+        /// <summary>
+        /// 备车检查
+        /// </summary>
+        public JObject PostCheckCar([FromBody]JObject jparam)
+        {
+            DoHandle dohandle;
+            var checkInfor = jparam.ToObject<CheckCarParam>();
+            DistCarCheckLogic carCheckLogic = new DistCarCheckLogic();
+            carCheckLogic.CheckDZCar(checkInfor.CheckDatas, out dohandle);
+
+            #region 写服务器日志
+
+            serverlogLogic.InsertLog("DeliveryConfirm", "CheckCar", jparam.ToString(), null, dohandle.IsSuccessful);
+
+            #endregion
+
+
+            var result = new APIResultDTO() { Code = (dohandle.IsSuccessful? 0 : 901), Message = dohandle.OperateMsg };
+            return JObject.FromObject(result);
+        }
+
+        #endregion
+
+        #region 装车开始
+
+        /// <summary>
+        /// 装车开始
+        /// </summary>
+        public JObject PostStartLoad([FromBody]JObject jparam)
+        {
+            DoHandle dohandle;
+            var distRecord = jparam.ToObject<DistRecordLog>();
+
+            var logKey = new LogKeyLogic().GetLogkey();
+            OperationType opType;
+            distRecord.LOG_SEQ = logKey;
+            if (string.IsNullOrEmpty(distRecord.OPERATION_TYPE))
+            {
+                distRecord.OPERATION_TYPE = opType.startLoad;//开始装车
+            }
+            I_DIST_RECORD_LOG log = ConvertToLC.ConvertRecordLog(distRecord);
+
+            #region 写浪潮数据表【送货员操作日志】
+
+            //LangchaoLogic lcLogic = new LangchaoLogic();
+            //lcLogic.WriteDistRecordLog(log, out dohandle);
+
+            #endregion
+
+            #region 写本地服务器数据表【送货员操作日志】
+
+            //if (dohandle.IsSuccessful)
+            //{
+                DistRecordLogLogic logLogic = new DistRecordLogLogic();
+                distRecord.Id = Guid.NewGuid();
+                logLogic.Create(distRecord, out dohandle);
+            //}
+            #endregion
+
+            #region 写服务器日志
+
+            serverlogLogic.InsertLog("DeliveryConfirm", "StartLoad", jparam.ToString(), distRecord.USER_ID, dohandle.IsSuccessful);
+
+            #endregion
+
+            var result = new APIResultDTO() { Code=(dohandle.IsSuccessful?0:901), Message = dohandle.OperateMsg };
+            return JObject.FromObject(result);
+
+        }
+
+        #endregion
+
+        #region 装车结束
+
+        /// <summary>
+        /// 装车结束
+        /// </summary>
+        public JObject PostFinishLoad([FromBody]JObject jparam)
+        {
+            DoHandle dohandle;
+            var distRecord = jparam.ToObject<DistRecordLog>();
+
+            var logKey = new LogKeyLogic().GetLogkey();
+            OperationType opType;
+            distRecord.LOG_SEQ = logKey;
+            distRecord.OPERATION_TYPE = opType.finishLoad; ;//装车结束
+            I_DIST_RECORD_LOG log = ConvertToLC.ConvertRecordLog(distRecord);
+
+            #region 写浪潮数据表【送货员操作日志】
+
+            //LangchaoLogic lcLogic = new LangchaoLogic();
+            //lcLogic.WriteDistRecordLog(log, out dohandle);
+
+            #endregion
+
+            #region 写本地服务器数据表【送货员操作日志】
+
+            //if (dohandle.IsSuccessful)
+            //{
+                DistRecordLogLogic logLogic = new DistRecordLogLogic();
+                distRecord.Id = Guid.NewGuid();
+                logLogic.Create(distRecord, out dohandle);
+            //}
+            #endregion
+
+            #region 写服务器日志
+
+            serverlogLogic.InsertLog("DeliveryConfirm", "FinishLoad", jparam.ToString(), distRecord.USER_ID, dohandle.IsSuccessful);
+
+            #endregion
+
+
+            var result = new APIResultDTO() { Code = (dohandle.IsSuccessful ? 0 : 901), Message = dohandle.OperateMsg };
+            return JObject.FromObject(result);
+        }
+
+        #endregion
+
+        #region 车辆出库
+
+        /// <summary>
+        /// 车辆出库
+        /// </summary>
+        public JObject PostCarOutWhse([FromBody]JObject jparam)
+        {
+            DoHandle dohandle;
+            var distRecord = jparam.ToObject<DistRecordLog>();
+
+            var logKey = new LogKeyLogic().GetLogkey();
+            OperationType opType;
+            distRecord.LOG_SEQ = logKey;
+            distRecord.OPERATION_TYPE = opType.carOutWhse; ;//车辆出库
+            I_DIST_RECORD_LOG log = ConvertToLC.ConvertRecordLog(distRecord);
+
+            #region 写浪潮数据表【送货员操作日志】
+
+            //LangchaoLogic lcLogic = new LangchaoLogic();
+            //lcLogic.WriteDistRecordLog(log, out dohandle);
+
+            #endregion
+
+            #region 写本地服务器数据表【送货员操作日志】
+
+            //if (dohandle.IsSuccessful)
+            //{
+                DistRecordLogLogic logLogic = new DistRecordLogLogic();
+                distRecord.Id = Guid.NewGuid();
+                logLogic.Create(distRecord, out dohandle);
+            //}
+            #endregion
+
+            #region 写服务器日志
+
+            serverlogLogic.InsertLog("DeliveryConfirm", "CarOutWhse", jparam.ToString(), distRecord.USER_ID, dohandle.IsSuccessful);
+
+            #endregion
+
+            #region 微信通知
+            //if (dohandle.IsSuccessful)
+            //{
+            //    try
+            //    {
+            //        DistCustLogic distLogic = new DistCustLogic();
+            //        distLogic.SendWxMsgAfterOut(distRecord.REF_ID);
+            //    }
+            //    catch
+            //    {
+
+            //    }
+            //}
+            #endregion
+
+            var result = new APIResultDTO() { Code = (dohandle.IsSuccessful ? 0 : 901), Message = dohandle.OperateMsg };
+            return JObject.FromObject(result);
+
+        }
+
+        #endregion
+
+        #region 送货任务开始
+
+        /// <summary>
+        /// 送货任务开始
+        /// </summary>
+        public JObject PostMissionStart([FromBody]JObject jparam)
+        {
+            DoHandle dohandle;
+            var distRecord = jparam.ToObject<DistRecordLog>();
+
+            var logKey = new LogKeyLogic().GetLogkey();
+            OperationType opType;
+            distRecord.LOG_SEQ = logKey;
+            distRecord.OPERATION_TYPE = opType.startMission; ;//送货任务开始
+            I_DIST_RECORD_LOG log = ConvertToLC.ConvertRecordLog(distRecord);
+
+            #region 写浪潮数据表【送货员操作日志】
+
+            //LangchaoLogic lcLogic = new LangchaoLogic();
+            //lcLogic.WriteDistRecordLog(log, out dohandle);
+
+            #endregion
+
+            #region 写本地服务器数据表【送货员操作日志】
+
+            //if (dohandle.IsSuccessful)
+            //{
+                DistRecordLogLogic logLogic = new DistRecordLogLogic();
+                distRecord.Id = Guid.NewGuid();
+                logLogic.Create(distRecord, out dohandle);
+            //}
+            #endregion
+
+            #region 写服务器日志
+
+            serverlogLogic.InsertLog("DeliveryConfirm", "MissionStart", jparam.ToString(), distRecord.USER_ID, dohandle.IsSuccessful);
+
+            #endregion
+
+
+            var result = new APIResultDTO() { Code = (dohandle.IsSuccessful ? 0 : 901), Message = dohandle.OperateMsg };
+            return JObject.FromObject(result);
+
+        }
+
+        #endregion
     }
 }
