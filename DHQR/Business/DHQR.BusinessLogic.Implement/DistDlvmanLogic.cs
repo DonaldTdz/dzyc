@@ -39,7 +39,21 @@ namespace DHQR.BusinessLogic.Implement
             repository.SynDlvmans(dlvmans, out dohandle);
         }
 
-         /// <summary>
+        /// <summary>
+        /// 添加时间：2018-2-6
+        /// 作者：Donald
+        /// 说明：同步达州配送员基础信息
+        /// </summary>
+        /// <param name="dlvmans"></param>
+        /// <param name="dohandle"></param>
+        public void SynDZDlvmans(string userId, out DoHandle dohandle)
+        {
+            DZLangchaoLogic lcLogic = new DZLangchaoLogic();
+            List<DistDlvman> dlvmans = lcLogic.GetDistDlvmans(userId).ToList();
+            repository.SynDlvmans(dlvmans, out dohandle);
+        }
+
+        /// <summary>
         /// 登录终端
         /// </summary>
         /// <param name="userName">用户名</param>

@@ -27,6 +27,64 @@ namespace DHQR.BusinessLogic.Implement
 
         #endregion
 
+        #region 同步配送员信息
+
+        /// <summary>
+        /// 同步车辆信息
+        /// </summary>
+        /// <param name="dohanle"></param>
+        public IList<DistDlvman> GetDistDlvmans(string userId)
+        {
+            var mans = repository.GetDistDlvmans(userId);
+            var datas = mans.Select(f => ConvertFromLC.ConvertDistDlvman(f)).ToList();
+            return datas;
+        }
+
+        #endregion
+
+        #region 同步线路信息
+
+        /// <summary>
+        /// 同步线路信息
+        /// </summary>
+        /// <param name="COM_ID">公司ID</param>
+        /// <returns></returns>
+        public List<DistRut> GetRutList()
+        {
+            var ruts = repository.GetRutList("");
+            var datas = ruts.Select(f => ConvertFromLC.ConvertDistRut(f)).ToList();
+            return datas;
+        }
+
+        #endregion
+
+        #region 同步车辆信息
+
+        /// <summary>
+        /// 同步车辆信息
+        /// </summary>
+        /// <param name="dohanle"></param>
+        //public void SysDistCars(out DoHandle dohandle)
+        //{
+        //    var cars = repository.GetDistCar("300000001");
+        //    var datas = cars.Select(f => ConvertFromLC.ConvertCar(f)).ToList();
+        //    LdmDistCarRep.InsertCar(datas, out dohandle);
+        //}
+
+
+        /// <summary>
+        /// 获取车辆列表
+        /// </summary>
+        /// <returns></returns>
+        public List<LdmDistCar> GetCarList()
+        {
+            var cars = repository.GetDistCar("300000001");
+            var datas = cars.Select(f => ConvertFromLC.ConvertCar(f)).ToList();
+            return datas;
+        }
+
+        #endregion
+
         #region 下载配送单
 
         /// <summary>

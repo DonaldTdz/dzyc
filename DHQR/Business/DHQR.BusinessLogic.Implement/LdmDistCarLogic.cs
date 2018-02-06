@@ -89,6 +89,18 @@ namespace DHQR.BusinessLogic.Implement
             LdmDistCarRep.SynLdmCars(cars, out dohandle);
 
         }
+        /// <summary>
+        /// 同步达州车辆信息
+        /// </summary>
+        /// <param name="cars"></param>
+        /// <param name="dohandle"></param>
+        public void SynDZLdmCars(out DoHandle dohandle)
+        {
+            DZLangchaoLogic lcLogic = new DZLangchaoLogic();
+            var cars = lcLogic.GetCarList();
+            LdmDistCarRep.SynLdmCars(cars, out dohandle);
+
+        }
         #endregion
 
     }

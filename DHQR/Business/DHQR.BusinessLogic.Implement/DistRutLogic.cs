@@ -38,6 +38,19 @@ namespace DHQR.BusinessLogic.Implement
             var ruts = lcLogic.GetRutList();
             repository.SynDistRuts(ruts, out dohandle);
         }
+        /// <summary>
+        /// 日期：2018-2-6
+        /// 作者：Donald
+        /// 说明：同步达州线路信息
+        /// </summary>
+        /// <param name="dlvmans"></param>
+        /// <param name="dohandle"></param>
+        public void SynDZDistRuts(out DoHandle dohandle)
+        {
+            DZLangchaoLogic lcLogic = new DZLangchaoLogic();
+            var ruts = lcLogic.GetRutList();
+            repository.SynDistRuts(ruts, out dohandle);
+        }
 
     }
 }

@@ -20,6 +20,81 @@ namespace DHQR.DataAccess.Langchao
 
         #endregion
 
+        #region 同步零售户
+
+        /// <summary>
+        /// 获取零售户信息
+        /// </summary>
+        /// <param name="COM_ID">公司ID</param>
+        /// <returns></returns>
+        public List<DZ_I_CUST> GetCustomer(string COM_ID)
+        {
+            IDictionary<string, string> dic = new Dictionary<string, string>();
+            dic.Add("COM_ID", COM_ID);
+            //dic.Add("STATUS", "01");
+            //dic.Add("STATUS", "02");
+            var result = new DB2Helper<DZ_I_CUST>().QueryData(dic);
+            return result;
+        }
+
+
+        #endregion
+
+        #region 同步配送员信息
+
+        /// <summary>
+        /// 同步配送员信息
+        /// </summary>
+        /// <param name="USER_ID">送货员账号ID</param>
+        /// <returns></returns>
+        public List<DZ_I_DIST_DLVMAN> GetDistDlvmans(string USER_ID)
+        {
+            //IDictionary<string, string> dic = new Dictionary<string, string>();
+            //dic.Add("COM_ID", COM_ID);
+            //dic.Add("USER_ID", USER_ID);
+            var result = new DB2Helper<DZ_I_DIST_DLVMAN>().GetAll();
+            return result;
+
+        }
+
+        #endregion
+
+        #region 同步线路信息
+
+        /// <summary>
+        /// 同步线路信息
+        /// </summary>
+        /// <param name="COM_ID">公司ID</param>
+        /// <returns></returns>
+        public List<DZ_I_DIST_RUT> GetRutList(string COM_ID)
+        {
+            //IDictionary<string, string> dic = new Dictionary<string, string>();
+            //dic.Add("COM_ID", COM_ID);
+            var result = new DB2Helper<DZ_I_DIST_RUT>().GetAll();
+            return result;
+
+        }
+
+        #endregion
+
+        #region 同步车辆和配送员信息
+
+        /// <summary>
+        /// 获取所有配送车辆
+        /// </summary>
+        /// <param name="COM_ID">公司ID</param>
+        /// <returns></returns>
+        public List<DZ_I_DIST_CAR> GetDistCar(string COM_ID)
+        {
+            //IDictionary<string, string> dic = new Dictionary<string, string>();
+            //dic.Add("COM_ID", COM_ID);
+            var result = new DB2Helper<DZ_I_DIST_CAR>().GetAll();
+            return result;
+
+        }
+
+        #endregion
+
         #region 下载配送单
 
         /// <summary>
