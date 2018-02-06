@@ -58,7 +58,7 @@ namespace DHQR.UI.Controllers.API
         /// <summary>
         /// 下载配送单
         /// </summary>
-        public JsonResult PostDownloadDist([FromBody]JObject jparam)
+        public JObject PostDownloadDist([FromBody]JObject jparam)
         {
             var param = jparam.ToObject<DownloadDistParam>();
             DoHandle dohandle;
@@ -107,7 +107,7 @@ namespace DHQR.UI.Controllers.API
                 result.Message = dohandle.OperateMsg;
                 result.Code = 901;
             }
-            return new JsonResult() { Data = result };
+            return JObject.FromObject(result);
         }
 
         #endregion
@@ -120,13 +120,13 @@ namespace DHQR.UI.Controllers.API
         /// </summary>
         /// <param name="data"></param>
         /// <returns></returns>
-        public JsonResult PostDownDistFinish([FromBody]JObject jparam)
+        public JObject PostDownDistFinish([FromBody]JObject jparam)
         {
             DoHandle dohandle;
             var param = jparam.ToObject<DownDistFinish>();
             if (param.DistNums == null)
             {
-                return new JsonResult() { Data = new APIResultDTO() { Code = 701, Message = "传入参数错误！" } };
+                return JObject.FromObject(new APIResultDTO() { Code = 701, Message = "传入参数错误！" });
             }
 
             #region 浪潮数据库回写日志
@@ -183,7 +183,7 @@ namespace DHQR.UI.Controllers.API
 
 
             var result = new APIResultDTO() { Code = (dohandle.IsSuccessful? 0 : 901), Message = dohandle.OperateMsg };
-            return new JsonResult() { Data = result };
+            return JObject.FromObject(result);
 
         }
 
