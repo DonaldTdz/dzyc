@@ -20,8 +20,6 @@ x86/
 bld/
 [Bb]in/
 [Oo]bj/
-[Ll]og/
-!DHQR/Common/DHQR.Log/
 
 # Visual Studio 2015 cache/options directory
 .vs/
@@ -62,7 +60,7 @@ artifacts/
 *.tlh
 *.tmp
 *.tmp_proj
-*.log
+# *.log
 *.vspscc
 *.vssscc
 .builds
