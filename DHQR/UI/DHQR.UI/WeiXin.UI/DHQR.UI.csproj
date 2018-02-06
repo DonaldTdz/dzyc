@@ -94,23 +94,16 @@
     <Reference Include="ICSharpCode.SharpZipLib">
       <HintPath>..\..\..\packages\NPOI.2.1.3.1\lib\net40\ICSharpCode.SharpZipLib.dll</HintPath>
     </Reference>
+    <Reference Include="Ionic.Zip, Version=1.9.1.5, Culture=neutral, PublicKeyToken=edbe51ad942a3f5c, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\NPOI.1.2.4\lib\net40\Ionic.Zip.dll</HintPath>
+    </Reference>
     <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\libs\log4net.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="NPOI, Version=1.2.4.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\packages\NPOI.2.1.3.1\lib\net40\NPOI.dll</HintPath>
-    </Reference>
-    <Reference Include="NPOI.OOXML">
-      <HintPath>..\..\..\packages\NPOI.2.1.3.1\lib\net40\NPOI.OOXML.dll</HintPath>
-    </Reference>
-    <Reference Include="NPOI.OpenXml4Net">
-      <HintPath>..\..\..\packages\NPOI.2.1.3.1\lib\net40\NPOI.OpenXml4Net.dll</HintPath>
-    </Reference>
-    <Reference Include="NPOI.OpenXmlFormats">
-      <HintPath>..\..\..\packages\NPOI.2.1.3.1\lib\net40\NPOI.OpenXmlFormats.dll</HintPath>
+      <HintPath>..\..\..\packages\NPOI.1.2.4\lib\net40\NPOI.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -193,6 +186,7 @@
     <Compile Include="Common\WechatJsonHelper.cs" />
     <Compile Include="Controllers\API\BaseServiceController.cs" />
     <Compile Include="Controllers\API\DeliveryServiceController.cs" />
+    <Compile Include="Controllers\API\Dto\APIResultDTO.cs" />
     <Compile Include="Controllers\AppVersionController.cs" />
     <Compile Include="Controllers\Base\NoticeController.cs" />
     <Compile Include="Controllers\Base\AccountController.cs" />
@@ -339,6 +333,10 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Content Include="App_Readme\NPOI\Ionic_Utils_Zip_license.txt" />
+    <Content Include="App_Readme\NPOI\License.txt" />
+    <Content Include="App_Readme\NPOI\Read Me.txt" />
+    <Content Include="App_Readme\NPOI\Release Notes.txt" />
     <Content Include="Content\Box\Content.css" />
     <Content Include="Content\Box\images\DialogBox-close1.gif" />
     <Content Include="Content\Box\images\DialogBox-close2.gif" />

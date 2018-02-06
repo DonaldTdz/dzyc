@@ -10,7 +10,6 @@ using System.Text;
 using System.Web;
 using NPOI.HPSF;
 using NPOI.HSSF.UserModel;
-using NPOI.SS.Formula.Functions;
 using NPOI.SS.UserModel;
 using NPOI.SS.Util;
 
@@ -91,7 +90,7 @@ namespace DHQR.UI.Common
                         headerRow.CreateCell(0).SetCellValue(strHeaderText);
 
                         ICellStyle headStyle = workbook.CreateCellStyle();
-                        headStyle.Alignment = HorizontalAlignment.Center;
+                        headStyle.Alignment = HorizontalAlignment.CENTER;
                         IFont font = workbook.CreateFont();
                         font.FontHeightInPoints = 20;
                         font.Boldweight = 700;
@@ -104,7 +103,7 @@ namespace DHQR.UI.Common
                     {
                         IRow headerRow = sheet.CreateRow(1);
                         ICellStyle headStyle = workbook.CreateCellStyle();
-                        headStyle.Alignment = HorizontalAlignment.Center;
+                        headStyle.Alignment = HorizontalAlignment.CENTER;
                         IFont font = workbook.CreateFont();
                         font.FontHeightInPoints = 10;
                         font.Boldweight = 700;
@@ -127,8 +126,8 @@ namespace DHQR.UI.Common
                 foreach (DataColumn column in dtSource.Columns)
                 {
                     ICell newCell = dataRow.CreateCell(column.Ordinal);
-                    newCell.CellStyle.Alignment = HorizontalAlignment.Center;
-                    newCell.CellStyle.VerticalAlignment = VerticalAlignment.Center;
+                    newCell.CellStyle.Alignment = HorizontalAlignment.CENTER;
+                    newCell.CellStyle.VerticalAlignment = VerticalAlignment.CENTER;
                     string drValue = row[column].ToString();
 
                     switch (column.DataType.ToString())
@@ -328,10 +327,12 @@ namespace DHQR.UI.Common
                     for (int i = 0; i < row.LastCellNum; i++)
                     {
                         ICell cell = row.GetCell(i);
-                        if (cell.CellType == CellType.Numeric)
+                        if (cell.CellType == CellType.NUMERIC)
                         {
                             //NPOI中数字和日期都是NUMERIC类型的，这里对其进行判断是否是日期类型
-                            if (HSSFDateUtil.IsCellDateFormatted(cell)) //日期类型
+                            
+                            //if (HSSFDateUtil.IsCellDateFormatted(cell)) //日期类型
+                            if(DateUtil.IsCellDateFormatted(cell))
                             {
                                 dataRow[i] = cell.DateCellValue;
                             }
@@ -340,7 +341,7 @@ namespace DHQR.UI.Common
                                 dataRow[i] = cell.NumericCellValue;
                             }
                         }
-                        else if (cell.CellType == CellType.Blank) //空数据类型
+                        else if (cell.CellType == CellType.BLANK) //空数据类型
                         {
                             dataRow[i] = "";
                         }
