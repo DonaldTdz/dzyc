@@ -8,6 +8,7 @@ namespace DHQR.DataAccess.Langchao
 {
     public class DZLangchaoDB2Repository
     {
+
         #region 访问达州数据库测试
 
         public List<DZ_I_DIST> GetDists(DownloadDistParam param)
@@ -136,6 +137,75 @@ namespace DHQR.DataAccess.Langchao
                 ldmDistLines = new List<DZ_I_DIST_LINE>();
                 ldmDisItems = new List<DZ_I_DIST_ITME>();
             }
+        }
+
+        #endregion
+
+        #region 下载配送单 按日期
+
+        /// <summary>
+        /// 从浪潮下载配送单信息
+        /// </summary>
+        /// <param name="param"></param>
+        /// <param name="ldmDists"></param>
+        /// <param name="ldmDistLines"></param>
+        /// <param name="ldmDisItems"></param>
+        public void DownloadDistByDate(DownloadDistByDateParam param, out List<DZ_I_DIST> ldmDists, out List<DZ_I_DIST_LINE> ldmDistLines, out List<DZ_I_DIST_ITME> ldmDisItems, out List<I_CO_TEMP_RETURN> coTempReturns)
+        {
+            //取日期字符串集合
+            IList<DateTime> realDateTime = param.DistDate.Select(f => DateTime.Parse(f)).ToList();
+            IList<string> realDateStr = new List<string>();
+            foreach (var item in realDateTime)
+            {
+                var rs = item.AddDays(-1).ToString("yyyyMMdd");
+                realDateStr.Add(rs);
+            }
+
+            ldmDists = new List<DZ_I_DIST>();
+            ldmDistLines = new List<DZ_I_DIST_LINE>();
+            ldmDisItems = new List<DZ_I_DIST_ITME>();
+            coTempReturns = new List<I_CO_TEMP_RETURN>();
+            foreach (var item in realDateStr)
+            {
+                IDictionary<string, string> dic1 = new Dictionary<string, string>();
+                IDictionary<string, IList<string>> dic2 = new Dictionary<string, IList<string>>();
+                IDictionary<string, IList<string>> dic3 = new Dictionary<string, IList<string>>();
+
+                //查询暂存订单参数
+                IDictionary<string, IList<string>> dic4 = new Dictionary<string, IList<string>>();
+
+                dic1.Add("DLVMAN_ID", param.DLVMAN_ID);
+                dic1.Add("DIST_DATE", item);
+                var currentDist = new DB2Helper<DZ_I_DIST>().QueryData(dic1);
+                ldmDists.AddRange(currentDist);
+                if (currentDist.Count != 0)
+                {
+                    IList<string> distNums = currentDist.Select(f => f.DIST_NUM).Distinct().ToList();
+
+                    dic2.Add("DIST_NUM", distNums);
+
+                    //正常订单
+                    var currentDistLine = new DB2Helper<DZ_I_DIST_LINE>().QueryData(new Dictionary<string, string>(), dic2);
+                    ldmDistLines.AddRange(currentDistLine);
+
+
+                    dic4.Add("OUT_DIST_NUM", distNums);
+                    //暂存订单 达州暂时没有
+                    //var currentCoTempReturn = new DB2Helper<I_CO_TEMP_RETURN>().QueryData(new Dictionary<string, string>(), dic4);
+                    //coTempReturns.AddRange(currentCoTempReturn);
+                    //List<string> coTempReturnNums = coTempReturns.Select(f => f.CO_NUM).ToList();
+
+                    //List<string> coNums = currentDistLine.Select(f => f.CO_NUM).ToList();
+                    //coNums.AddRange(coTempReturnNums);
+
+                    //dic3.Add("CO_NUM", coNums);
+
+                    var currentDisItems = new DB2Helper<DZ_I_DIST_ITME>().QueryData(new Dictionary<string, string>(), dic3);
+                    ldmDisItems.AddRange(currentDisItems);
+                }
+            }
+
+
         }
 
         #endregion

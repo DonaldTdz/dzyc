@@ -43,7 +43,21 @@ namespace DHQR.BusinessLogic.Implement
             }
         }
 
-
+        /// <summary>
+        /// 达州送货员实时位置上传
+        /// </summary>
+        /// <param name="locRecord"></param>
+        /// <param name="dohandle"></param>
+        public void UploadLocationDZ(GisLastLocrecord locRecord, out DoHandle dohandle)
+        {
+            //达州先注释浪潮数据
+            //LangchaoLogic lcLogic = new LangchaoLogic();
+            //lcLogic.UploadLocation(locRecord, out dohandle);
+            //if (dohandle.IsSuccessful)
+            //{
+                GisLastLocrecordRep.UploadLocation(locRecord, out dohandle);
+            //}
+        }
         #endregion
 
 

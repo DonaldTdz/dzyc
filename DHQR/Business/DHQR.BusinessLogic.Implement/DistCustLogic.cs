@@ -105,6 +105,83 @@ namespace DHQR.BusinessLogic.Implement
             }
         }
 
+        /// <summary>
+        /// 达州到货确认
+        /// </summary>
+        /// <param name="data"></param>
+        /// <param name="dohandle"></param>
+        public void ConfirmDeliveryDZ(DistCust data, out DoHandle dohandle)
+        {
+
+            //浪潮写入数据 达州先注释 浪潮写入
+            //LangchaoLogic lcLogic = new LangchaoLogic();
+            //lcLogic.ConfirmDelivery(data, out dohandle);
+            dohandle = new DoHandle { IsSuccessful = true };
+            LdmDistLineRepository lineRep = new LdmDistLineRepository(_baseDataEntities);
+            if (dohandle.IsSuccessful)
+            {
+                //本地服务器写入数据
+                DistCustRep.ConfirmDelivery(data, out dohandle);
+                //达州先注释微信部分
+                /*
+                if (dohandle.IsSuccessful)
+                {
+                    try
+                    {
+                        
+                        WeiXinCommonApi wp = new WeiXinCommonApi();
+                        WeiXinUserRep wuerRep = new WeiXinUserRep(_baseDataEntities);
+                        WeiXinAppRep appRep = new WeiXinAppRep(_baseDataEntities);
+                        Guid appId = Guid.Parse("0CD98D1B-C476-4A02-B4B9-0F619FCCD36F");
+                        WeiXinApp weiXinApp = appRep.GetByKey(appId);
+                        */
+                        /*
+                        IList<WeiXinUser> weiXinUsers = lineRep.GetToSendUsers(data.DIST_NUM, data.CO_NUM);
+
+                        string msg = "";
+                        foreach (var item in weiXinUsers)
+                        {
+                            wp.SendOrderTmp(weiXinApp, item, item.CO_NUM, out msg);
+                        }
+                        
+                        var weiXinUser = lineRep.GetToSendUser(data.DIST_NUM, data.CO_NUM);
+                        if (weiXinUser != null)
+                        {
+                            string msg = "";
+                            wp.SendOrderTmp(weiXinApp, weiXinUser, weiXinUser.CO_NUM, out msg);
+                        }
+                         */
+                       /* var weiXinUsers = lineRep.GetNextToSendUsers(data.DIST_NUM, data.CO_NUM);
+                        if (weiXinUsers.Count > 0)
+                        {
+                            foreach (var wx in weiXinUsers)
+                            {
+                                string msg = "";
+                                wp.SendOrderTmp(weiXinApp, wx, wx.CO_NUM, out msg);
+                            }
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        DoHandle exDoHandle;
+                        ExceptionLogLogic lc = new ExceptionLogLogic();
+                        ExceptionLog log = new ExceptionLog
+                        {
+                            Id = Guid.NewGuid(),
+                            Message = ex.Message,
+                            InnerException = ex.InnerException == null ? " " : ex.InnerException.Message,
+                            Ip = data.DIST_NUM + "," + data.CO_NUM,
+                            CreateTime = DateTime.Now,
+                            UserName = "System"
+                        };
+                        lc.Create(log, out exDoHandle);
+                    }
+                }*/
+
+
+            }
+        }
+
 
 
         /// <summary>

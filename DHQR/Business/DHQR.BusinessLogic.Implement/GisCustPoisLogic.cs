@@ -52,6 +52,20 @@ namespace DHQR.BusinessLogic.Implement
             }
         }
 
+        /// <summary>
+        /// 达州零售户位置信息上传
+        /// </summary>
+        public void CollectRetailerXYDZ(GisCustPois poi, out DoHandle dohandle)
+        {
+            //达州先屏蔽浪潮数据
+            //LangchaoLogic lcLogic = new LangchaoLogic();
+            //lcLogic.CollectRetailerXY(poi, out dohandle);
+            //if (dohandle.IsSuccessful)
+            //{
+                GisCustPoisRep.CollectRetailerXY(poi, out dohandle);
+            //} 
+        }
+
         public void SynLatLng()
         {
             GisCustPoisRep.SynLatLng();
