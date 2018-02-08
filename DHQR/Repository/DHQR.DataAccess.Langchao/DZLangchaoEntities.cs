@@ -17,6 +17,7 @@ namespace DHQR.DataAccess.Langchao
     /// </summary>
     public class DZ_I_DIST_LINE : I_DIST_LINE
     {
+        public string LECENSE_CODE { get; set; }
     }
 
     /// <summary>
@@ -73,5 +74,22 @@ namespace DHQR.DataAccess.Langchao
     /// </summary>
     public class DZ_I_CUST : I_CUST
     {
+        public string LICENSE_COCE { get; set; }
     }
+
+    /// <summary>
+    /// 获取用户的经纬度
+    /// </summary>
+    public class DZ_CUST_INFO
+    {
+        public string LICENSE_COCE { get; set; }
+
+        public string CUST_ID { get; set; }
+
+        public string LONGITUDE { get; set; }
+
+        public string LATITUDE { get; set; }
+    }
+
+     
 }

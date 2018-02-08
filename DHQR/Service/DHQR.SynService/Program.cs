@@ -29,7 +29,8 @@ namespace DHQR.SynService
             //===============================未同步
             Console.WriteLine(string.Format("开始同步零售户数据！"));
             RetailerLogic retailerLogic = new RetailerLogic();
-            retailerLogic.SysCustomer("300000001", out dohandle);
+            //retailerLogic.SysCustomer("300000001", out dohandle);
+            retailerLogic.SysCustomerDZ("300000001", out dohandle);
             Console.WriteLine(string.Format("同步完成，处理结果：{0}！", dohandle.OperateMsg));
             Console.ReadLine();
 

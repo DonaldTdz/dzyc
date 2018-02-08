@@ -31,7 +31,7 @@ namespace DHQR.DataAccess.Langchao
         public List<DZ_I_CUST> GetCustomer(string COM_ID)
         {
             IDictionary<string, string> dic = new Dictionary<string, string>();
-            dic.Add("COM_ID", COM_ID);
+            //dic.Add("COM_ID", COM_ID);
             //dic.Add("STATUS", "01");
             //dic.Add("STATUS", "02");
             var result = new DB2Helper<DZ_I_CUST>().QueryData(dic);
@@ -195,10 +195,10 @@ namespace DHQR.DataAccess.Langchao
                     //coTempReturns.AddRange(currentCoTempReturn);
                     //List<string> coTempReturnNums = coTempReturns.Select(f => f.CO_NUM).ToList();
 
-                    //List<string> coNums = currentDistLine.Select(f => f.CO_NUM).ToList();
+                    List<string> coNums = currentDistLine.Select(f => f.CO_NUM).ToList();
                     //coNums.AddRange(coTempReturnNums);
 
-                    //dic3.Add("CO_NUM", coNums);
+                    dic3.Add("CO_NUM", coNums);
 
                     var currentDisItems = new DB2Helper<DZ_I_DIST_ITME>().QueryData(new Dictionary<string, string>(), dic3);
                     ldmDisItems.AddRange(currentDisItems);

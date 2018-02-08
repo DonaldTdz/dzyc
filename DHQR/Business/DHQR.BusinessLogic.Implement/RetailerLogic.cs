@@ -56,6 +56,18 @@ namespace DHQR.BusinessLogic.Implement
             RetailerRep.SysnRetailers(retailers, out dohandle);
         }
 
+        /// <summary>
+        /// 转换客户信息
+        /// </summary>
+        /// <param name="COM_ID"></param>
+        /// <param name="dohandle"></param>
+        public void SysCustomerDZ(string COM_ID, out DoHandle dohandle)
+        {
+            DZLangchaoLogic lcLogic = new DZLangchaoLogic();
+            var retailers = lcLogic.GetCustomer(COM_ID);
+            RetailerRep.SysnRetailers(retailers, out dohandle);
+        }
+
         #endregion
 
 

@@ -77,7 +77,7 @@ namespace DHQR.DataAccess.Implement
                     dohandle.IsSuccessful = true;
                     dohandle.OperateMsg = "下载到本地服务器成功!";
                 }
-                catch
+                catch(Exception ex)
                 {
                     dohandle.OperateMsg = "保存到本地服务器失败!";
                 }

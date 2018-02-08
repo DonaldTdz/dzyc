@@ -108,6 +108,42 @@ namespace DHQR.BusinessLogic.Implement
         }
 
         /// <summary>
+        /// 达州转换订单
+        /// </summary>
+        /// <param name="dist"></param>
+        /// <returns></returns>
+        public static LdmDistLine ConvertDistLine(DZ_I_DIST_LINE L)
+        {
+            LdmDistLine result = new LdmDistLine
+            {
+                Id = Guid.NewGuid(),
+                DIST_NUM = L.DIST_NUM,
+                CO_NUM = L.CO_NUM,
+                CUST_ID = L.CUST_ID,
+                CUST_CODE = L.CUST_CODE,
+                CUST_NAME = L.CUST_NAME,
+                MANAGER = L.MANAGER,
+                ADDR = L.ADDR,
+                TEL = L.TEL,
+                QTY_BAR = L.QTY_BAR,
+                AMT_AR = L.AMT_AR,
+                AMT_OR = L.AMT_OR.HasValue ? L.AMT_OR.Value : 0,
+                PMT_STATUS = L.PMT_STATUS,
+                TYPE = L.TYPE,
+                SEQ = L.SEQ,
+                //LICENSE_CODE = L.LICENSE_CODE,
+                LICENSE_CODE = L.LECENSE_CODE,
+                PAY_TYPE = L.PAY_TYPE,
+                LONGITUDE = L.LONGITUDE,
+                LATITUDE = L.LATITUDE,
+                CUST_CARD_ID = L.CUST_CARD_ID,
+                CUST_CARD_CODE = L.CUST_CARD_CODE
+
+            };
+            return result;
+        }
+
+        /// <summary>
         /// 转换订单明细
         /// </summary>
         /// <param name="L"></param>
@@ -171,6 +207,30 @@ namespace DHQR.BusinessLogic.Implement
                 ORDER_TEL=cust.ORDER_TEL,
                 BUSI_ADDR=cust.BUSI_ADDR,
                 RUT_ID=cust.RUT_ID
+            };
+            return result;
+        }
+        /// <summary>
+        /// 转换客户信息
+        /// </summary>
+        /// <param name="cust"></param>
+        /// <returns></returns>
+        public static Retailer ConvertRetailer(DZ_I_CUST cust)
+        {
+            Retailer result = new Retailer
+            {
+                Id = Guid.NewGuid(),
+                CUST_ID = cust.CUST_ID,
+                CUST_NAME = cust.CUST_NAME,
+                LICENSE_CODE = cust.LICENSE_COCE,
+                STATUS = cust.STATUS,
+                COM_ID = cust.COM_ID,
+                PSW = string.Format("c33367701511b4f6020ec61ded352059"),
+                CARD_ID = cust.CARD_ID,
+                CARD_CODE = cust.CARD_CODE,
+                ORDER_TEL = cust.ORDER_TEL,
+                BUSI_ADDR = cust.BUSI_ADDR,
+                RUT_ID = cust.RUT_ID
             };
             return result;
         }

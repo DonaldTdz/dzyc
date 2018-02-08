@@ -82,6 +82,7 @@ namespace DHQR.UI.Controllers.API
                 result.Message = dohandle.OperateMsg;
                 result.Code = 901;
             }
+            //var j1 = Newtonsoft.Json.JsonConvert.SerializeObject(result);
             return JObject.FromObject(result);
         }
 

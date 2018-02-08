@@ -89,6 +89,21 @@ namespace DHQR.BusinessLogic.Implement
 
         #endregion
 
+        #region 获取零售户信息
+
+        /// <summary>
+        /// 获取零售户信息
+        /// </summary>
+        /// <param name="COM_ID">公司ID</param>
+        /// <returns></returns>
+        public List<Retailer> GetCustomer(string COM_ID)
+        {
+            var result = repository.GetCustomer(COM_ID).Select(f => ConvertFromLC.ConvertRetailer(f)).ToList();
+            return result;
+        }
+
+        #endregion
+
         #region 下载配送单
 
         /// <summary>
