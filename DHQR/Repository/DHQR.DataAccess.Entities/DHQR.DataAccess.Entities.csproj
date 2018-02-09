@@ -132,6 +132,7 @@
     <Compile Include="DistRut.cs">
       <DependentUpon>BaseDataEntity.tt</DependentUpon>
     </Compile>
+    <Compile Include="DZEntities\LdmDisItem.cs" />
     <Compile Include="EntranceCard.cs">
       <DependentUpon>BaseDataEntity.tt</DependentUpon>
     </Compile>

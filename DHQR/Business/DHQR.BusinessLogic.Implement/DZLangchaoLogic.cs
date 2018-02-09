@@ -99,12 +99,37 @@ namespace DHQR.BusinessLogic.Implement
         public List<Retailer> GetCustomer(string COM_ID)
         {
             var result = repository.GetCustomer(COM_ID).Select(f => ConvertFromLC.ConvertRetailer(f)).ToList();
+            var jwList = repository.GetCustomerJW();
+            foreach (var item in result)
+            {
+                var jw = jwList.Where(j => j.CUST_ID == item.CUST_ID).FirstOrDefault();
+                if (jw != null)
+                {
+                    item.LONGITUDE = decimal.Parse(jw.LONGITUDE);
+                    item.LATITUDE = decimal.Parse(jw.LATITUDE);
+                }
+            }
             return result;
         }
 
         #endregion
 
         #region 下载配送单
+
+        private void SetQRCode(List<LdmDistLine> ldmDistLines, List<LdmDisItem> ldmDisItems)
+        {
+            var orders = ldmDistLines.Select(l => l.CO_NUM).ToList();
+            var qrlist = repository.GetQRCodes(orders);
+            foreach (var item in qrlist)
+            {
+                var llist = ldmDisItems.Where(l => l.CO_NUM == item.ORDER_CODE.ToString() && l.ITEM_ID == item.BRAND_ID.ToString()).ToList();
+
+                foreach (var litem in llist)
+                {
+                    litem.QR_CODE = item.QR_CODE_FIXED.ToString();
+                }
+            }
+        }
 
         /// <summary>
         /// 下载配送单
@@ -125,7 +150,8 @@ namespace DHQR.BusinessLogic.Implement
             ldmDists = idists.Select(f => ConvertFromLC.ConvertDist(f)).ToList();
             ldmDistLines = idistLine.Select(f => ConvertFromLC.ConvertDistLine(f)).ToList();
             ldmDisItems = idistItem.Select(f => ConvertFromLC.ConvertDistItem(f)).ToList();
-
+            //设置二维码信息
+            SetQRCode(ldmDistLines, ldmDisItems);
 
             RetailerLogic retailerLogic = new RetailerLogic();
             var custIds = ldmDistLines.Select(f => f.CUST_ID).ToList();
@@ -172,10 +198,11 @@ namespace DHQR.BusinessLogic.Implement
 
             var tmpReturnLines = lineRep.ConvertTempToLine(icoTempReturns);
             ldmDists = idists.Select(f => ConvertFromLC.ConvertDist(f)).ToList();
-            ldmDistLines = idistLine.Select(f => ConvertFromLC.ConvertDistLine(f)).ToList();
+            ldmDistLines = idistLine.Select(f => ConvertFromLC.ConvertDistLine(f)).Take(1).ToList();
             ldmDisItems = idistItem.Select(f => ConvertFromLC.ConvertDistItem(f)).ToList();
             ldmDistLines.AddRange(tmpReturnLines);
-
+            //设置二维码信息
+            SetQRCode(ldmDistLines, ldmDisItems);
 
             RetailerLogic retailerLogic = new RetailerLogic();
             var custIds = ldmDistLines.Select(f => f.CUST_ID).ToList();

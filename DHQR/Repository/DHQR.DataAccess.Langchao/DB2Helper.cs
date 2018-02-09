@@ -58,12 +58,36 @@ namespace DHQR.DataAccess.Langchao
             return result;
         }
 
-       /// <summary>
+        /// <summary>
+        /// 根据条件查询 并传入新的链接字符串
+        /// </summary>
+        /// <param name="queryParam"></param>
+        /// <returns></returns>
+        public List<TEntity> QueryData(IDictionary<string, string> queryParam, string connstr)
+        {
+            var tableName = typeof(TEntity).Name;
+            string sql = string.Format("select * from {0}", tableName);
+            if (queryParam.Count != 0)
+            {
+                sql = sql + " where";
+                foreach (var q in queryParam)
+                {
+                    sql = sql + " " + q.Key + "='" + q.Value + "' and";
+                }
+                sql = sql.Remove(sql.Length - 3, 3);
+            }
+            CommonDB2 db2Rep = new CommonDB2(connstr);
+            var dt = db2Rep.ExeForDtl(sql);
+            var result = ConvertHelper<TEntity>.ConvertToList(dt);
+            return result;
+        }
+
+        /// <summary>
         /// 根据条件查询
-       /// </summary>
-       /// <param name="queryParam"></param>
-       /// <param name="containParam"></param>
-       /// <returns></returns>
+        /// </summary>
+        /// <param name="queryParam"></param>
+        /// <param name="containParam"></param>
+        /// <returns></returns>
         public List<TEntity> QueryData(IDictionary<string, string> queryParam,IDictionary<string,IList<string>> containParam)
         {
             var tableName = typeof(TEntity).Name;
@@ -94,6 +118,48 @@ namespace DHQR.DataAccess.Langchao
                 sql = sql + ")";
             }
             CommonDB2 db2Rep = new CommonDB2();
+            var dt = db2Rep.ExeForDtl(sql);
+            db2Rep.Close();
+            var result = ConvertHelper<TEntity>.ConvertToList(dt);
+            return result;
+        }
+
+        /// <summary>
+        /// 根据条件查询
+        /// </summary>
+        /// <param name="queryParam"></param>
+        /// <param name="containParam"></param>
+        /// <returns></returns>
+        public List<TEntity> QueryData(IDictionary<string, string> queryParam, IDictionary<string, IList<string>> containParam, string connStr)
+        {
+            var tableName = typeof(TEntity).Name;
+            string sql = string.Format("select * from {0}", tableName);
+            if (queryParam.Count != 0)
+            {
+                sql = sql + " where";
+                foreach (var q in queryParam)
+                {
+                    sql = sql + " " + q.Key + "='" + q.Value + "' and";
+                }
+            }
+            if (containParam.Count != 0)
+            {
+                if (queryParam.Count == 0)
+                {
+                    sql = sql + " where ";
+                }
+                foreach (var c in containParam)
+                {
+                    sql = sql + " " + c.Key + " in ('";
+                    foreach (var t in c.Value)
+                    {
+                        sql = sql + t + "','";
+                    }
+                }
+                sql = sql.Remove(sql.Length - 2, 2);
+                sql = sql + ")";
+            }
+            CommonDB2 db2Rep = new CommonDB2(connStr);
             var dt = db2Rep.ExeForDtl(sql);
             db2Rep.Close();
             var result = ConvertHelper<TEntity>.ConvertToList(dt);

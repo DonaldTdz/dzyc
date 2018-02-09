@@ -26,8 +26,6 @@ namespace DHQR.DataAccess.Langchao
         /// <summary>
         /// 获取零售户信息
         /// </summary>
-        /// <param name="COM_ID">公司ID</param>
-        /// <returns></returns>
         public List<DZ_I_CUST> GetCustomer(string COM_ID)
         {
             IDictionary<string, string> dic = new Dictionary<string, string>();
@@ -38,6 +36,18 @@ namespace DHQR.DataAccess.Langchao
             return result;
         }
 
+        /// <summary>
+        /// 获取零售户经纬度
+        /// </summary>
+        public List<DZ_CUST_INFO> GetCustomerJW()
+        {
+            IDictionary<string, string> dic = new Dictionary<string, string>();
+            //dic.Add("COM_ID", COM_ID);
+            //dic.Add("STATUS", "01");
+            //dic.Add("STATUS", "02");
+            var result = new DB2Helper<DZ_CUST_INFO>().QueryData(dic, CommonDataConfig.ConnectionJWStr);
+            return result;
+        }
 
         #endregion
 
@@ -206,6 +216,33 @@ namespace DHQR.DataAccess.Langchao
             }
 
 
+        }
+
+        #endregion
+
+        #region 根据订单获取二维码
+
+        /// <summary>
+        /// 获取零售户信息
+        /// </summary>
+        public List<CODE_RELATION_CHECK_RESULT_VIEW> GetQRCodes(string ORDER_CODE)
+        {
+            IDictionary<string, string> dic = new Dictionary<string, string>();
+            dic.Add("ORDER_CODE", ORDER_CODE);
+            var result = new DB2Helper<CODE_RELATION_CHECK_RESULT_VIEW>().QueryData(dic, CommonDataConfig.ConnectionQRCodeStr);
+            return result;
+        }
+
+        /// <summary>
+        /// 获取零售户信息
+        /// </summary>
+        public List<CODE_RELATION_CHECK_RESULT_VIEW> GetQRCodes(List<string> orderCodes)
+        {
+            IDictionary<string, string> dic = new Dictionary<string, string>();
+            IDictionary<string, IList<string>> dic2 = new Dictionary<string, IList<string>>();
+            dic2.Add("ORDER_CODE", orderCodes);
+            var result = new DB2Helper<CODE_RELATION_CHECK_RESULT_VIEW>().QueryData(dic, dic2, CommonDataConfig.ConnectionQRCodeStr);
+            return result;
         }
 
         #endregion

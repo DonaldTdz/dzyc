@@ -91,5 +91,16 @@ namespace DHQR.DataAccess.Langchao
         public string LATITUDE { get; set; }
     }
 
-     
+    public class CODE_RELATION_CHECK_RESULT_VIEW
+    {
+        //public Int64 ID { get; set; }
+
+        public object ORDER_CODE { get; set; }
+
+        public object BRAND_ID { get; set; }
+
+        public object QR_CODE_FIXED { get; set; }
+    }
+
+
 }
