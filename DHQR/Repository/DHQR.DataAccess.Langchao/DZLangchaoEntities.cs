@@ -95,11 +95,11 @@ namespace DHQR.DataAccess.Langchao
     {
         //public Int64 ID { get; set; }
 
-        public object ORDER_CODE { get; set; }
+        public string ORDER_CODE { get; set; }
 
-        public object BRAND_ID { get; set; }
+        public string BRAND_ID { get; set; }
 
-        public object QR_CODE_FIXED { get; set; }
+        public string QR_CODE_FIXED { get; set; }
     }
 
 

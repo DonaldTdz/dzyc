@@ -122,11 +122,11 @@ namespace DHQR.BusinessLogic.Implement
             var qrlist = repository.GetQRCodes(orders);
             foreach (var item in qrlist)
             {
-                var llist = ldmDisItems.Where(l => l.CO_NUM == item.ORDER_CODE.ToString() && l.ITEM_ID == item.BRAND_ID.ToString()).ToList();
+                var llist = ldmDisItems.Where(l => l.CO_NUM == item.ORDER_CODE && l.ITEM_ID == item.BRAND_ID).ToList();
 
                 foreach (var litem in llist)
                 {
-                    litem.QR_CODE = item.QR_CODE_FIXED.ToString();
+                    litem.QR_CODE = item.QR_CODE_FIXED;
                 }
             }
         }
@@ -151,7 +151,7 @@ namespace DHQR.BusinessLogic.Implement
             ldmDistLines = idistLine.Select(f => ConvertFromLC.ConvertDistLine(f)).ToList();
             ldmDisItems = idistItem.Select(f => ConvertFromLC.ConvertDistItem(f)).ToList();
             //设置二维码信息
-            SetQRCode(ldmDistLines, ldmDisItems);
+            //SetQRCode(ldmDistLines, ldmDisItems);
 
             RetailerLogic retailerLogic = new RetailerLogic();
             var custIds = ldmDistLines.Select(f => f.CUST_ID).ToList();
@@ -198,11 +198,12 @@ namespace DHQR.BusinessLogic.Implement
 
             var tmpReturnLines = lineRep.ConvertTempToLine(icoTempReturns);
             ldmDists = idists.Select(f => ConvertFromLC.ConvertDist(f)).ToList();
-            ldmDistLines = idistLine.Select(f => ConvertFromLC.ConvertDistLine(f)).Take(1).ToList();
+            //ldmDistLines = idistLine.Select(f => ConvertFromLC.ConvertDistLine(f)).Take(1).ToList();
+            ldmDistLines = idistLine.Select(f => ConvertFromLC.ConvertDistLine(f)).ToList();
             ldmDisItems = idistItem.Select(f => ConvertFromLC.ConvertDistItem(f)).ToList();
             ldmDistLines.AddRange(tmpReturnLines);
             //设置二维码信息
-            SetQRCode(ldmDistLines, ldmDisItems);
+            //SetQRCode(ldmDistLines, ldmDisItems);
 
             RetailerLogic retailerLogic = new RetailerLogic();
             var custIds = ldmDistLines.Select(f => f.CUST_ID).ToList();
@@ -249,6 +250,14 @@ namespace DHQR.BusinessLogic.Implement
 
         #endregion
 
+        #region 扫描二维码
+
+        public string GetOrderCodeByQRCode(string qrcode)
+        {
+            return repository.GetOrderCodeByQRCode(qrcode);
+        }
+
+        #endregion
 
     }
 }

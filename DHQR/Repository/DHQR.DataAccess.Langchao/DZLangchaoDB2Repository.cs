@@ -241,8 +241,20 @@ namespace DHQR.DataAccess.Langchao
             IDictionary<string, string> dic = new Dictionary<string, string>();
             IDictionary<string, IList<string>> dic2 = new Dictionary<string, IList<string>>();
             dic2.Add("ORDER_CODE", orderCodes);
-            var result = new DB2Helper<CODE_RELATION_CHECK_RESULT_VIEW>().QueryData(dic, dic2, CommonDataConfig.ConnectionQRCodeStr);
+            var result = new DB2Helper<CODE_RELATION_CHECK_RESULT_VIEW>().QueryDataByOle(dic, dic2, CommonDataConfig.ConnectionQRCodeStr);
             return result;
+        }
+
+        public string GetOrderCodeByQRCode(string qrcode)
+        {
+            IDictionary<string, string> dic = new Dictionary<string, string>();
+            dic.Add("QR_CODE_FIXED", qrcode);
+            var result = new DB2Helper<CODE_RELATION_CHECK_RESULT_VIEW>().QueryDataByOle(dic, CommonDataConfig.ConnectionQRCodeStr).FirstOrDefault();
+            if (result != null)
+            {
+                return result.ORDER_CODE;
+            }
+            return string.Empty;
         }
 
         #endregion

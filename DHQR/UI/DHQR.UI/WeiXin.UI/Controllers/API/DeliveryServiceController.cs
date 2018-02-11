@@ -873,5 +873,99 @@ namespace DHQR.UI.Controllers.API
 
 
         #endregion
+
+        #region 通过扫描二维码返回订单编号
+
+        /// <summary>
+        /// 下载配送单
+        /// </summary>
+        public JObject PostOrderCodeByQRCode(string qrcode)
+        {
+            try
+            {
+                DZLangchaoLogic lcLogic = new DZLangchaoLogic();
+                var orderCode = lcLogic.GetOrderCodeByQRCode(qrcode);
+                APIResultDTO result = new APIResultDTO();
+                if (string.IsNullOrEmpty(orderCode))
+                {
+                    result.Code = 701;
+                    result.Message = "没有查到订单数据";
+                }
+                else
+                {
+                    result.Code = 0;
+                    result.Message = "验证成功";
+                }
+                result.Data = orderCode;
+                return JObject.FromObject(result);
+            }
+            catch (Exception ex)
+            {
+                //写异常日志
+                ExceptionLog exLog = new ExceptionLog
+                {
+                    Id = Guid.NewGuid(),
+                    Message = ex.Message,
+                    InnerException = (ex.InnerException == null || ex.InnerException.Message == null) ? "" : ex.InnerException.Message,
+                    Ip = "",
+                    CreateTime = DateTime.Now,
+                    UserName = "System"
+                };
+                ExceptionLogLogic exLogic = new ExceptionLogLogic();
+                DoHandle dohandle;
+                exLogic.Create(exLog, out dohandle);
+
+                APIResultDTO result = new APIResultDTO();
+                result.Code = 901;
+                result.Message = "验证异常";
+                return JObject.FromObject(result);
+            }
+            
+        }
+
+        public JObject GetOrderCodeByQRCode(string qrcode)
+        {
+            try
+            {
+                DZLangchaoLogic lcLogic = new DZLangchaoLogic();
+                var orderCode = lcLogic.GetOrderCodeByQRCode(qrcode);
+                APIResultDTO result = new APIResultDTO();
+                if (string.IsNullOrEmpty(orderCode))
+                {
+                    result.Code = 701;
+                    result.Message = "没有查到订单数据";
+                }
+                else
+                {
+                    result.Code = 0;
+                    result.Message = "验证成功";
+                }
+                result.Data = orderCode;
+                return JObject.FromObject(result);
+            }
+            catch (Exception ex)
+            {
+                //写异常日志
+                ExceptionLog exLog = new ExceptionLog
+                {
+                    Id = Guid.NewGuid(),
+                    Message = ex.Message,
+                    InnerException = (ex.InnerException == null || ex.InnerException.Message == null) ? "" : ex.InnerException.Message,
+                    Ip = "",
+                    CreateTime = DateTime.Now,
+                    UserName = "System"
+                };
+                ExceptionLogLogic exLogic = new ExceptionLogLogic();
+                DoHandle dohandle;
+                exLogic.Create(exLog, out dohandle);
+
+                APIResultDTO result = new APIResultDTO();
+                result.Code = 901;
+                result.Message = "验证异常";
+                return JObject.FromObject(result);
+            }
+        }
+
+        #endregion
     }
 }
