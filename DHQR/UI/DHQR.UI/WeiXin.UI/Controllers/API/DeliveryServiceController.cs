@@ -142,12 +142,12 @@ namespace DHQR.UI.Controllers.API
 
             //if (dohandle.IsSuccessful)
             //{
-                DistRecordLogLogic logLogic = new DistRecordLogLogic();
-                foreach (var d in distRecords)
-                {
-                    d.Id = Guid.NewGuid();
-                }
-                logLogic.Create(distRecords, out dohandle);
+            DistRecordLogLogic logLogic = new DistRecordLogLogic();
+            foreach (var d in distRecords)
+            {
+                d.Id = Guid.NewGuid();
+            }
+            logLogic.Create(distRecords, out dohandle);
             //}
             #endregion
 
@@ -158,7 +158,7 @@ namespace DHQR.UI.Controllers.API
             #endregion
 
 
-            var result = new APIResultDTO() { Code = (dohandle.IsSuccessful? 0 : 901), Message = dohandle.OperateMsg };
+            var result = new APIResultDTO() { Code = (dohandle.IsSuccessful ? 0 : 901), Message = dohandle.OperateMsg };
             return JObject.FromObject(result);
 
         }
@@ -184,7 +184,7 @@ namespace DHQR.UI.Controllers.API
             #endregion
 
 
-            var result = new APIResultDTO() { Code = (dohandle.IsSuccessful? 0 : 901), Message = dohandle.OperateMsg };
+            var result = new APIResultDTO() { Code = (dohandle.IsSuccessful ? 0 : 901), Message = dohandle.OperateMsg };
             return JObject.FromObject(result);
         }
 
@@ -220,9 +220,9 @@ namespace DHQR.UI.Controllers.API
 
             //if (dohandle.IsSuccessful)
             //{
-                DistRecordLogLogic logLogic = new DistRecordLogLogic();
-                distRecord.Id = Guid.NewGuid();
-                logLogic.Create(distRecord, out dohandle);
+            DistRecordLogLogic logLogic = new DistRecordLogLogic();
+            distRecord.Id = Guid.NewGuid();
+            logLogic.Create(distRecord, out dohandle);
             //}
             #endregion
 
@@ -232,7 +232,7 @@ namespace DHQR.UI.Controllers.API
 
             #endregion
 
-            var result = new APIResultDTO() { Code=(dohandle.IsSuccessful?0:901), Message = dohandle.OperateMsg };
+            var result = new APIResultDTO() { Code = (dohandle.IsSuccessful ? 0 : 901), Message = dohandle.OperateMsg };
             return JObject.FromObject(result);
 
         }
@@ -266,9 +266,9 @@ namespace DHQR.UI.Controllers.API
 
             //if (dohandle.IsSuccessful)
             //{
-                DistRecordLogLogic logLogic = new DistRecordLogLogic();
-                distRecord.Id = Guid.NewGuid();
-                logLogic.Create(distRecord, out dohandle);
+            DistRecordLogLogic logLogic = new DistRecordLogLogic();
+            distRecord.Id = Guid.NewGuid();
+            logLogic.Create(distRecord, out dohandle);
             //}
             #endregion
 
@@ -312,9 +312,9 @@ namespace DHQR.UI.Controllers.API
 
             //if (dohandle.IsSuccessful)
             //{
-                DistRecordLogLogic logLogic = new DistRecordLogLogic();
-                distRecord.Id = Guid.NewGuid();
-                logLogic.Create(distRecord, out dohandle);
+            DistRecordLogLogic logLogic = new DistRecordLogLogic();
+            distRecord.Id = Guid.NewGuid();
+            logLogic.Create(distRecord, out dohandle);
             //}
             #endregion
 
@@ -373,9 +373,9 @@ namespace DHQR.UI.Controllers.API
 
             //if (dohandle.IsSuccessful)
             //{
-                DistRecordLogLogic logLogic = new DistRecordLogLogic();
-                distRecord.Id = Guid.NewGuid();
-                logLogic.Create(distRecord, out dohandle);
+            DistRecordLogLogic logLogic = new DistRecordLogLogic();
+            distRecord.Id = Guid.NewGuid();
+            logLogic.Create(distRecord, out dohandle);
             //}
             #endregion
 
@@ -817,58 +817,81 @@ namespace DHQR.UI.Controllers.API
         /// </summary>
         public JObject PostDownloadDistByDate([FromBody]JObject jparam)
         {
-            var param = jparam.ToObject<DownloadDistByDateParam>();
-            DoHandle dohandle;
-            #region 写服务器日志
-
-            serverlogLogic.InsertLog("DeliveryConfirm", "DownloadDistByDate", jparam.ToString(), param.DLVMAN_ID, true);
-
-            #endregion
-
-            #region 取浪潮配送单数据
-
-            List<LdmDist> ldmDists = new List<LdmDist>();//配送单
-            List<LdmDistLine> ldmDistLines = new List<LdmDistLine>();//配送单明细
-            List<LdmDisItem> ldmDisItems = new List<LdmDisItem>();//配送单商品信息
-            List<I_CO_TEMP_RETURN> tmpReturns = new List<I_CO_TEMP_RETURN>();//再出库暂存订单
-
-
-            DZLangchaoLogic lcLogic = new DZLangchaoLogic();
-            lcLogic.DownloadDistByDate(param, out ldmDists, out ldmDistLines, out ldmDisItems, out tmpReturns);
-
-            #endregion
-
-            #region 写本地数据库
-
-            LdmDistLogic ldmLogic = new LdmDistLogic();
-            ldmLogic.DownloadDistsByDate(ldmDists, ldmDistLines, ldmDisItems, tmpReturns, out dohandle);
-
-            #endregion
-
-            if (ldmDists.Count == 0)
+            try
             {
-                dohandle.IsSuccessful = false;
-                dohandle.OperateMsg = "未找到配送单,请与配送调度管理员联系!";
-            }
+                var param = jparam.ToObject<DownloadDistByDateParam>();
+                DoHandle dohandle;
+                #region 写服务器日志
 
-            var result = new APIResultDTO();
-            if (dohandle.IsSuccessful)
-            {
-                #region 返回配送单到终端
+                serverlogLogic.InsertLog("DeliveryConfirm", "DownloadDistByDate", jparam.ToString(), param.DLVMAN_ID, true);
 
-                LdmInfo ldmInfo = new LdmInfo { LdmDists = ldmDists, LdmDistLines = ldmDistLines, LdmDisItems = ldmDisItems };
-                result.Code = 0;
-                result.Data = ldmInfo;
-                result.Message = "获取数据成功";
                 #endregion
-            }
 
-            else
-            {
-                result.Message = dohandle.OperateMsg;
-                result.Code = 901;
+                #region 取浪潮配送单数据
+
+                List<LdmDist> ldmDists = new List<LdmDist>();//配送单
+                List<LdmDistLine> ldmDistLines = new List<LdmDistLine>();//配送单明细
+                List<LdmDisItem> ldmDisItems = new List<LdmDisItem>();//配送单商品信息
+                List<I_CO_TEMP_RETURN> tmpReturns = new List<I_CO_TEMP_RETURN>();//再出库暂存订单
+
+
+                DZLangchaoLogic lcLogic = new DZLangchaoLogic();
+                lcLogic.DownloadDistByDate(param, out ldmDists, out ldmDistLines, out ldmDisItems, out tmpReturns);
+
+                #endregion
+
+                #region 写本地数据库
+
+                LdmDistLogic ldmLogic = new LdmDistLogic();
+                ldmLogic.DownloadDistsByDate(ldmDists, ldmDistLines, ldmDisItems, tmpReturns, out dohandle);
+
+                #endregion
+
+                if (ldmDists.Count == 0)
+                {
+                    dohandle.IsSuccessful = false;
+                    dohandle.OperateMsg = "未找到配送单,请与配送调度管理员联系!";
+                }
+
+                var result = new APIResultDTO();
+                if (dohandle.IsSuccessful)
+                {
+                    #region 返回配送单到终端
+
+                    LdmInfo ldmInfo = new LdmInfo { LdmDists = ldmDists, LdmDistLines = ldmDistLines, LdmDisItems = ldmDisItems };
+                    result.Code = 0;
+                    result.Data = ldmInfo;
+                    result.Message = "获取数据成功";
+                    #endregion
+                }
+                else
+                {
+                    result.Message = dohandle.OperateMsg;
+                    result.Code = 901;
+                }
+                return JObject.FromObject(result);
             }
-            return JObject.FromObject(result);
+            catch (Exception ex)
+            {
+                //写异常日志
+                ExceptionLog exLog = new ExceptionLog
+                {
+                    Id = Guid.NewGuid(),
+                    Message = ex.Message,
+                    InnerException = (ex.InnerException == null || ex.InnerException.Message == null) ? "" : ex.InnerException.Message,
+                    Ip = "",
+                    CreateTime = DateTime.Now,
+                    UserName = "System"
+                };
+                ExceptionLogLogic exLogic = new ExceptionLogLogic();
+                DoHandle dohandle;
+                exLogic.Create(exLog, out dohandle);
+
+                APIResultDTO result = new APIResultDTO();
+                result.Code = 901;
+                result.Message = "获取数据异常:" + ex.Message;
+                return JObject.FromObject(result);
+            }
         }
 
 
@@ -917,10 +940,10 @@ namespace DHQR.UI.Controllers.API
 
                 APIResultDTO result = new APIResultDTO();
                 result.Code = 901;
-                result.Message = "验证异常";
+                result.Message = "验证异常:" + ex.Message;
                 return JObject.FromObject(result);
             }
-            
+
         }
 
         public JObject GetOrderCodeByQRCode(string qrcode)
@@ -961,7 +984,7 @@ namespace DHQR.UI.Controllers.API
 
                 APIResultDTO result = new APIResultDTO();
                 result.Code = 901;
-                result.Message = "验证异常";
+                result.Message = "验证异常:" + ex.Message;
                 return JObject.FromObject(result);
             }
         }
